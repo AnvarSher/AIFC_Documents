@@ -1,0 +1,160 @@
+<p style="text-align: center; font-size: 17px; width: 525px; margin-left: 40px;">Registrar of Companies Assessment Report</p>
+
+<p style="text-align: center; font-size: 17px; width: 525px; margin-left: 40px;">Materially Complete Review, Assessment Report and Recommendation</p>
+
+
+<p style="margin-left: 40px; width: 525px;">
+	<strong>Complexity: </strong>
+	[PsApplicationComplexity]
+</p>
+
+<p style="margin-left: 40px; width: 525px;">
+	<strong>Applicant Firm Name: </strong>
+	[PsAccount]
+</p>
+
+<p style="margin-left: 40px; width: 525px;">
+	<strong>Date of Submission of application: </strong>
+	[PsSubmittedDate*DATE]
+</p>
+
+<p style="margin-left: 40px; width: 525px;">
+	<strong>Date of In-Principal approval (if any): </strong>
+	[PreApplicationApprovedDate]
+</p>
+
+<p style="margin-left: 40px; width: 525px;">
+	<strong>Case Officer: </strong>
+	[PsEmployee]
+</p>
+
+
+<table style="width: 100%; border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td colspan="2" style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>1. Application overview</strong>
+			</td>
+		</tr>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; width: 40%; text-align: right;">Organisational-legal form:</td>
+			<td style="border: 1px solid black; padding: 5px; width: 60%;">[PsApplicationType]</td>
+		</tr>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; width: 40%; text-align: right;">Nature of business:</td>
+			<td style="border: 1px solid black; padding: 5px; width: 60%;">[PsNatureBusiness]</td>
+		</tr>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; width: 40%; text-align: right;">Type of activity:</td>
+			<td style="border: 1px solid black; padding: 5px; width: 60%;">[TypeOfActivity]</td>
+		</tr>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; width: 40%; text-align: right;">Registered address in the AIFC:</td>
+			<td style="border: 1px solid black; padding: 5px; width: 60%;">[AddressText]</td>
+		</tr>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; width: 40%; text-align: right;">Issues for consideration and recommendations:</td>
+			<td style="border: 1px solid black; padding: 5px; width: 60%;"></td>
+		</tr>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; width: 40%; text-align: right;">Waivers or modifications sought by the Applicant:</td>
+			<td style="border: 1px solid black; padding: 5px; width: 60%;">
+				[{"type": "list", "table": "PsFintechWaiverAndModification", "where": { "column": "PsApplication", "valueColumn": "PsPreApplication", "type": "EQUAL" }, "fields": "PsType;PsDescription", "format": "{0}: {1};", "numbering":false, "orderby": "PsCode"}]
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section2" style="width: 100%; border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>2. Information on Authorised Signatory (applicable if different from Shareholder/Partner/Director)</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section3" style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td colspan="2" style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>[ThirdTitle]</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section4" style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td colspan="2" style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>[FourthTitle]</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section5" style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px; ">
+			<td style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>5. Additional information on Beneficial Owners (if applicable)</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section6" style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td colspan="2" style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>6. Directors/Designated Members (if applicable)</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section7" style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td colspan="2" style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>7. Secretary - Individual (if applicable)</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table id="section8" style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td colspan="2" style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>8. Person Authorised to accept services - Individual (if applicable)</strong>
+			</td>
+		</tr>
+	</thead>
+</table>
+<br>
+
+<table style="border-collapse: collapse; margin-left: 40px; width: 525px;">
+	<thead>
+		<tr style="border: 1px solid black; padding: 5px;">
+			<td style="border: 1px solid black; padding: 5px; background-color: lightgray;">
+				<strong>9. Additional information (if any)</strong>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="border: 1px solid black; padding: 5px 20px 5px 20px; vertical-align: baseline;">
+			<td style="min-height: 50px; border: 1px solid black; padding: 5px;"></td>
+		</tr>
+	</tbody>
+</table>
+<br>
