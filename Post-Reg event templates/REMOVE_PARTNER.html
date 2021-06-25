@@ -19,18 +19,11 @@
         <div>Address: [#ITEM:address.addressLine#]</div>
         <div>Number of shares contributed: [#ITEM:amountOfContribution#]</div>
         <div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
-        <div>Certificate of Incorporation: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
-        <div>Consent of Partners: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_PARTNERS_CONSENT"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
-        <div>Court's Order: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_COURTS_ORDER"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
-        <div>A copy of an indemnity for the liabilities of the outgoing or deceased partner: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_INDEMNITY"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
+        [#ARRAY:ITEM:attachmentsList:["event:REMOVE_PARTNER"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
         <div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
         <div>Percentage of shareholding, %:: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
         <div>Ultimate beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>

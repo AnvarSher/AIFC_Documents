@@ -1,51 +1,38 @@
-<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-    <div><strong>[#EVENT:PsName#]</strong></div>
-    <hr>
-    [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DP", "status:UPDATED"]:##
-        <div>Status of Individual: [#ITEM:status#]</div>
-        <div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-        <div>Resident or Non-Resident of Republic of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>
-        <div>First Name: [#ITEM:firstName#]</div>
-        <div>Patronymic Name: [#ITEM:middleName#]</div>
-        <div>Last Name: [#ITEM:lastName#]</div>
-        <div>First name in Cyrillic: [#ITEM:firstNameCyrillic#]</div>
-        <div>Patronymic name in Cyrillic: [#ITEM:middleNameCyrillic#]</div>
-        <div>Last name in Cyrillic: [#ITEM:lastNameCyrillic#]</div>
-        <div>KYC ID: [#ITEM:kycId#]</div>
-        <div>Type of identity document: [#ITEM:passport.documentType#]</div>
-        <div>Passport / Identity document number: [#ITEM:passport.number#]</div>
-        <div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>
-        <div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-        <div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-        <div>IIN: [#ITEM:personalId#]</div>
-        <div>Residential Address: [#ITEM:address#]</div>
-        <div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-        <div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-        <div>Country of Nationality: [#ITEM:nationalityCodeIso2#]</div>
-        <div>Email: [#ITEM:contact.email#]</div>
-        <div>Value of shares: [#ITEM:valueOfShares#]</div>
-
-        <div>KYC Report: [#ARRAY:ITEM:attachmentsList:["fileCode:KYC_REPORT"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
-        <div>Upload a scan copy of passport / ID document: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
-        <div>Certificate of Name change: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_CERTIFICATE_OF_NAME_CHANGE"]:##
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-        </div>
-
-        <div>Confirm the Director details are changing and that you are not appointing a new Director: [#ITEM:changeConfirmation:BOOLEAN#]</div>
-        <br>
-    #]
-    <div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
-    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
-    <div>Representatove's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
-    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DIRECTOR"]:##
-        <div>
-            [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-        </div>    
-    #]
-    <br>
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
+	<div><strong>[#EVENT:PsName#]</strong></div>     
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DP", "status:UPDATED"]:##
+		<div>First Name: [#ITEM:firstName#]</div>     
+		<div>Patronymic Name: [#ITEM:middleName#]</div>     
+		<div>Last Name: [#ITEM:lastName#]</div>     
+		<div>Resident of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>     
+		<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>   
+		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>     
+		<div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>     
+		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>     
+		<div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>     
+		<div>IIN: [#ITEM:personalId#]</div>     
+		<div>Residential Address: [#ITEM:address#]</div>     
+		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
+		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
+		<div>Email: [#ITEM:contact.email#]</div>     
+		<div>Confirm the Director details are changing and that you are not appointing a new Director: [#ITEM:changeConfirmation:BOOLEAN#]</div>     
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DIRECTOR"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
+		<br>      
+	#]     
+	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>     
+	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
+	<div>Representative's Phone Number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>     
+	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>      
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DIRECTOR"]:##        
+		<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>          
+		</div>      
+	#]     
+	<br>  
 </div>

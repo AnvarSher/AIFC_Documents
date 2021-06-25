@@ -12,7 +12,7 @@
 		<div>Last Name: [#ITEM:lastName#]</div>
 		<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
 		<div>IIN: [#ITEM:personalId#]</div>
-		<div>Type of identity document: [#ITEM:passport.documentType#]</div>
+        <div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
 		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
 		<div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
@@ -24,7 +24,7 @@
 		<div>KYC Individual status: [#ITEM:kycIndividualStatus#]</div>
 		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_DESIGNATED_MEMBER"]:##
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_FOUNDER"]:##
 			<div> 
 				[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
@@ -46,7 +46,7 @@
 		<div>Number of shares contributed: [#ITEM:amountOfContribution#]</div>
 		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_DESIGNATED_MEMBER"]:##
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_FOUNDER"]:##
 			<div> 
 				[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>

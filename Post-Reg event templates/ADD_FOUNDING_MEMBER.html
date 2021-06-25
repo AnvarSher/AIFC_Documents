@@ -11,7 +11,7 @@
 		<div>Last Name: [#ITEM:lastName#]</div>
 		<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
 		<div>IIN: [#ITEM:personalId#]</div>
-		<div>Type of identity document: [#ITEM:passport.documentType#]</div>
+		<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
 		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
 		<div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
@@ -23,12 +23,11 @@
 		<div>KYC Individual status: [#ITEM:kycIndividualStatus#]</div>
 		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div>Upload a scan copy of passport: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-		</div>
-		<div>Consent of Members: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_MEMBERS_CONSENT"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
-		</div>
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_FOUNDING_MEMBER"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
 		<br> 
 	#] 
 
@@ -45,12 +44,11 @@
 		<div>Number of shares contributed: [#ITEM:amountOfContribution#]</div>
 		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 
-		<div>Certificate of Incorporation: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-		</div>
-		<div>Consent of Members: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_MEMBERS_CONSENT"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-		</div>
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_FOUNDING_MEMBER"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
 
 		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
 		<div>Percentage of shareholding, %:: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>

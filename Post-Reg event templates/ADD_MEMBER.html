@@ -8,7 +8,7 @@
 	<div>Last Name: [#ITEM:lastName#]</div>
 	<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
 	<div>IIN: [#ITEM:personalId#]</div>
-	<div>Type of identity document: [#ITEM:passport.documentType#]</div>
+	<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 	<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
 	<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
 	<div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>

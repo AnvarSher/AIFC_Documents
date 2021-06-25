@@ -1,44 +1,40 @@
-<!-- <div>[#CEO={path: "applicationForm.application.individualList", filters: ["roleCode:CEO", "status:UPDATED"]}#]</div> -->
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-    <div><strong>[#EVENT:PsName#]</strong></div>
-    <hr>
-    <div>Type of Company: [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
-    <div>Name of the Company: [#JSON:applicationForm.application.nameOfCompany.nameEn#]</div>
-
-    [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:UPDATED"]:##
-        <div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-        <div>First Name: [#ITEM:firstName#]</div>
-        <div>Patronymic name: [#ITEM:middleName#]</div>
-        <div>Last Name: [#ITEM:lastName#]</div>
-        <div>First name in Cyrillic: [#ITEM:firstNameCyrillic#]</div>
-        <div>Patronymic name in Cyrillic: [#ITEM:middleNameCyrillic#]</div>
-        <div>Last name in Cyrillic: [#ITEM:lastNameCyrillic#]</div>
-        <div>Former name: [#ITEM:formerNames#]</div>
-        <div>IIN: [#ITEM:personalId#]</div>
-        <div>Residential Address: [#ITEM:address#]</div>
-        <div>Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-        <div>Email: [#ITEM:contact.email#]</div>
-        <div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-        <div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-        <div>Confirm the CEO details are changing and that you are not appointing a new CEO.: [#ITEM:changeConfirmation:BOOLEAN#]</div>
-        <br>
-    #]
-    <div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>
-    <div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
-    <div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-    <div>Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>
-    <div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>
-    <div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.UPDATE_CEO:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>
-    <div>Date of Resolution: 
-        [#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_CEO:DATE:dd.MM.yyyy#]
-        [#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_CEO:DATE:dd.MM.yyyy#]
-        [#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_CEO:DATE:dd.MM.yyyy#]
-    </div>
-    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_CEO"]:##
-        <div>
-            [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-        </div>    
-    #]
-    <br>
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	<div> Type of Company: [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#] </div>
+	<div> Name of the Company: [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#] </div> 
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:UPDATED"]:##
+		<div> Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#] </div>
+		<div> First Name: [#ITEM:firstName#] </div>
+		<div> Patronymic name: [#ITEM:middleName#] </div>
+		<div> Last Name: [#ITEM:lastName#] </div>
+		<div> First name in Cyrillic: [#ITEM:firstNameCyrillic#] </div>
+		<div> Patronymic name in Cyrillic: [#ITEM:middleNameCyrillic#] </div>
+		<div> Last name in Cyrillic: [#ITEM:lastNameCyrillic#] </div>
+		<div> Former name: [#ITEM:formerNames#] </div>
+		<div> IIN: [#ITEM:personalId#] </div>
+		<div> Residential Address: [#ITEM:address#] </div>
+		<div> Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#] </div>
+		<div> Email: [#ITEM:contact.email#] </div>
+		<div> Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
+		<div> Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
+		<div> Confirm the CEO details are changing and that you are not appointing a new CEO.: [#ITEM:changeConfirmation:BOOLEAN#] </div>
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_CEO"]:##    
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
+		<br>
+	#]
+	<div> Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#] </div>
+	<div> Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#] </div>
+	<div> Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
+	<div> Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#] </div>
+	<div> Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#] </div> 
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_CEO"]:##
+		<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div> 
+	#]
+	<br> 
 </div>

@@ -16,12 +16,11 @@
 		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
 		<div>Percentage of shareholding, %: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div>Ultimate beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div>Certificate of Incorporation: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
-		</div>
-		<div>Consent of Members: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_MEMBERS_CONSENT"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
-		</div>
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_MEMBER"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
 		<br>
 	#]
 

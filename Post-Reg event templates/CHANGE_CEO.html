@@ -16,7 +16,7 @@
 		<div>Last Name in Cyrillic: [#ITEM:lastNameCyrillic#]</div>
 		<div>Resident or Non-Resident of Republic of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>
 		<div>IIN: [#ITEM:personalId#]</div>
-		<div>Type of identity document: [#ITEM:passport.documentType#]</div>
+		<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
 		<div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>
 		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
@@ -28,12 +28,11 @@
 		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div>Email: [#ITEM:contact.email#]</div>
-		<div>KYC Report: [#ARRAY:ITEM:attachmentsList:["fileCode:KYC_REPORT"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-		</div>
-		<div>Upload a scan copy of passport / ID document: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
-		</div>
+		[#ARRAY:ITEM:attachmentsList:["event:CHANGE_CEO"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
 		<br>
 	#]
 
@@ -49,7 +48,7 @@
 		<div>Last Name in Cyrillic: [#ITEM:lastNameCyrillic#]</div>
 		<div>Resident or Non-Resident of Republic of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>
 		<div>IIN: [#ITEM:personalId#]</div>
-		<div>Type of identity document: [#ITEM:passport.documentType#]</div>
+		<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
 		<div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>
 		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
@@ -61,6 +60,11 @@
 		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div>Email: [#ITEM:contact.email#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:CHANGE_CEO"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
 		<br>
 	#]
 	<div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
@@ -69,12 +73,6 @@
 	<div>Generated a standard special resolution + get online approval of shareholders: [#JSON:applicationForm.application.isStandardOnlineResolutionOfIncorporation:BOOLEAN#]</div>
 	<div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
 	<div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.contact.personName#]</div>
-	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.CHANGE_CEO:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>
-    <div>Date of Resolution: 
-        [#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-        [#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-        [#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-    </div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_CEO"]:##
 		<div>
 			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  

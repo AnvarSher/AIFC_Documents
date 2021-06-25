@@ -3,11 +3,11 @@
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DP", "status:REMOVED"]:##     
 		<div>First name: [#ITEM:firstName#]</div>     
 		<div>Patronymic Name: [#ITEM:middleName#]</div>     
-		<div>Last Name: [#ITEM:lastName#]</div>     
-		<div>Former Name: [#ITEM:formerNames#]</div>     
+		<div>Last Name: [#ITEM:lastName#]</div>        
 		<div>Resident of Republic of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>     
 		<div>IIN: [#ITEM:personalId#]</div>     
-		<div>Type of identity document: [#ITEM:passport.documentType#]</div>     
+		<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
+        <div>Passport / Identity document number: [#ITEM:passport.number#]</div>     
 		<div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>     
 		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>     
 		<div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>     
