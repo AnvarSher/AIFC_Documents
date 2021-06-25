@@ -1,0 +1,163 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	<div>BIN of Company: [#JSON:applicationForm.application.bin#]</div>
+	<div>Use state capital: [#JSON:applicationForm.application.transfer.shareCapital.useStateCapital:BOOLEAN#]</div>
+	<div>Currency: [#JSON:applicationForm.application.transfer.shareCapital.currencyCodeIso3#]</div>
+	<div>Share of State capital: [#JSON:applicationForm.application.transfer.shareCapital.shareOfStateCapital#]</div>
+	<div>Total number of shares: [#JSON:applicationForm.application.transfer.shareCapital.totalNumberOfShares#]</div>
+	<div>Amount of state capital: [#JSON:applicationForm.application.transfer.shareCapital.amountOfStateCapital#]</div>
+	<div>Share of private capital: [#JSON:applicationForm.application.transfer.shareCapital.shareOfPrivateCapital#]</div>
+	<div>Amount of Private capital: [#JSON:applicationForm.application.transfer.shareCapital.amountOfPrivateCapital#]</div>
+	<div>Total amount of share capital: [#JSON:applicationForm.application.transfer.shareCapital.totalAmountOfShareCapital#]</div>
+
+	<div>[#ARRAY:JSON:applicationForm.application.transfer.shareCapital.shareCapitalClasses:[]:##
+		<br>
+		<div>Class Name: [#ITEM:className#]</div>
+		<div>Value of share: [#ITEM:shareValue#]</div>
+		<div>Number of Votes: [#ITEM:votesNumber#]</div>
+		<div>Total number of shares: [#ITEM:totalNumberOfShares#]</div>
+		#]
+	</div>
+	<hr>
+	
+	[#ARRAY:JSON:applicationForm.application.transfer.corporateList:["roleCode:SH", "status:NEW"]:##
+		<div>Status of Entity: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Appointment date: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div>Company Name: [#ITEM:companyName#]</div>
+		<div>Tax registration number: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div>Structure Type: [#ITEM:structureType#]</div>
+		<div>Type of business: [#ITEM:typeOfBusiness#]</div>
+		<div>Country of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div>Certificate of Incorporation: [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div>Contact: [#ITEM:address.contact#]</div>
+		<div>Residential address: [#ITEM:address.addressLine#]</div>
+		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div>Number of shares: [#ITEM:numberOfShares#]</div>
+		<div>Amount of contribution: [#ITEM:amountOfContribution#]</div>
+		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div>Shareholding Percentage: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div>Ultimate Beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div>
+			[#ARRAY:ITEM:shareClasses:[]:##
+				<br>
+				<div>Class Name: [#ITEM:className#]</div>
+				<div>Value of shares: [#ITEM:valueOfShares#]</div>
+				<div>Number of shares: [#ITEM:numberOfShares#]</div>
+			#]
+		</div>
+		<br>
+	#]
+
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.transfer.corporateList:["roleCode:SH", "status:REMOVED"]:##
+		<div>Status of Entity: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Remove date: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div>Company Name: [#ITEM:companyName#]</div>
+		<div>Tax registration number: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div>Structure Type: [#ITEM:structureType#]</div>
+		<div>Type of business: [#ITEM:typeOfBusiness#]</div>
+		<div>Country of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div>Certificate of Incorporation: [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div>Contact: [#ITEM:address.contact#]</div>
+		<div>Residential address: [#ITEM:address.addressLine#]</div>
+		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div>Number of shares: [#ITEM:numberOfShares#]</div>
+		<div>Amount of contribution: [#ITEM:amountOfContribution#]</div>
+		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div>Shareholding Percentage: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div>Ultimate Beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div>[#ARRAY:ITEM:shareClasses:[]:##
+			<br>
+			<div>Class Name: [#ITEM:className#]</div>
+			<div>Value of shares: [#ITEM:valueOfShares#]</div>
+			<div>Number of shares: [#ITEM:numberOfShares#]</div>
+			#]
+		</div>
+		<br>
+	#]
+
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.transfer.individualList:["roleCode:SH", "status:NEW"]:##
+		<div>Status of Entity: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Appointment date: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div>Company Name: [#ITEM:companyName#]</div>
+		<div>Tax registration number: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div>Structure Type: [#ITEM:structureType#]</div>
+		<div>Type of business: [#ITEM:typeOfBusiness#]</div>
+		<div>Country of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div>Certificate of Incorporation: [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div>Contact: [#ITEM:address.contact#]</div>
+		<div>Residential address: [#ITEM:address.addressLine#]</div>
+		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div>Number of shares: [#ITEM:numberOfShares#]</div>
+		<div>Amount of contribution: [#ITEM:amountOfContribution#]</div>
+		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div>Shareholding Percentage: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div>Ultimate Beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div>[#ARRAY:ITEM:shareClasses:[]:##
+			<br>
+			<div>Class Name: [#ITEM:className#]</div>
+			<div>Value of shares: [#ITEM:valueOfShares#]</div>
+			<div>Number of shares: [#ITEM:numberOfShares#]</div>
+			#]
+		</div>
+		<br>
+	#]
+
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.transfer.individualList:["roleCode:SH", "status:REMOVED"]:##
+		<div>Status of Entity: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Remove date: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div>Company Name: [#ITEM:companyName#]</div>
+		<div>Tax registration number: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div>Structure Type: [#ITEM:structureType#]</div>
+		<div>Type of business: [#ITEM:typeOfBusiness#]</div>
+		<div>Country of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div>Certificate of Incorporation: [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div>Contact: [#ITEM:address.contact#]</div>
+		<div>Residential address: [#ITEM:address.addressLine#]</div>
+		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div>Number of shares: [#ITEM:numberOfShares#]</div>
+		<div>Amount of contribution: [#ITEM:amountOfContribution#]</div>
+		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div>Shareholding Percentage: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div>Ultimate Beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div>[#ARRAY:ITEM:shareClasses:[]:##
+			<br>
+			<div>Class Name: [#ITEM:className#]</div>
+			<div>Value of shares: [#ITEM:valueOfShares#]</div>
+			<div>Number of shares: [#ITEM:numberOfShares#]</div>
+			#]
+		</div>
+		<br>
+	#]
+
+	<hr>
+	<div>Effective date of Standard Resolution: [#JSON:applicationForm.application.transfer.effectiveDayStandardResolution:DATE:dd.MM.yyyy#]</div>
+	<div>Effective date of Special Resolution: [#JSON:applicationForm.application.transfer.effectiveDaySpecialResolution:DATE:dd.MM.yyyy#]</div>
+	<div>Payer's details: [#JSON:applicationForm.application.payerEmail#]</div>
+	<div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
+	<div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+	<div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:TRANSFER_SHARES"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+	<hr>
+	<hr><br><br>
+</div>

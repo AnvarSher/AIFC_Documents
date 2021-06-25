@@ -1,0 +1,17 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+    <div><strong>[#EVENT:PsName#]</strong></div>
+    <hr>
+    <div>Type of post-registration application: ANNUAL_RETURN</div>
+    <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+    <div>Please confirm that the Company is subject to submission of Annual return in accordance with section 26 of the AIFC Companies Regulations: [#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</div>
+    <div>Financial Year end: [#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd#]</div>
+    <div>Payment option: [#JSON:applicationForm.application.paymentOption#]</div>
+    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ANNUAL_RETURNS"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+</div>

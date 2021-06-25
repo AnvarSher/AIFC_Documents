@@ -1,0 +1,16 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+    <div><strong>[#EVENT:PsName#]</strong></div>
+    <hr>
+    <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+    <div>I confirm that all Shareholders have assented to the election to file an annual confirmation statement instead of an annual return.: [#JSON:applicationForm.application.electionConfirmation:BOOLEAN#]</div>
+    <div>Payer's email: [#JSON:applicationForm.application.payerEmail#]</div>
+    <div>Payment option: [#JSON:applicationForm.application.paymentOption#]</div>
+    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ELECTION_ANNUAL_CONFIRMATION_STATEMENT"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+</div>

@@ -1,0 +1,26 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr> 
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:REMOVED"]:##
+		<div>First Name: [#ITEM:firstName#]</div>
+		<div>Patronymic name: [#ITEM:middleName#]</div>
+		<div>Last Name: [#ITEM:lastName#]</div>     
+		<div>Former Name: [#ITEM:formerNames#]</div>     
+		<div>Residential Address: [#ITEM:address#]</div>     
+		<div>Email: [#ITEM:contact.email#]</div>     
+		<div>Date of removal: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>     
+		<div>Reason of removal: [#ITEM:removeReason#]</div>     
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DESIGNATED_MEMBER"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>         
+			</div>      
+		#]     
+		<br>      
+	#] 
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_DESIGNATED_MEMBER"]:##     
+		<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div> 
+	#]     
+	<br>  
+</div>

@@ -1,0 +1,42 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	<div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:UPDATED"]:##
+		<div>Status: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>First name: [#ITEM:firstName#]</div>
+		<div>Last Name: [#ITEM:lastName#]</div>
+		<div>Patronymic Name: [#ITEM:middleName#]</div>
+		<div>Former name: [#ITEM:formerNames#]</div>
+		<div>Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
+		<div>Residential address: [#ITEM:address#]</div>
+		<div>Country of Citizenship: [#citizenshipCountryIso2Code#]</div>
+		<div>Country of main residence: [#mainResidenceCountryIso2Code#]</div>
+		<div>Email: [#ITEM:contact.email#]</div>
+	#] 
+
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:UPDATED"]:##
+		<div>Status of Member: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
+		<div>Company name: [#ITEM:companyName#]</div>
+		<div>Place of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<br> 
+	#]
+
+	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>
+	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
+	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+	<div>Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>
+	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DEFAULT_RECIPIENTS"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+	<br>
+</div>

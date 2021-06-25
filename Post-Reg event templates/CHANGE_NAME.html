@@ -1,0 +1,29 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">    
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>    
+	<div>Company BIN: [#JSON:applicationForm.application.bin#]</div>    
+	<div>Type of Company: [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>    
+	<div>Name of a legal entity to be established in the AIFC (English): [#JSON:applicationForm.application.fullNameOfCompany.nameEn#]</div>    
+	<div>Name of a legal entity to be established in the AIFC (Kazakh): [#JSON:applicationForm.application.fullNameOfCompany.nameKz#]</div>    
+	<div>Name of a legal entity to be established in the AIFC (Russian): [#JSON:applicationForm.application.fullNameOfCompany.nameRu#]</div>    
+	<div>Abbreviated Name of a legal entity to be established in the AIFC (English): [#JSON:applicationForm.application.fullAbbreviatedNameOfCompany.nameEn#]</div>    
+	<div>Abbreviated Name of a legal entity to be established in the AIFC (Kazakh): [#JSON:applicationForm.application.fullAbbreviatedNameOfCompany.nameKz#]</div>    
+	<div>Abbreviated Name of a legal entity to be established in the AIFC (Russian): [#JSON:applicationForm.application.fullAbbreviatedNameOfCompany.nameRu#]</div>    
+	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>    
+	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>    
+	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>    
+	<div>Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>    
+	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>    
+	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.CHANGE_NAME:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>    
+	<div>Date of Resolution: 
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]   
+	</div>    
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_NAME"]:##        
+		<div>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+		</div>
+	#]
+	<br>
+</div>

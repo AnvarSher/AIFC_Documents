@@ -1,0 +1,66 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	<div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:NEW"]:##
+		<div>Status: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>First name: [#ITEM:firstName#]</div>
+		<div>Last Name: [#ITEM:lastName#]</div>
+		<div>Patronymic Name: [#ITEM:middleName#]</div>
+		<div>Former name: [#ITEM:formerNames#]</div>
+		<div>Resident of Republic of Kazakhstan: [#ITEM:residentRok#]</div>
+		<div>IIN: [#ITEM:personalId#]</div>
+		<div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Type of identity document: [#ITEM:passport.documentType#]</div>
+		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
+		<div>Identity document issued by: [#ITEM:issuePlace#]</div>
+		<div>Date of issue of a document: [#ITEM:issueDt#]</div>
+		<div>Date of expiration of a document: [#ITEM:expirationDt#]</div>
+		<div>Date of Birth: [#ITEM:dob#]</div>
+		<div>Residential address: [#ITEM:address#]</div>
+		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code#]</div>
+		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code#]</div>
+		<div>Email: [#ITEM:contact.email#]</div>
+		<div>Date of appointment: [#ITEM:appointmentDate#]</div>
+		<div>Percentage of shareholding, %: [#ITEM:shareholdingPercent#]</div>
+		<div>Number of share: [#ITEM:numberOfShares#]</div>
+	#] 
+
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:NEW"]:##
+		<div>Status of Member: [#ITEM:status#]</div>
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Company name: [#ITEM:companyName#]</div>
+		<div>Place of incorporation: [#ITEM:incorpCountryCodeIso2#]</div>
+		<div>Date of registration: [#ITEM:registrationDate#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Type of activity: [#ITEM:typeOfBusiness#]</div>
+		<div>Address: [#ITEM:address#]</div>
+		<div>Date of appointment: [#ITEM:appointmentDate#]</div>
+		<div>Percentage of shareholding, %: [#ITEM:shareholdingPercent#]</div>
+		<div>Number of shares: [#ITEM:numberOfShares#]</div>
+
+		<br> 
+	#]
+
+	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>
+	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
+	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+	<div>Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>
+	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>
+	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.ADD_SHAREHOLDER:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>
+	<div>Date of Resolution: 
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
+	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_SHAREHOLDER"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+	<br>
+</div>

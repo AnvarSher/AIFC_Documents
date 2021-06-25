@@ -1,0 +1,124 @@
+<!-- <div>[#NI={path: "applicationForm.application.individualList", filters: ["roleCode:", "status:NEW"]}#]</div> -->
+<!-- <div>[#RI={path: "applicationForm.application.individualList", filters: ["roleCode:", "status:REMOVED"]}#]</div> -->
+<!-- <div>[#NС={path: "applicationForm.application.corporateList", filters: ["roleCode:", "status:NEW"]}#]</div> -->
+<!-- <div>[#RС={path: "applicationForm.application.corporateList", filters: ["roleCode:", "status:REMOVED"]}#]</div> -->
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+    <div><strong>[#EVENT:PsName#]</strong></div>
+    <hr>
+    <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+    <div>Status: [#NI:status#]</div>
+    <div>Role: [#NI:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+    <div>Appointment date: [#NI:appointmentDate:DATE:dd.MM.yyyy#]</div>
+    <div>First name: [#NI:firstName#]</div>
+    <div>Patronymic Name: [#NI:middleName#]</div>
+    <div>Last Name: [#NI:lastName#]</div>
+    <div>First name in Cyrillic: [#NI:firstNameCyrillic#]</div>
+    <div>Patronymic name in Cyrillic: [#NI:middleNameCyrillic#]</div>
+    <div>Last name in Cyrillic: [#NI:lastNameCyrillic#]</div>
+    <div>IIN: [#NI:personalId#]</div>
+    <div>Type of identity document: [#NI:passport.documentType#]</div>
+    <div>Passport / Identity document number: [#NI:passport.number#]</div>
+    <div>Date of issue of a document: [#NI:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+    <div>Date of expiration of a document: [#NI:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
+    <div>Passport / Identity document issued by: [#NI:passport.issuePlace#]</div>
+    <div>Residential Address: [#NI:address#]</div>
+    <div>Date of birth: [#NI:dob:DATE:dd.MM.yyyy#]</div>
+    <div>Country of Citizenship: [#NI:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+    <div>Country of main residence: [#NI:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+    <div>Email: [#NI:contact.email#]</div>
+    <div>Business occupation: [#NI:businessOccupation#]</div>
+    <div>Place of birth: [#NI:placeOfBirth#]</div>
+    <div>The date when became an Owner (MM.YYYY): [#NI:beneficiaryDetails.shareholdingMMYYYY#]</div>
+    <div>Percentage of shareholding: [#NI:beneficiaryDetails.shareholdingPercent#]</div>
+    <div>Share class name: [#NI:shareClasses.className#]</div>
+    <div>Value of shares: [#NI:shareClasses.valueOfShares#]</div>
+    <div>Certificate of Name Change: [#ARRAY:NI:attachmentsList:["fileCode:PR_CERTIFICATE_OF_NAME_CHANGE"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Copy of the passport: [#ARRAY:NI:attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <br>
+    <div>Status: [#RI:status#]</div>
+    <div>Role: [#RI:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+    <div>Remove date: [#RI:removeDate:DATE:dd.MM.yyyy#]</div>
+    <div>First name: [#RI:firstName#]</div>
+    <div>Patronymic Name: [#RI:middleName#]</div>
+    <div>Last Name: [#RI:lastName#]</div>
+    <div>First name in Cyrillic: [#RI:firstNameCyrillic#]</div>
+    <div>Patronymic name in Cyrillic: [#RI:middleNameCyrillic#]</div>
+    <div>Last name in Cyrillic: [#RI:lastNameCyrillic#]</div>
+    <div>IIN: [#RI:personalId#]</div>
+    <div>Type of identity document: [#RI:passport.documentType#]</div>
+    <div>Passport / Identity document number: [#RI:passport.number#]</div>
+    <div>Date of issue of a document: [#RI:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+    <div>Date of expiration of a document: [#RI:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
+    <div>Passport / Identity document issued by: [#RI:passport.issuePlace#]</div>
+    <div>Residential Address: [#RI:address#]</div>
+    <div>Date of birth: [#RI:dob:DATE:dd.MM.yyyy#]</div>
+    <div>Country of Citizenship: [#RI:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+    <div>Country of main residence: [#RI:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+    <div>Email: [#RI:contact.email#]</div>
+    <div>Business occupation: [#RI:businessOccupation#]</div>
+    <div>Place of birth: [#RI:placeOfBirth#]</div>
+    <div>The date when became an Owner (MM.YYYY): [#RI:beneficiaryDetails.shareholdingMMYYYY#]</div>
+    <div>Percentage of shareholding: [#RI:beneficiaryDetails.shareholdingPercent#]</div>
+    <div>Share class name: [#RI:shareClasses.className#]</div>
+    <div>Value of shares: [#RI:shareClasses.valueOfShares#]</div>
+    <div>Certificate of Name Change: [#ARRAY:RI:attachmentsList:["fileCode:PR_CERTIFICATE_OF_NAME_CHANGE"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Copy of the passport: [#ARRAY:RI:attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <br>
+    <div>Status of Member: [#NC:status#]</div>
+    <div>Role: [#NC:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+    <div>Company name: [#NC:companyName#]</div>
+    <div>Place of incorporation: [#NC:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+    <div>Date of registration: [#NC:registrationDate:DATE:dd.MM.yyyy#]</div>
+    <div>Registration Number: [#NC:registrationNumber#]</div>
+    <div>Tax registration number in the country of incorporation: [#NC:registrationNumberCountryOfIncorporation#]</div>
+    <div>Type of activity: [#NC:typeOfBusiness#]</div>
+    <div>Address: [#NC:address.addressLine#]</div>
+    <div>Organisational legal form: [#NC:orgLegalForm#]</div>
+    <div>Governing Law: [#NC:governLawDescription#]</div>
+    <div>Percentage of shareholding: [#NC:beneficiaryDetails.shareholdingPercent#]</div>
+    <div>Certificate of Incorporation: [#ARRAY:NC:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Appointment Date: [#NC:appointmentDate:DATE:dd.MM.yyyy#]</div>
+    <br>
+    <div>Status of Member: [#RC:status#]</div>
+    <div>Role: [#RC:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+    <div>Company name: [#RC:companyName#]</div>
+    <div>Place of incorporation: [#RC:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+    <div>Date of registration: [#RC:registrationDate:DATE:dd.MM.yyyy#]</div>
+    <div>Registration Number: [#RC:registrationNumber#]</div>
+    <div>Tax registration number in the country of incorporation: [#RC:registrationNumberCountryOfIncorporation#]</div>
+    <div>Type of activity: [#RC:typeOfBusiness#]</div>
+    <div>Address: [#RC:address.addressLine#]</div>
+    <div>Organisational legal form: [#RC:orgLegalForm#]</div>
+    <div>Governing Law: [#RC:governLawDescription#]</div>
+    <div>Percentage of shareholding: [#RC:beneficiaryDetails.shareholdingPercent#]</div>
+    <div>Certificate of Incorporation: [#ARRAY:RC:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Remove Date: [#RC:removeDate:DATE:dd.MM.yyyy#]</div>
+    <br>
+    <div>Generate a standard Ordinary Resolution: [#JSON:applicationForm.application.isStandardResolutionOfIncorporation:BOOLEAN#]</div>
+    <div>Uploaded existing Ordinary Resolution: [#JSON:applicationForm.application.isOwnResolutionOfIncorporation:BOOLEAN#]</div>
+    <div>Generate a standard special resolution + get online approval of shareholders: [#JSON:applicationForm.application.isStandardOnlineResolutionOfIncorporation:BOOLEAN#]</div>
+    <div>Effective date of Resolution: [#JSON:applicationForm.application.effectiveDate:DATE:dd.MM.yyyy#]</div>
+    <div>Resolution signed date: [#JSON:applicationForm.application.resolutionSignedDate:DATE:dd.MM.yyyy#]</div>
+    <div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
+    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:NOTICE_OF_BO"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+    <br>
+</div>

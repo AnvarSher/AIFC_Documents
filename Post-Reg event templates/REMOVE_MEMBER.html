@@ -1,0 +1,45 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB", "status:REMOVED"]:##
+		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div>Remove Date: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div>Company name: [#ITEM:companyName#]</div>
+		<div>Place of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>
+		<div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div>Type of activity: [#ITEM:typeOfBusiness#]</div>
+		<div>Address: [#ITEM:address.addressLine#]</div>
+		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+		<div>Amount of shares contributed: [#ITEM:amountOfContribution#]</div>
+		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div>Percentage of shareholding, %: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div>Ultimate beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div>Certificate of Incorporation: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
+		</div>
+		<div>Consent of Members: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_MEMBERS_CONSENT"]:##
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
+		</div>
+		<br>
+	#]
+
+	<div>Resolution signed date: [#JSON:applicationForm.application.resolutionSignedDate:DATE:dd.MM.yyyy#]</div>
+	<div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
+	<div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+	<div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.contact.personName#]</div>
+	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.REMOVE_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>
+    <div>Date of Resolution: 
+        [#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_MEMBER:DATE:dd.MM.yyyy#]
+        [#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_MEMBER:DATE:dd.MM.yyyy#]
+        [#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_MEMBER:DATE:dd.MM.yyyy#]
+    </div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_MEMBER"]:##
+		<div>
+			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+	<br>
+</div>

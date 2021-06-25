@@ -1,0 +1,62 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr> 
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:OM", "status:NEW"]:##     
+		<div>First name: [#ITEM:firstName#]</div>     
+		<div>Patronymic Name: [#ITEM:middleName#]</div>     
+		<div>Last Name: [#ITEM:lastName#]</div>     
+		<div>First name in Cyrillic: [#ITEM:firstNameCyrillic#]</div>     
+		<div>Patronymic name in Cyrillic: [#ITEM:middleNameCyrillic#]</div>     
+		<div>Last name in Cyrillic: [#ITEM:lastNameCyrillic#]</div>     
+		<div>Former Name: [#ITEM:formerNames#]</div>     
+		<div>Resident of Republic of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>     
+		<div>IIN: [#ITEM:personalId#]</div>     
+		<div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>     
+		<div>Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#]</div>     
+		<div>Residential address: [#ITEM:address#]</div>     
+		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
+		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
+		<div>Email: [#ITEM:contact.email#]</div>     
+		<div>Date of appointment: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>     
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_ORDINARY_MEMBER"]:##         
+			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+			</div>
+		#]
+		<br>
+	#]
+	
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:OM", "status:NEW"]:##     
+		<div>Resident of Republic of Kazakhstan: [#ITEM:residentRok:BOOLEAN#]</div>     
+		<div>Company name: [#ITEM:companyName#]</div>     
+		<div>Place of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>     
+		<div>Registration Number: [#ITEM:registrationNumber#]</div>     
+		<div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>     
+		<div>Organisational legal form: [#ITEM:orgLegalForm#]</div>     
+		<div>Governing Law: [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>     
+		<div>Date of appointment: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_ORDINARY_MEMBER"]:##         
+			<div>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>         
+			</div>      
+		#]
+		<br>
+	#]     
+	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>     
+	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
+	<div>Representative's Phone Number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>     
+	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>     
+	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.ADD_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>     
+	<div>Date of Resolution: 
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#] 
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#] 
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#] 
+	</div> 
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_ORDINARY_MEMBER"]:##     
+		<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div> 
+	#]
+	<br> 
+</div>

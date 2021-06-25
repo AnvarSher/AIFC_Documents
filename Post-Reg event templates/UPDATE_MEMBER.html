@@ -1,0 +1,77 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+    <div><strong>[#EVENT:PsName#]</strong></div>
+    <hr>
+    <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+
+    [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MB", "status:UPDATED"]:##
+        <div>Status: [#ITEM:status#]</div>
+        <div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+        <div>First name: [#ITEM:firstName#]</div>
+        <div>Patronymic Name: [#ITEM:middleName#]</div>
+        <div>Last Name: [#ITEM:lastName#]</div>
+        <div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
+        <div>IIN: [#ITEM:personalId#]</div>
+        <div>Type of identity document: [#ITEM:passport.documentType#]</div>
+        <div>Passport / Identity document number: [#ITEM:passport.number#]</div>
+        <div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+        <div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
+        <div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>
+        <div>Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
+        <div>Residential address: [#ITEM:address#]</div>
+        <div>Email: [#ITEM:contact.email#]</div>
+        <div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+        <div>KYC Individual status: [#ITEM:kycIndividualStatus#]</div>
+        <div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+        <div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+        <div>Upload a scan copy of passport: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
+            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+        </div>
+        <div>Consent of Members: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_MEMBERS_CONSENT"]:##
+            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
+        </div>
+    #]
+
+    [#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB", "status:UPDATED"]:##
+        <div>Status of Member: [#ITEM:status#]</div>
+        <div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+        <div>Company name: [#ITEM:companyName#]</div>
+        <div>Place of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+        <div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+        <div>Registration Number: [#ITEM:registrationNumber#]</div>
+        <div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+        <div>Type of activity: [#ITEM:typeOfBusiness#]</div>
+        <div>Address: [#ITEM:address.addressLine#]</div>
+        <div>Number of shares contributed: [#ITEM:amountOfContribution#]</div>
+        <div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+
+        <div>Certificate of Incorporation: [#ARRAY:ITEM:attachmentsList:["fileCode:PR_CERTIFICATE_INCORPORATION"]:##
+            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+        </div>
+        <div>Consent of Members: 
+            [#ARRAY:ITEM:attachmentsList:["fileCode:PR_MEMBERS_CONSENT"]:##
+                <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+            #]
+        </div>
+
+        <div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+        <div>Percentage of shareholding, %:: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+        <div>Ultimate beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+        <br>
+    #]
+
+    <div>Generate a standard Ordinary Resolution: [#JSON:applicationForm.application.isStandardResolutionOfIncorporation:BOOLEAN#]</div>
+    <div>Uploaded existing Ordinary Resolution: [#JSON:applicationForm.application.isOwnResolutionOfIncorporation:BOOLEAN#]</div>
+    <div>Generate a standard special resolution + get online approval of shareholders: [#JSON:applicationForm.application.isStandardOnlineResolutionOfIncorporation:BOOLEAN#]</div>
+    <div>Effective date of Resolution: [#JSON:applicationForm.application.effectiveDate:DATE:dd.MM.yyyy#]</div>
+    <div>Resolution signed date: [#JSON:applicationForm.application.resolutionSignedDate:DATE:dd.MM.yyyy#]</div>
+    <div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
+    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_MEMBER"]:##
+        <div>
+            [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+        </div>    
+    #]
+    <br>
+</div>

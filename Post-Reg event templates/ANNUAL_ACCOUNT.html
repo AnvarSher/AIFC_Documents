@@ -1,0 +1,32 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+    <div><strong>[#EVENT:PsName#]</strong></div>
+    <hr>
+    <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+    <div>Financial Year end: [#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd:DATE:dd.MM.yyyy#]</div>
+    <div>Please confirm that the Company is subject to submission of Annual accounts in accordance with section 131 of the AIFC Companies Regulations: [#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</div>
+    <div>Profit and Loss account notes: [#JSON:applicationForm.application.annualFillings.annualAccount.profitLossAccountNotes#]</div>
+    <div>Balance Sheet notes: [#JSON:applicationForm.application.annualFillings.annualAccount.balanceSheetNotes#]</div>
+    <div>Auditor: [#JSON:applicationForm.application.annualFillings.annualAccount.auditor#]</div>
+    <div>When: [#JSON:applicationForm.application.annualFillings.annualAccount.when:DATE:dd.MM.yyyy#]</div>
+    <div>Period: [#JSON:applicationForm.application.annualFillings.annualAccount.period#]</div>
+    <div>Main conclusion: [#JSON:applicationForm.application.annualFillings.annualAccount.mainConclusion#]</div>
+    <div>Profit and Loss account: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["fileCode:PR_ANNUAL_PROFIT_LOSS_ACCOUNT"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Balance Sheet: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["fileCode:PR_ANNUAL_BALANCE_SHEET"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Auditor's report: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["fileCode:PR_ANNUAL_AUDITORS_REPORT"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Directors' report: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["fileCode:PR_ANNUAL_DIRECTORS_REPORT"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Payer's email: [#JSON:applicationForm.application.payerEmail#]</div>
+    <div>Payment option: [#JSON:applicationForm.application.paymentOption#]</div>
+    <div>Invoice: [#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PAYMENT_CONFIRMATION_OFFLINE_PAYMENT"]:##
+        <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
+    </div>
+    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+</div>
