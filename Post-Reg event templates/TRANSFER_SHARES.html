@@ -1,51 +1,51 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong style="background: yellow;"><strong>[#EVENT:PsName#]</strong></div>
+	<div><strong style="text-decoration: underline;"><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong style="background: yellow;">BIN of Company:</strong> [#JSON:applicationForm.application.bin#]</div>
-	<div><strong style="background: yellow;">Use state capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.useStateCapital:BOOLEAN#]</div>
-	<div><strong style="background: yellow;">Currency:</strong> [#JSON:applicationForm.application.transfer.shareCapital.currencyCodeIso3#]</div>
-	<div><strong style="background: yellow;">Share of State capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.shareOfStateCapital#]</div>
-	<div><strong style="background: yellow;">Total number of shares:</strong> [#JSON:applicationForm.application.transfer.shareCapital.totalNumberOfShares#]</div>
-	<div><strong style="background: yellow;">Amount of state capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.amountOfStateCapital#]</div>
-	<div><strong style="background: yellow;">Share of private capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.shareOfPrivateCapital#]</div>
-	<div><strong style="background: yellow;">Amount of Private capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.amountOfPrivateCapital#]</div>
-	<div><strong style="background: yellow;">Total amount of share capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.totalAmountOfShareCapital#]</div>
-	<div><strong style="background: yellow;">[#ARRAY:JSON:applicationForm.application.transfer.shareCapital.shareCapitalClasses:[]:##
+	<div><strong style="text-decoration: underline;">BIN of Company:</strong> [#JSON:applicationForm.application.bin#]</div>
+	<div><strong style="text-decoration: underline;">Use state capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.useStateCapital:BOOLEAN#]</div>
+	<div><strong style="text-decoration: underline;">Currency:</strong> [#JSON:applicationForm.application.transfer.shareCapital.currencyCodeIso3#]</div>
+	<div><strong style="text-decoration: underline;">Share of State capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.shareOfStateCapital#]</div>
+	<div><strong style="text-decoration: underline;">Total number of shares:</strong> [#JSON:applicationForm.application.transfer.shareCapital.totalNumberOfShares#]</div>
+	<div><strong style="text-decoration: underline;">Amount of state capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.amountOfStateCapital#]</div>
+	<div><strong style="text-decoration: underline;">Share of private capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.shareOfPrivateCapital#]</div>
+	<div><strong style="text-decoration: underline;">Amount of Private capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.amountOfPrivateCapital#]</div>
+	<div><strong style="text-decoration: underline;">Total amount of share capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.totalAmountOfShareCapital#]</div>
+	<div><strong style="text-decoration: underline;">[#ARRAY:JSON:applicationForm.application.transfer.shareCapital.shareCapitalClasses:[]:##
 		<br>
-		<div><strong style="background: yellow;">Class Name:</strong> [#ITEM:className#]</div>
-		<div><strong style="background: yellow;">Value of share:</strong> [#ITEM:shareValue#]</div>
-		<div><strong style="background: yellow;">Number of Votes:</strong> [#ITEM:votesNumber#]</div>
-		<div><strong style="background: yellow;">Total number of shares:</strong> [#ITEM:totalNumberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Class Name:</strong> [#ITEM:className#]</div>
+		<div><strong style="text-decoration: underline;">Value of share:</strong> [#ITEM:shareValue#]</div>
+		<div><strong style="text-decoration: underline;">Number of Votes:</strong> [#ITEM:votesNumber#]</div>
+		<div><strong style="text-decoration: underline;">Total number of shares:</strong> [#ITEM:totalNumberOfShares#]</div>
 		#]
 	</div>
 	<hr>
 	
 	[#ARRAY:JSON:applicationForm.application.transfer.corporateList:["roleCode:SH", "status:NEW"]:##
-		<div><strong style="background: yellow;">Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="background: yellow;">Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Company Name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="background: yellow;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Structure Type:</strong> [#ITEM:structureType#]</div>
-		<div><strong style="background: yellow;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="background: yellow;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
-		<div><strong style="background: yellow;">Contact:</strong> [#ITEM:address.contact#]</div>
-		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
-		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
-		<div><strong style="background: yellow;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="background: yellow;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong style="background: yellow;">
+		<div><strong style="text-decoration: underline;">Status of Entity:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="text-decoration: underline;">Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Company Name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Structure Type:</strong> [#ITEM:structureType#]</div>
+		<div><strong style="text-decoration: underline;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="text-decoration: underline;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div><strong style="text-decoration: underline;">Contact:</strong> [#ITEM:address.contact#]</div>
+		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong style="text-decoration: underline;">
 			[#ARRAY:ITEM:shareClasses:[]:##
 				<br>
-				<div><strong style="background: yellow;">Class Name:</strong> [#ITEM:className#]</div>
-				<div><strong style="background: yellow;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
-				<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+				<div><strong style="text-decoration: underline;">Class Name:</strong> [#ITEM:className#]</div>
+				<div><strong style="text-decoration: underline;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
+				<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 			#]
 		</div>
 		<br>
@@ -53,30 +53,30 @@
 
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.transfer.corporateList:["roleCode:SH", "status:REMOVED"]:##
-		<div><strong style="background: yellow;">Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="background: yellow;">Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Company Name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="background: yellow;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Structure Type:</strong> [#ITEM:structureType#]</div>
-		<div><strong style="background: yellow;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="background: yellow;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
-		<div><strong style="background: yellow;">Contact:</strong> [#ITEM:address.contact#]</div>
-		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
-		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
-		<div><strong style="background: yellow;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="background: yellow;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong style="background: yellow;">[#ARRAY:ITEM:shareClasses:[]:##
+		<div><strong style="text-decoration: underline;">Status of Entity:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="text-decoration: underline;">Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Company Name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Structure Type:</strong> [#ITEM:structureType#]</div>
+		<div><strong style="text-decoration: underline;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="text-decoration: underline;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div><strong style="text-decoration: underline;">Contact:</strong> [#ITEM:address.contact#]</div>
+		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong style="text-decoration: underline;">[#ARRAY:ITEM:shareClasses:[]:##
 			<br>
-			<div><strong style="background: yellow;">Class Name:</strong> [#ITEM:className#]</div>
-			<div><strong style="background: yellow;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
-			<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+			<div><strong style="text-decoration: underline;">Class Name:</strong> [#ITEM:className#]</div>
+			<div><strong style="text-decoration: underline;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
+			<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 			#]
 		</div>
 		<br>
@@ -84,30 +84,30 @@
 
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.transfer.individualList:["roleCode:SH", "status:NEW"]:##
-		<div><strong style="background: yellow;">Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="background: yellow;">Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Company Name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="background: yellow;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Structure Type:</strong> [#ITEM:structureType#]</div>
-		<div><strong style="background: yellow;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="background: yellow;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
-		<div><strong style="background: yellow;">Contact:</strong> [#ITEM:address.contact#]</div>
-		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
-		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
-		<div><strong style="background: yellow;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="background: yellow;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong style="background: yellow;">[#ARRAY:ITEM:shareClasses:[]:##
+		<div><strong style="text-decoration: underline;">Status of Entity:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="text-decoration: underline;">Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Company Name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Structure Type:</strong> [#ITEM:structureType#]</div>
+		<div><strong style="text-decoration: underline;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="text-decoration: underline;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div><strong style="text-decoration: underline;">Contact:</strong> [#ITEM:address.contact#]</div>
+		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong style="text-decoration: underline;">[#ARRAY:ITEM:shareClasses:[]:##
 			<br>
-			<div><strong style="background: yellow;">Class Name:</strong> [#ITEM:className#]</div>
-			<div><strong style="background: yellow;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
-			<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+			<div><strong style="text-decoration: underline;">Class Name:</strong> [#ITEM:className#]</div>
+			<div><strong style="text-decoration: underline;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
+			<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 			#]
 		</div>
 		<br>
@@ -115,60 +115,60 @@
 
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.transfer.individualList:["roleCode:SH", "status:REMOVED"]:##
-		<div><strong style="background: yellow;">Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="background: yellow;">Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Company Name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="background: yellow;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Structure Type:</strong> [#ITEM:structureType#]</div>
-		<div><strong style="background: yellow;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="background: yellow;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
-		<div><strong style="background: yellow;">Contact:</strong> [#ITEM:address.contact#]</div>
-		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
-		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
-		<div><strong style="background: yellow;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="background: yellow;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong style="background: yellow;">[#ARRAY:ITEM:shareClasses:[]:##
+		<div><strong style="text-decoration: underline;">Status of Entity:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="text-decoration: underline;">Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Company Name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Structure Type:</strong> [#ITEM:structureType#]</div>
+		<div><strong style="text-decoration: underline;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="text-decoration: underline;">Country of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Certificate of Incorporation:</strong> [#ITEM:attachmentsList.fileCode=""fileCode"":""PR_CERTIFICATE_INCORPORATION""#]</div>
+		<div><strong style="text-decoration: underline;">Contact:</strong> [#ITEM:address.contact#]</div>
+		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+		<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding Percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Ultimate Beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong style="text-decoration: underline;">[#ARRAY:ITEM:shareClasses:[]:##
 			<br>
-			<div><strong style="background: yellow;">Class Name:</strong> [#ITEM:className#]</div>
-			<div><strong style="background: yellow;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
-			<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+			<div><strong style="text-decoration: underline;">Class Name:</strong> [#ITEM:className#]</div>
+			<div><strong style="text-decoration: underline;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
+			<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 			#]
 		</div>
 		<br>
 	#]
 
 	<hr>
-	<div><strong style="background: yellow;">Payer's details: [#JSON:applicationForm.application.payerEmail#]</div>
-	<div><strong style="background: yellow;">Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
+	<div><strong style="text-decoration: underline;">Payer's details: [#JSON:applicationForm.application.payerEmail#]</div>
+	<div><strong style="text-decoration: underline;">Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
 	<div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:TRANSFER_SHARES"]:##
 		<div>
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]

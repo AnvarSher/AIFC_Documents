@@ -1,53 +1,53 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>     
-	<div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>     
-	<div><strong style="background: yellow;">Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>     
-	<div><strong style="background: yellow;">The address of the principal place of business of the entity to be registered in the AIFC:</strong> [#JSON:applicationForm.application.addressInAifc.addressType#]</div>     
-	<div><strong style="background: yellow;">City:</strong> [#JSON:applicationForm.application.addressInAifc.city#]</div>     
-	<div><strong style="background: yellow;">District:</strong> [#JSON:applicationForm.application.addressInAifc.raion#]</div>     
-	<div><strong style="background: yellow;">Zip code:</strong> [#JSON:applicationForm.application.addressInAifc.zipCode#]</div>     
-	<div><strong style="background: yellow;">Street/avenue:</strong> [#JSON:applicationForm.application.addressInAifc.addressLine#]</div>     
-	<div><strong style="background: yellow;">Building number:</strong> [#JSON:applicationForm.application.addressInAifc.buildingNumber#]</div>     
-	<div><strong style="background: yellow;">Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>     
+	<div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>     
+	<div><strong style="text-decoration: underline;">Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>     
+	<div><strong style="text-decoration: underline;">The address of the principal place of business of the entity to be registered in the AIFC:</strong> [#JSON:applicationForm.application.addressInAifc.addressType#]</div>     
+	<div><strong style="text-decoration: underline;">City:</strong> [#JSON:applicationForm.application.addressInAifc.city#]</div>     
+	<div><strong style="text-decoration: underline;">District:</strong> [#JSON:applicationForm.application.addressInAifc.raion#]</div>     
+	<div><strong style="text-decoration: underline;">Zip code:</strong> [#JSON:applicationForm.application.addressInAifc.zipCode#]</div>     
+	<div><strong style="text-decoration: underline;">Street/avenue:</strong> [#JSON:applicationForm.application.addressInAifc.addressLine#]</div>     
+	<div><strong style="text-decoration: underline;">Building number:</strong> [#JSON:applicationForm.application.addressInAifc.buildingNumber#]</div>     
+	<div><strong style="text-decoration: underline;">Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Type of Resolution: </strong>
+		<strong style="text-decoration: underline;">Type of Resolution: </strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Date of Resolution: </strong>
+		<strong style="text-decoration: underline;">Date of Resolution: </strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 	</div>     
-	<div><strong style="background: yellow;">Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>     
-	<div><strong style="background: yellow;">Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>     
-	<div><strong style="background: yellow;">Does document have no validity limit?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]</div>     
-	<div><strong style="background: yellow;">Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>     
-	<div><strong style="background: yellow;">Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>     
-	<div><strong style="background: yellow;">Amendments to Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
+	<div><strong style="text-decoration: underline;">Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>     
+	<div><strong style="text-decoration: underline;">Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>     
+	<div><strong style="text-decoration: underline;">Does document have no validity limit?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]</div>     
+	<div><strong style="text-decoration: underline;">Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>     
+	<div><strong style="text-decoration: underline;">Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>     
+	<div><strong style="text-decoration: underline;">Amendments to Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_REGISTERED_ADDRESS"]:##     
 		<div> 
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
 		</div>
 	#]

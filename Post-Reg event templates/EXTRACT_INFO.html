@@ -1,20 +1,20 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div><strong style="background: yellow;">BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
+    <div><strong style="text-decoration: underline;">BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
     <br> 
 	[#ARRAY:JSON:applicationForm.application.extractInfo:[]:##
-		<div><strong style="background: yellow;">Name of the sub-event(s):</strong> [#ITEM:type:LOOKUP:PsPostRegExtractType.PsCode.Name#]</div>
-		<div><strong style="background: yellow;">Date on which extract is required:</strong> [#ITEM:sinceDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Name of the sub-event(s):</strong> [#ITEM:type:LOOKUP:PsPostRegExtractType.PsCode.Name#]</div>
+		<div><strong style="text-decoration: underline;">Date on which extract is required:</strong> [#ITEM:sinceDate:DATE:dd.MM.yyyy#]</div>
 		<br> 
 	#]
-    <div><strong style="background: yellow;">Payer's email:</strong> [#JSON:applicationForm.application.payerEmail#]</div>
-    <div><strong style="background: yellow;">Payment option:</strong> [#JSON:applicationForm.application.paymentOption#]</div>
-    <div><strong style="background: yellow;">Representative's Contact:</strong> [#JSON:applicationForm.documentSignature.representative.contact#]</div>
-    <div><strong style="background: yellow;">Representative's Full name:</strong> [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    <div><strong style="text-decoration: underline;">Payer's email:</strong> [#JSON:applicationForm.application.payerEmail#]</div>
+    <div><strong style="text-decoration: underline;">Payment option:</strong> [#JSON:applicationForm.application.paymentOption#]</div>
+    <div><strong style="text-decoration: underline;">Representative's Contact:</strong> [#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div><strong style="text-decoration: underline;">Representative's Full name:</strong> [#JSON:applicationForm.documentSignature.representative.personName#]</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:EXTRACT_INFO"]:##
 		<div>
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
 		</div>    
 	#]

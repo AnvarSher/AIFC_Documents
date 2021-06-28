@@ -1,41 +1,41 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div><hr>     
-	<div><strong style="background: yellow;">Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
-	<div><strong style="background: yellow;">Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#]</div>
-	<div><strong style="background: yellow;">Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
-	<div><strong style="background: yellow;">The nature of business:</strong> [#JSON:applicationForm.application.businessDesc#]</div>
-	<div><strong style="background: yellow;">Detailed description of your business activities to be conducted in the AIFC:</strong> [#JSON:applicationForm.application.descriptionOfBusinessActivities#]</div>
+	<div><strong style="text-decoration: underline;">Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
+	<div><strong style="text-decoration: underline;">Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#]</div>
+	<div><strong style="text-decoration: underline;">Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
+	<div><strong style="text-decoration: underline;">The nature of business:</strong> [#JSON:applicationForm.application.businessDesc#]</div>
+	<div><strong style="text-decoration: underline;">Detailed description of your business activities to be conducted in the AIFC:</strong> [#JSON:applicationForm.application.descriptionOfBusinessActivities#]</div>
 	<div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Type of Resolution: </strong>
+		<strong style="text-decoration: underline;">Type of Resolution: </strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Date of Resolution: </strong>
+		<strong style="text-decoration: underline;">Date of Resolution: </strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_MAIN_ACTIVITY"]:##
-		<div><strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+		<div><strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>         
 		</div>     
 	#]         

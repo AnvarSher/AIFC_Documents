@@ -1,81 +1,81 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
+	<div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:NEW"]:##
-		<div><strong style="background: yellow;">Status:</strong> [#ITEM:status#]</div>
-		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="background: yellow;">First name: </strong>[#ITEM:firstName#]</div>
-		<div><strong style="background: yellow;">Last name: </strong>[#ITEM:lastName#]</div>
-		<div><strong style="background: yellow;">Patronymic name: </strong>[#ITEM:middleName#]</div>
-		<div><strong style="background: yellow;">Former name: </strong>[#ITEM:formerNames#]</div>
-		<div><strong style="background: yellow;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok#]</div>
-		<div><strong style="background: yellow;">IIN: </strong>[#ITEM:personalId#]</div>
-		<div><strong style="background: yellow;">Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong style="background: yellow;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong style="background: yellow;">Identity document issued by:</strong> [#ITEM:issuePlace#]</div>
-		<div><strong style="background: yellow;">Date of issue of a document:</strong> [#ITEM:issueDt#]</div>
-		<div><strong style="background: yellow;">Date of expiration of a document:</strong> [#ITEM:expirationDt#]</div>
-		<div><strong style="background: yellow;">Date of Birth:</strong> [#ITEM:dob#]</div>
-		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong style="background: yellow;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
-		<div><strong style="background: yellow;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code#]</div>
-		<div><strong style="background: yellow;">Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong style="background: yellow;">Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
-		<div><strong style="background: yellow;">Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Number of share:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Status:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="text-decoration: underline;">First name: </strong>[#ITEM:firstName#]</div>
+		<div><strong style="text-decoration: underline;">Last name: </strong>[#ITEM:lastName#]</div>
+		<div><strong style="text-decoration: underline;">Patronymic name: </strong>[#ITEM:middleName#]</div>
+		<div><strong style="text-decoration: underline;">Former name: </strong>[#ITEM:formerNames#]</div>
+		<div><strong style="text-decoration: underline;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok#]</div>
+		<div><strong style="text-decoration: underline;">IIN: </strong>[#ITEM:personalId#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
+		<div><strong style="text-decoration: underline;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
+		<div><strong style="text-decoration: underline;">Identity document issued by:</strong> [#ITEM:issuePlace#]</div>
+		<div><strong style="text-decoration: underline;">Date of issue of a document:</strong> [#ITEM:issueDt#]</div>
+		<div><strong style="text-decoration: underline;">Date of expiration of a document:</strong> [#ITEM:expirationDt#]</div>
+		<div><strong style="text-decoration: underline;">Date of Birth:</strong> [#ITEM:dob#]</div>
+		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address#]</div>
+		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
+		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code#]</div>
+		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong style="text-decoration: underline;">Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
+		<div><strong style="text-decoration: underline;">Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Number of share:</strong> [#ITEM:numberOfShares#]</div>
 	#] 
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:NEW"]:##
-		<div><strong style="background: yellow;">Status of Member:</strong> [#ITEM:status#]</div>
-		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="background: yellow;">Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="background: yellow;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
-		<div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate#]</div>
-		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="background: yellow;">Tax registration number in the country of incorporation:</strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="background: yellow;">Address:</strong> [#ITEM:address#]</div>
-		<div><strong style="background: yellow;">Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
-		<div><strong style="background: yellow;">Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="text-decoration: underline;">Status of Member:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="text-decoration: underline;">Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="text-decoration: underline;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
+		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate#]</div>
+		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation:</strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="text-decoration: underline;">Address:</strong> [#ITEM:address#]</div>
+		<div><strong style="text-decoration: underline;">Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
+		<div><strong style="text-decoration: underline;">Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 		<br> 
 	#]
 
 	<div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Type of Resolution: </strong>
+		<strong style="text-decoration: underline;">Type of Resolution: </strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Date of Resolution: </strong>
+		<strong style="text-decoration: underline;">Date of Resolution: </strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_SHAREHOLDER"]:##
 		<div>
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]

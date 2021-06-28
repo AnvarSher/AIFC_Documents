@@ -1,29 +1,29 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div><hr>
-	<div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div> 
+	<div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MB", "status:UPDATED"]:##
-		<div><strong style="background: yellow;">First name:</strong> [#ITEM:firstName#]</div>
-		<div><strong style="background: yellow;">Patronymic Name:</strong> [#ITEM:middleName#]</div>
-		<div><strong style="background: yellow;">Last Name:</strong> [#ITEM:lastName#]</div>
-		<div><strong style="background: yellow;">First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>
-		<div><strong style="background: yellow;">Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
-		<div><strong style="background: yellow;">Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
-		<div><strong style="background: yellow;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong style="background: yellow;">IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong style="background: yellow;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong style="background: yellow;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong style="background: yellow;">Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
-		<div><strong style="background: yellow;">Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong style="background: yellow;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong style="text-decoration: underline;">First name:</strong> [#ITEM:firstName#]</div>
+		<div><strong style="text-decoration: underline;">Patronymic Name:</strong> [#ITEM:middleName#]</div>
+		<div><strong style="text-decoration: underline;">Last Name:</strong> [#ITEM:lastName#]</div>
+		<div><strong style="text-decoration: underline;">First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>
+		<div><strong style="text-decoration: underline;">Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
+		<div><strong style="text-decoration: underline;">Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
+		<div><strong style="text-decoration: underline;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong style="text-decoration: underline;">IIN:</strong> [#ITEM:personalId#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
+		<div><strong style="text-decoration: underline;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
+		<div><strong style="text-decoration: underline;">Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
+		<div><strong style="text-decoration: underline;">Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address#]</div>
+		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_MEMBER"]:##   
 		<div> 
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div>
 		#]
@@ -31,46 +31,46 @@
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB", "status:UPDATED"]:##
-		<div><strong style="background: yellow;">Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="background: yellow;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="background: yellow;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="background: yellow;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="background: yellow;">Address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong style="text-decoration: underline;">Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="text-decoration: underline;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="text-decoration: underline;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="text-decoration: underline;">Address:</strong> [#ITEM:address.addressLine#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_MEMBER"]:##   
 		<div> 
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div>
 		#]
-		<div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="background: yellow;">Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="background: yellow;">Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong style="text-decoration: underline;">Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong style="text-decoration: underline;">Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
 		<br> 
 	#]
 	<div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_MEMBER"]:##
 	<div> 
-		<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+		<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 		<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 	</div>
 	 #]<br> </div>

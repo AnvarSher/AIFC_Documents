@@ -1,32 +1,32 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-    <div><strong style="background: yellow;">I confirm that all Shareholders have assented to the election to file an annual confirmation statement instead of an annual return.:</strong> [#JSON:applicationForm.application.electionConfirmation:BOOLEAN#]</div>
-    <div><strong style="background: yellow;">Payer's email:</strong> [#JSON:applicationForm.application.payerEmail#]</div>
-    <div><strong style="background: yellow;">Payment option:</strong> [#JSON:applicationForm.application.paymentOption#]</div>
+    <div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
+    <div><strong style="text-decoration: underline;">I confirm that all Shareholders have assented to the election to file an annual confirmation statement instead of an annual return.:</strong> [#JSON:applicationForm.application.electionConfirmation:BOOLEAN#]</div>
+    <div><strong style="text-decoration: underline;">Payer's email:</strong> [#JSON:applicationForm.application.payerEmail#]</div>
+    <div><strong style="text-decoration: underline;">Payment option:</strong> [#JSON:applicationForm.application.paymentOption#]</div>
     <div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ELECTION_ANNUAL_CONFIRMATION_STATEMENT"]:##
 		<div>
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
 		</div>    
 	#]

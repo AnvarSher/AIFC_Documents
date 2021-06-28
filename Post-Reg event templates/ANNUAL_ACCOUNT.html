@@ -1,42 +1,42 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-    <div><strong style="background: yellow;">Financial Year end:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd:DATE:dd.MM.yyyy#]</div>
-    <div><strong style="background: yellow;">Please confirm that the Company is subject to submission of Annual accounts in accordance with section 131 of the AIFC Companies Regulations:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</div>
-    <div><strong style="background: yellow;">Profit and Loss account notes:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.profitLossAccountNotes#]</div>
-    <div><strong style="background: yellow;">Balance Sheet notes:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.balanceSheetNotes#]</div>
-    <div><strong style="background: yellow;">Auditor:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.auditor#]</div>
-    <div><strong style="background: yellow;">When:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.when:DATE:dd.MM.yyyy#]</div>
-    <div><strong style="background: yellow;">Period:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.period#]</div>
-    <div><strong style="background: yellow;">Main conclusion:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.mainConclusion#]</div>
-    <div><strong style="background: yellow;">Profit and Loss account: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["event:ANNUAL_ACCOUNT"]:##
+    <div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
+    <div><strong style="text-decoration: underline;">Financial Year end:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd:DATE:dd.MM.yyyy#]</div>
+    <div><strong style="text-decoration: underline;">Please confirm that the Company is subject to submission of Annual accounts in accordance with section 131 of the AIFC Companies Regulations:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</div>
+    <div><strong style="text-decoration: underline;">Profit and Loss account notes:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.profitLossAccountNotes#]</div>
+    <div><strong style="text-decoration: underline;">Balance Sheet notes:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.balanceSheetNotes#]</div>
+    <div><strong style="text-decoration: underline;">Auditor:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.auditor#]</div>
+    <div><strong style="text-decoration: underline;">When:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.when:DATE:dd.MM.yyyy#]</div>
+    <div><strong style="text-decoration: underline;">Period:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.period#]</div>
+    <div><strong style="text-decoration: underline;">Main conclusion:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.mainConclusion#]</div>
+    <div><strong style="text-decoration: underline;">Profit and Loss account: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["event:ANNUAL_ACCOUNT"]:##
         <div> 
-			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>
     </div>
     <div>
-		<strong style="background: yellow;">Representative's First Name: </strong>
+		<strong style="text-decoration: underline;">Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Last Name: </strong>
+		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="background: yellow;">Representative's Email: </strong>
+		<strong style="text-decoration: underline;">Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
-		<strong style="background: yellow;">Type of Resolution: </strong>
+		<strong style="text-decoration: underline;">Type of Resolution: </strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 </div>
