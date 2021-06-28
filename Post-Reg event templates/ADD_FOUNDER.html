@@ -1,17 +1,16 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+	<div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:FO", "status:NEW"]:##
 		<div><strong style="background: yellow;">Status</strong> [#ITEM:status#]</div>
 		<div><strong style="background: yellow;">Role:</strong>> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div>Appointment date: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong style="background: yellow;">First name: </strong>[#ITEM:firstName#]</div>
-
 		<div><strong style="background: yellow;">Patronymic name: </strong>[#ITEM:middleName#]</div>
 		<div><strong style="background: yellow;">Last name: </strong>[#ITEM:lastName#]</div>
-		<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong style="background: yellow;">Is resident of RoK?:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong style="background: yellow;">IIN: </strong>[#ITEM:personalId#]</div>
         <div><strong style="background: yellow;">Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div><strong style="background: yellow;">Passport / Identity document number: </strong>[#ITEM:passport.number#]</div>

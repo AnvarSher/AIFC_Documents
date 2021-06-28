@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
+	<div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:QR", "status:NEW"]:##
 		<div><strong style="background: yellow;">Status:</strong> [#ITEM:status#]</div>
