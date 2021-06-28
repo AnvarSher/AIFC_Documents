@@ -1,38 +1,56 @@
-
-<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div>     
-	<hr> 
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:NEW"]:##     
-		<div>First Name: [#ITEM:firstName#]</div>     
-		<div>Patronymic name: [#ITEM:middleName#]</div>     
-		<div>Last Name: [#ITEM:lastName#]</div>     
-		<div>Former Name: [#ITEM:formerNames#]</div>     
-		<div>Residential Address: [#ITEM:address#]</div>     
-		<div>Email: [#ITEM:contact.email#]</div>     
-		<div>Date of appointment: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>      
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_DESIGNATED_MEMBER"]:##
-			<div> 
-				[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div><hr> 
+	
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:NEW"]:##
+		<div><strong style="background: yellow;">First Name:</strong> [#ITEM:firstName#]</div>    
+		<div><strong style="background: yellow;">Patronymic name:</strong> [#ITEM:middleName#]</div>    
+		<div><strong style="background: yellow;">Last Name:</strong> [#ITEM:lastName#]</div>    
+		<div><strong style="background: yellow;">Former Name:</strong> [#ITEM:formerNames#]</div>    
+		<div><strong style="background: yellow;">Residential Address:</strong> [#ITEM:address#]</div>    
+		<div><strong style="background: yellow;">Email:</strong> [#ITEM:contact.email#]</div>    
+		<div><strong style="background: yellow;">Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div> 
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_DESIGNATED_MEMBER"]:##    
+			<div>
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-			</div>      
+			</div>
 		#]
 		<br>
-	#]     
-	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>     
-	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
-	<div>Representative's Phone Number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>     
-	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>     
-	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.ADD_DESIGNATED_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>     
-	<div>Date of Resolution: 
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#] 
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#] 
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#] 
-	</div> 
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_DESIGNATED_MEMBER"]:##     
-		<div> 
-			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div> 
 	#]
-	<br> 
+	<div>
+		<strong style="background: yellow;">Representative's First Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Last Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Email: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Type of Resolution: </strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Date of Resolution: </strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_DESIGNATED_MEMBER"]:##
+	<div>
+		<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+		<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+	</div>
+	#]
+	<br>
 </div>

@@ -1,21 +1,20 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
-    <div>Please confirm that the Company is subject to submission of Annual Confirmation Statement in accordance with section 26-1 of the AIFC Companies Regulations: [#JSON:applicationForm.application.annualConfirmStatement.companySubjectConfirmation:BOOLEAN#]
+    <div><strong style="background: yellow;">Company BIN:</strong>[#JSON:applicationForm.application.bin#]</div>
+    <div><strong style="background: yellow;">Please confirm that the Company is subject to submission of Annual Confirmation Statement in accordance with section 26-1 of the AIFC Companies Regulations:</strong>[#JSON:applicationForm.application.annualConfirmStatement.companySubjectConfirmation:BOOLEAN#]
     </div>
-    <div>I confirm that all information required to be delivered by the Private Company pursuant to section 26-1 of the AIFC Companies Regulations 2017 in relation to the confirmation period ending on the confirmation date above either has been delivered or
-        is being delivered with this statement. [#JSON:applicationForm.application.annualConfirmStatement.confirmation:BOOLEAN#]</div>
-    <div>Confirmation date: [#JSON:applicationForm.application.annualConfirmStatement.confirmationDate:DATE:dd.MM.yyyy#]</div>
-    <div>Review period: [#JSON:applicationForm.application.annualConfirmStatement.reviewPeriod:DATE:dd.MM.yyyy#]</div>
-    <div>Payer's email: [#JSON:applicationForm.application.payerEmail#]</div>
-    <div>Payment option: [#JSON:applicationForm.application.paymentOption#]</div>
-    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
-    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    <div><strong style="background: yellow;">I confirm that all information required to be delivered by the Private Company pursuant to section 26-1 of the AIFC Companies Regulations 2017 in relation to the confirmation period ending on the  	confirmation date above either has been delivered or is being delivered with this statement.</strong>[#JSON:applicationForm.application.annualConfirmStatement.confirmation:BOOLEAN#]</div>
+    <div><strong style="background: yellow;">Confirmation date:</strong>[#JSON:applicationForm.application.annualConfirmStatement.confirmationDate:DATE:dd.MM.yyyy#]</div>
+    <div><strong style="background: yellow;">Review period:</strong>[#JSON:applicationForm.application.annualConfirmStatement.reviewPeriod:DATE:dd.MM.yyyy#]</div>
+    <div><strong style="background: yellow;">Payer's email:</strong>[#JSON:applicationForm.application.payerEmail#]</div>
+    <div><strong style="background: yellow;">Payment option:</strong>[#JSON:applicationForm.application.paymentOption#]</div>
+    <div><strong style="background: yellow;">Representative's Contact:</strong>[#JSON:applicationForm.documentSignature.representative.contact#]</div>
+    <div><strong style="background: yellow;">Representative's Full name:</strong>[#JSON:applicationForm.documentSignature.representative.personName#]</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ANNUAL_CONFIRMATION_STATEMENT"]:##
-		<div>
-			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+		<div> 
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>    
+		</div>  
 	#]
 </div>

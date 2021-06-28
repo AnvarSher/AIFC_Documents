@@ -4,63 +4,85 @@
 	<div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:NEW"]:##
-		<div>Status: [#ITEM:status#]</div>
-		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div>First name: [#ITEM:firstName#]</div>
-		<div>Last Name: [#ITEM:lastName#]</div>
-		<div>Patronymic Name: [#ITEM:middleName#]</div>
-		<div>Former name: [#ITEM:formerNames#]</div>
-		<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
-		<div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div>Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div>Residential address: [#ITEM:address#]</div>
-		<div>Country of Citizenship: [#citizenshipCountryIso2Code#]</div>
-		<div>Country of main residence: [#mainResidenceCountryIso2Code#]</div>
-		<div>Email: [#ITEM:contact.email#]</div>
-		<div>Date of appointment: [#ITEM:appointmentDate#]</div>
+		<div><strong style="background: yellow;">Status:</strong> [#ITEM:status#]</div>
+		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="background: yellow;">First name:</strong> [#ITEM:firstName#]</div>
+
+		<div><strong style="background: yellow;">Last name:</strong> [#ITEM:lastName#]</div>
+		<div><strong style="background: yellow;">Patronymic name:</strong> [#ITEM:middleName#]</div>
+		<div><strong style="background: yellow;">Former name:</strong> [#ITEM:formerNames#]</div>
+		<div><strong style="background: yellow;">Is resident of RoK?:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong style="background: yellow;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="background: yellow;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address#]</div>
+		<div><strong style="background: yellow;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
+		<div><strong style="background: yellow;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code#]</div>
+		<div><strong style="background: yellow;">Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong style="background: yellow;">Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ADD_DEFAULT_RECIPIENTS"]:##
 			<div> 
-				[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>      
 		#]
 		<br>
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:NEW"]:##
-		<div>Status of Member: [#ITEM:status#]</div>
-		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div>Is resident of RoK?: [#ITEM:residentRok:BOOLEAN#]</div>
-		<div>Company name: [#ITEM:companyName#]</div>
-		<div>Place of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div>Registration Number: [#ITEM:registrationNumber#]</div>
-		<div>Date of appointment: [#ITEM:appointmentDate#]</div>
+		<div><strong style="background: yellow;">Status of Member:</strong> [#ITEM:status#]</div>
+		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="background: yellow;">Is resident of RoK?:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong style="background: yellow;">Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="background: yellow;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong style="background: yellow;">Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ADD_DEFAULT_RECIPIENTS"]:##
 			<div> 
-				[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 			</div>      
 		#]
 		<br>
 	#]
 
-	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>
-	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
-	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-	<div>Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>
-	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>
-	<div>Amendments to Partnership Agreement: [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
-	<div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>
-	<div>Date of Resolution: 
+	<div>
+		<strong style="background: yellow;">Representative's First Name:</strong> 
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Last Name:</strong> 
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Country of Residence:</strong> 
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Phone Number:</strong> 
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Email:</strong> 
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Amendments to Partnership Agreement:</strong> 
+		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Type of Resolution:</strong> 
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Date of Resolution:</strong> 
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_DEFAULT_RECIPIENTS"]:##
-		<div>
-			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+		<div> 
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>    
+		</div>
 	#]
 	<br>
 </div>

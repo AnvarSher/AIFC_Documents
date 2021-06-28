@@ -16,7 +16,7 @@
     <div>Patronymic name in Cyrillic: [#NI:middleNameCyrillic#]</div>
     <div>Last name in Cyrillic: [#NI:lastNameCyrillic#]</div>
     <div>IIN: [#NI:personalId#]</div>
-    <div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
+    <div>Type of identity document:[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
     <div>Passport / Identity document number: [#NI:passport.number#]</div>
     <div>Date of issue of a document: [#NI:passport.issueDt:DATE:dd.MM.yyyy#]</div>
     <div>Date of expiration of a document: [#NI:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
@@ -116,7 +116,7 @@
     <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:NOTICE_OF_BO"]:##
 		<div>
-			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]

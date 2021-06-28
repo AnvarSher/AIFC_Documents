@@ -1,110 +1,131 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div>Bin of Company: [#JSON:applicationForm.application.bin#]</div>
-	<div>Reason for alteration: [#JSON:applicationForm.application.alterationShares.alterReason#]</div>
-	<div>Date of alteration: [#JSON:applicationForm.application.alterationShares.alterDate:DATE:dd.MM.yyyy#]</div>
-	<div>Are there any unpaid shares: [#JSON:applicationForm.application.alterationShares.hasUnpaidShares:BOOLEAN#]</div>
-	<div>Total number of unpaid shares: [#JSON:applicationForm.application.alterationShares.totalNumberOfUnpaidShares#]</div>
-	<div>Currency: [#JSON:applicationForm.application.alterationShares.shareCapital.currencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+	<div><strong style="background: yellow;">Bin of Company:</strong> [#JSON:applicationForm.application.bin#]</div>
+	<div><strong style="background: yellow;">Reason for alteration:</strong> [#JSON:applicationForm.application.alterationShares.alterReason#]</div>
+	<div><strong style="background: yellow;">Date of alteration:</strong> [#JSON:applicationForm.application.alterationShares.alterDate:DATE:dd.MM.yyyy#]</div>
+	<div><strong style="background: yellow;">Are there any unpaid shares:</strong> [#JSON:applicationForm.application.alterationShares.hasUnpaidShares:BOOLEAN#]</div>
+	<div><strong style="background: yellow;">Total number of unpaid shares:</strong> [#JSON:applicationForm.application.alterationShares.totalNumberOfUnpaidShares#]</div>
+	<div><strong style="background: yellow;">Currency:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.currencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 
 	[#ARRAY:JSON:applicationForm.application.alterationShares.shareCapital.shareCapitalClasses:[]:##
 		<br>
-		<div>Class name: [#ITEM:className#]</div>
-		<div>Nominal value per share: [#ITEM:shareValue#]</div>
-		<div>Number of votes per share: [#ITEM:votesNumber#]</div>
-		<div>Total number of shares: [#ITEM:totalNumberOfShares#]</div>
+		<div><strong style="background: yellow;">Class name:</strong> [#ITEM:className#]</div>
+		<div><strong style="background: yellow;">Nominal value per share:</strong> [#ITEM:shareValue#]</div>
+		<div><strong style="background: yellow;">Number of votes per share:</strong> [#ITEM:votesNumber#]</div>
+		<div><strong style="background: yellow;">Total number of shares:</strong> [#ITEM:totalNumberOfShares#]</div>
 	#]
 	<br>
 
-	<div>State Capital share: [#JSON:applicationForm.application.alterationShares.shareCapital.shareOfStateCapital#]</div>
-	<div>Total Number of shares: [#JSON:applicationForm.application.alterationShares.shareCapital.totalNumberOfShares#]</div>
-	<div>Amount of State Capital: [#JSON:applicationForm.application.alterationShares.shareCapital.amountOfStateCapital#]</div>
-	<div>Share of Private capital: [#JSON:applicationForm.application.alterationShares.shareCapital.shareOfPrivateCapital#]</div>
-	<div>Amount of private capital: [#JSON:applicationForm.application.alterationShares.shareCapital.amountOfPrivateCapital#]</div>
-	<div>Total amount of share capital: [#JSON:applicationForm.application.alterationShares.shareCapital.totalAmountOfShareCapital#]</div>
+	<div><strong style="background: yellow;">State Capital share:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.shareOfStateCapital#]</div>
+	<div><strong style="background: yellow;">Total Number of shares:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.totalNumberOfShares#]</div>
+	<div><strong style="background: yellow;">Amount of State Capital:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.amountOfStateCapital#]</div>
+	<div><strong style="background: yellow;">Share of Private capital:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.shareOfPrivateCapital#]</div>
+	<div><strong style="background: yellow;">Amount of private capital:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.amountOfPrivateCapital#]</div>
+	<div><strong style="background: yellow;">Total amount of share capital:</strong> [#JSON:applicationForm.application.alterationShares.shareCapital.totalAmountOfShareCapital#]</div>
 	<br>
 
 	[#ARRAY:JSON:applicationForm.application.alterationShares.corporateList:["roleCode:SH", "status:UPDATED"]:##
-		<div>Status: [#ITEM:status#]</div>
-		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div>Appointment date: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		<div>Company Name: [#ITEM:companyName#]</div>
-		<div>Registration date: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div>Tax registration number: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div>Company's Contact: [#ITEM:address.contact#]</div>
-		<div>Company's address: [#ITEM:address.addressLine#]</div>
-		<div>Type of business: [#ITEM:typeOfBusiness#]</div>
-		<div>
+		<div><strong style="background: yellow;">Status:</strong> [#ITEM:status#]</div>
+		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="background: yellow;">Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Company Name:</strong> [#ITEM:companyName#]</div>
+		<div><strong style="background: yellow;">Registration date:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong style="background: yellow;">Company's Contact:</strong> [#ITEM:address.contact#]</div>
+		<div><strong style="background: yellow;">Company's address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong style="background: yellow;">Type of business:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong style="background: yellow;">
 			[#ARRAY:ITEM:shareClasses:[]:##
 			<br>
-			<div>Share Class Name: [#ITEM:className#]</div>
-			<div>Value of shares: [#ITEM:valueOfShares#]</div>
-			<div>Number of shares: [#ITEM:numberOfShares#]</div>
+			<div><strong style="background: yellow;">Share Class Name:</strong> [#ITEM:className#]</div>
+			<div><strong style="background: yellow;">Value of shares:</strong> [#ITEM:valueOfShares#]</div>
+			<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 			#]
 		</div>
 		<br>
-		<div>Structure Type: [#ITEM:structureType#]</div>
-		<div>Number of shares: [#ITEM:numberOfShares#]</div>
+		<div><strong style="background: yellow;">Structure Type:</strong> [#ITEM:structureType#]</div>
+		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:numberOfShares#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_SHARES"]:##         
-			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			<div> 
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
-		<div>Amount of Contribution: [#ITEM:amountOfContribution#]</div>
-		<div>Place of Incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+		<div><strong style="background: yellow;">Amount of Contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong style="background: yellow;">Place of Incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 		<br>
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.alterationShares.corporateList:["roleCode:SH", "status:UPDATED"]:##
-		<div>Status of Individual: [#ITEM:status#]</div>
-		<div>Role: [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div>Appointment date: [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		<div>First name: [#ITEM:firstName#]</div>
-		<div>Last name: [#ITEM:lastName#]</div>
-		<div>Is resident of RoK: [#ITEM:residentRok:BOOLEAN#]</div>
-		<div>Type of identity document: [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div>Passport / Identity document number: [#ITEM:passport.number#]</div>
-		<div>Date of issue of a document: [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div>Date of expiration of a document: [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div>Identity document issued by: [#ITEM:passport.issuePlace#]</div>
-		<div>Structure Type: [#ITEM:structureType#]</div>
-		<div>Country of CitizenITEMp: [#ITEM:citizenITEMpCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div>Country of Main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div>Tax registration number: [#ITEM:registrationNumberCountryOfIncorporatio#]</div>
-		<div>Date of birth: [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div>Residential address: [#ITEM:address#]</div>
-		<div>Email: [#ITEM:contact.email#]</div>
-		<div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div>Shareholding percentage: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div>Ultimate beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div>Number of shares contributed: [#ITEM:numberOfShares#]</div>
-		<div>Amount of contribution: [#ITEM:amountOfContribution#]</div>
-		<div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
-		<div>Value of shares: [#ITEM:shareClasses.valueOfShares#]</div>
-		<div>Number of shares: [#ITEM:shareClasses.numberOfShares#]</div>
-		<div>% from total of Share Class: [#ITEM:shareClasses.shareholdingPercent#]</div>
+		<div><strong style="background: yellow;">Status of Individual:</strong> [#ITEM:status#]</div>
+		<div><strong style="background: yellow;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong style="background: yellow;">Appointment date: </strong>[#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">First name: </strong>[#ITEM:firstName#]</div>
+		<div><strong style="background: yellow;">Last name: </strong>[#ITEM:lastName#]</div>
+		<div><strong style="background: yellow;">Is resident of RoK:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong style="background: yellow;">Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
+		<div><strong style="background: yellow;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
+		<div><strong style="background: yellow;">Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
+		<div><strong style="background: yellow;">Structure Type:</strong> [#ITEM:structureType#]</div>
+		<div><strong style="background: yellow;">Country of CitizenITEMp:</strong> [#ITEM:citizenITEMpCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="background: yellow;">Country of Main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="background: yellow;">Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporatio#]</div>
+		<div><strong style="background: yellow;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
+		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address#]</div>
+		<div><strong style="background: yellow;">Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong style="background: yellow;">Shareholding percentage:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong style="background: yellow;">Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong style="background: yellow;">Number of shares contributed:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong style="background: yellow;">Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+		<div><strong style="background: yellow;">Value of shares:</strong> [#ITEM:shareClasses.valueOfShares#]</div>
+		<div><strong style="background: yellow;">Number of shares:</strong> [#ITEM:shareClasses.numberOfShares#]</div>
+		<div><strong style="background: yellow;">% from total of Share Class:</strong> [#ITEM:shareClasses.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_SHARES"]:##         
-			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			<div> 
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
 		<br>
 	#]
-
-	<div>Effective Date of Standard Resolution: [#JSON:applicationForm.application.alterationShares.effectiveDayStandardResolution:DATE:dd.MM.yyyy#]</div>
-	<div>Effective Date of Special Resolution: [#JSON:applicationForm.application.alterationShares.effectiveDaySpecialResolution:DATE:dd.MM.yyyy#]</div>
-	<div>Standard Resolution: [#ARRAY:JSON:applicationForm.application.alterationShares.attachmentsList:["fileCode:PR_STANDARD_RESOLUTION_SH"]:##
-		<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> #]
+	<div>
+		<strong style="background: yellow;">Representative's First Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Last Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Email: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	<div>Payer Email: [#JSON:applicationForm.application.payerEmail#]</div>
-	<div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
-	<div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
-	<div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+	<div>
+		<strong style="background: yellow;">Type of Resolution: </strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Date of Resolution: </strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ALTERATION_SHARES"]:##
 		<div>
-			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]

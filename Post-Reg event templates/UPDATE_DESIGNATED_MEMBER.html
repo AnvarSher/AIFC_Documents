@@ -2,28 +2,45 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:UPDATED"]:##     
-		<div>First name: [#ITEM:firstName#]</div>     
-		<div>Patronymic Name: [#ITEM:middleName#]</div>     
-		<div>Last Name: [#ITEM:lastName#]</div>     
-		<div>Former Name: [#ITEM:formerNames#]</div>     
-		<div>Residential address: [#ITEM:address#]</div>     
-		<div>Email: [#ITEM:contact.email#]</div>     
+		<div><strong style="background: yellow;">First name: </strong>[#ITEM:firstName#]</div>
+     
+		<div><strong style="background: yellow;">Patronymic name: </strong>[#ITEM:middleName#]</div>     
+		<div><strong style="background: yellow;">Last name: </strong>[#ITEM:lastName#]</div>     
+		<div><strong style="background: yellow;">Former name: </strong>[#ITEM:formerNames#]</div>     
+		<div><strong style="background: yellow;">Residential address:</strong> [#ITEM:address#]</div>     
+		<div><strong style="background: yellow;">Email:</strong> [#ITEM:contact.email#]</div>     
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DESIGNATED_MEMBER"]:##         
-			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>         
-			</div>      
+			<div> 
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>    
 		#]     
 		<br>      
 	#]     
-	<div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>     
-	<div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
-	<div>Representative's Phone Number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>     
-	<div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div> 
+	<div>
+		<strong style="background: yellow;">Representative's First Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Last Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Email: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DESIGNATED_MEMBER"]:##     
-		<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: 
+		<div> 
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div> 
+		</div>
 	#]     
 	<br> 
 </div>

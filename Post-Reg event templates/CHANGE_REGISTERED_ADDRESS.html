@@ -1,39 +1,55 @@
-<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-    <div><strong>[#EVENT:PsName#]</strong></div>
-    <hr>
-    <div> Company BIN: [#JSON:applicationForm.application.bin#] </div>
-    <div> Type of Company: [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
-    <div> The address of the principal place of business of the entity to be registered in the AIFC: [#JSON:applicationForm.application.addressInAifc.addressType#] </div>
-    <div> City: [#JSON:applicationForm.application.addressInAifc.city#] </div>
-    <div> District: [#JSON:applicationForm.application.addressInAifc.raion#] </div>
-    <div> Zip code: [#JSON:applicationForm.application.addressInAifc.zipCode#] </div>
-    <div> Street/avenue: [#JSON:applicationForm.application.addressInAifc.addressLine#] </div>
-    <div> Building number: [#JSON:applicationForm.application.addressInAifc.buildingNumber#] </div>
-    
-    <div>Representative's First Name: [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>
-    <div>Representative's Last Name: [#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
-    <div>Representative's Country of Residence: [#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-    <div>Representative's Phone number: [#JSON:applicationForm.documentSignature.representative.contact.phone#]</div>
-    <div>Representative's Email: [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>
-    <div>Type of Resolution: [#JSON:applicationForm.application.selectedResolutionOption.CHANGE_REGISTERED_ADDRESS:LOOKUP:PsPostRegResolutionType.Name.Description#]</div>
-    <div>Date of Resolution: 
-        [#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-        [#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-        [#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-    </div>
-
-    <div>Document type: [#JSON:applicationForm.application.leaseAgreementType#]</div>
-    <div>Document name: [#JSON:applicationForm.application.otherDocumentName#]</div>
-    <div>Does document have no validity limit?: [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]</div>
-    <div>Validity start date: [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>
-    <div>Validity end date: [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>
-    <div>Amendments to Partnership Agreement: [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
-    
-    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_REGISTERED_ADDRESS"]:##
-        <div>
-            [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
-            <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-        </div>    
-    #]
-    <br>
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>     
+	<div><strong style="background: yellow;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>     
+	<div><strong style="background: yellow;">Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>     
+	<div><strong style="background: yellow;">The address of the principal place of business of the entity to be registered in the AIFC:</strong> [#JSON:applicationForm.application.addressInAifc.addressType#]</div>     
+	<div><strong style="background: yellow;">City:</strong> [#JSON:applicationForm.application.addressInAifc.city#]</div>     
+	<div><strong style="background: yellow;">District:</strong> [#JSON:applicationForm.application.addressInAifc.raion#]</div>     
+	<div><strong style="background: yellow;">Zip code:</strong> [#JSON:applicationForm.application.addressInAifc.zipCode#]</div>     
+	<div><strong style="background: yellow;">Street/avenue:</strong> [#JSON:applicationForm.application.addressInAifc.addressLine#]</div>     
+	<div><strong style="background: yellow;">Building number:</strong> [#JSON:applicationForm.application.addressInAifc.buildingNumber#]</div>     
+	<div><strong style="background: yellow;">Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>     
+	<div>
+		<strong style="background: yellow;">Representative's First Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Last Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
+	<div>
+		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Email: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Type of Resolution: </strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Date of Resolution: </strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+	</div>     
+	<div><strong style="background: yellow;">Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>     
+	<div><strong style="background: yellow;">Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>     
+	<div><strong style="background: yellow;">Does document have no validity limit?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]</div>     
+	<div><strong style="background: yellow;">Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>     
+	<div><strong style="background: yellow;">Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>     
+	<div><strong style="background: yellow;">Amendments to Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_REGISTERED_ADDRESS"]:##     
+		<div> 
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+		</div>
+	#]
+	<br>
 </div>

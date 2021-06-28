@@ -3,45 +3,69 @@
     <hr>
     <div>Company BIN: [#JSON:applicationForm.application.bin#]</div>
     [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:PR", "status:REMOVED"]:##
-        <div>Status: [#ITEM:status#]</div>
-        <div>Remove date: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+        <div><strong style="background: yellow;">Status:</strong> [#ITEM:status#]</div>
+        <div><strong style="background: yellow;">Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
         <br>
     #]
 
     [#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:PR", "status:REMOVED"]:##
-        <div>Status of Member: [#ITEM:status#]</div>
-        <div>Company name: [#ITEM:companyName#]</div>
-        <div>Place of incorporation: [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-        <div>Date of registration: [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-        <div>Registration Number: [#ITEM:registrationNumber#]</div>
-        <div>Tax registration number in the country of incorporation: [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-        <div>Type of activity: [#ITEM:typeOfBusiness#]</div>
-        <div>Address: [#ITEM:address.addressLine#]</div>
-        <div>Number of shares contributed: [#ITEM:amountOfContribution#]</div>
-        <div>Currency: [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
+        <div><strong style="background: yellow;">Status of Member:</strong> [#ITEM:status#]</div>
+        <div><strong style="background: yellow;">Company name:</strong> [#ITEM:companyName#]</div>
+        <div><strong style="background: yellow;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+        <div><strong style="background: yellow;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+        <div><strong style="background: yellow;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+        <div><strong style="background: yellow;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+        <div><strong style="background: yellow;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
+        <div><strong style="background: yellow;">Address:</strong> [#ITEM:address.addressLine#]</div>
+        <div><strong style="background: yellow;">Number of shares contributed:</strong> [#ITEM:amountOfContribution#]</div>
+        <div><strong style="background: yellow;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3#]</div>
         [#ARRAY:ITEM:attachmentsList:["event:REMOVE_PARTNER"]:##         
-			<div> [#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:              
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			<div> 
+				<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
-        <div>Shareholding weight: [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-        <div>Percentage of shareholding, %:: [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-        <div>Ultimate beneficiary ratio: [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-        <div>Remove Date: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+        <div><strong style="background: yellow;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+        <div><strong style="background: yellow;">Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+        <div><strong style="background: yellow;">Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+        <div><strong style="background: yellow;">Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
         <br>
     #]
 
-    <div>Generate a standard Ordinary Resolution: [#JSON:applicationForm.application.isStandardResolutionOfIncorporation:BOOLEAN#]</div>
-    <div>Uploaded existing Ordinary Resolution: [#JSON:applicationForm.application.isOwnResolutionOfIncorporation:BOOLEAN#]</div>
-    <div>Generate a standard special resolution + get online approval of shareholders: [#JSON:applicationForm.application.isStandardOnlineResolutionOfIncorporation:BOOLEAN#]</div>
-    <div>Effective date of Resolution: [#JSON:applicationForm.application.effectiveDate:DATE:dd.MM.yyyy#]</div>
-    <div>Resolution signed date: [#JSON:applicationForm.application.resolutionSignedDate:DATE:dd.MM.yyyy#]</div>
-    <div>Payment Option: [#JSON:applicationForm.application.paymentOption#]</div>
-    <div>Representative's Contact: [#JSON:applicationForm.documentSignature.representative.contact#]</div>
-    <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
+    <div>
+		<strong style="background: yellow;">Representative's First Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Last Name: </strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Country of Residence: </strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Phone Number: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong style="background: yellow;">Representative's Email: </strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+
+	
+	<div>
+		<strong style="background: yellow;">Type of Resolution: </strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong style="background: yellow;">Date of Resolution: </strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+	</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_PARTNER"]:##
 		<div>
-			[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:  
+			<strong style="background: yellow;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]
