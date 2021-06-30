@@ -6,15 +6,22 @@
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:UPDATED"]:##
 		<div><strong style="text-decoration: underline;">Status:</strong> [#ITEM:status#]</div>
 		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="text-decoration: underline;">First name: </strong>[#ITEM:firstName#]</div>
-		<div><strong style="text-decoration: underline;">Last name: </strong>[#ITEM:lastName#]</div>
-		<div><strong style="text-decoration: underline;">Patronymic name: </strong>[#ITEM:middleName#]</div>
-		<div><strong style="text-decoration: underline;">Former name: </strong>[#ITEM:formerNames#]</div>
+		<div><strong style="text-decoration: underline;">First name:</strong> [#ITEM:firstName#]</div>
+		<div><strong style="text-decoration: underline;">Last name:</strong> [#ITEM:lastName#]</div>
+		<div><strong style="text-decoration: underline;">Patronymic name:</strong> [#ITEM:middleName#]</div>
+		<div><strong style="text-decoration: underline;">Former name:</strong> [#ITEM:formerNames#]</div>
 		<div><strong style="text-decoration: underline;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
-		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code#]</div>
+		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DEFAULT_RECIPIENTS"]:##
+			<div>
+				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+			</div>
+		#]
+		<br>
 	#] 
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:UPDATED"]:##
@@ -24,6 +31,12 @@
 		<div><strong style="text-decoration: underline;">Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong style="text-decoration: underline;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DEFAULT_RECIPIENTS"]:##
+			<div>
+				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+			</div>
+		#]
 		<br> 
 	#]
 

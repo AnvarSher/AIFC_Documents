@@ -6,7 +6,6 @@
 		<div><strong style="text-decoration: underline;">Status:</strong> [#ITEM:status#]</div>
 		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong style="text-decoration: underline;">First name: </strong>[#ITEM:firstName#]</div>
-
 		<div><strong style="text-decoration: underline;">Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong style="text-decoration: underline;">Patronymic name: </strong>[#ITEM:middleName#]</div>
 		<div><strong style="text-decoration: underline;">Former name: </strong>[#ITEM:formerNames#]</div>
@@ -18,8 +17,13 @@
 		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong style="text-decoration: underline;">Reason of removal:</strong> [#ITEM:removeReason#]</div>
-
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_GUARDIANS"]:##
+			<div> 
+				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>      
+		#]
+		<br>
 	#]
 	
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:GU", "status:REMOVED"]:##
@@ -31,9 +35,14 @@
 		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong style="text-decoration: underline;">Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
-		<div><strong style="text-decoration: underline;">Governing Law:</strong> [#ITEM:governLaw#]</div>
+		<div><strong style="text-decoration: underline;">Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Reason of removal:</strong> [#ITEM:removeReason#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_GUARDIANS"]:##
+			<div> 
+				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>      
+		#]
 		<br>
 	#]
 
@@ -62,13 +71,13 @@
 	</div>
 	<div>
 		<strong style="text-decoration: underline;">Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_GUARDIANS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong style="text-decoration: underline;">Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_GUARDIANS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_GUARDIANS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_GUARDIANS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_GUARDIANS"]:##
 		<div>

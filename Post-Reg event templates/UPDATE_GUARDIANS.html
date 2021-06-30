@@ -7,7 +7,6 @@
 		<div><strong style="text-decoration: underline;">Status:</strong> [#ITEM:status#]</div>
 		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong style="text-decoration: underline;">First name:</strong> [#ITEM:firstName#]</div>
-
 		<div><strong style="text-decoration: underline;">Last name:</strong> [#ITEM:lastName#]</div>
 		<div><strong style="text-decoration: underline;">Patronymic name:</strong> [#ITEM:middleName#]</div>
 		<div><strong style="text-decoration: underline;">Former name:</strong> [#ITEM:formerNames#]</div>
@@ -19,6 +18,13 @@
 		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
+			<div> 
+				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>      
+		#]
+		<br>
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:GU", "status:UPDATED"]:##
@@ -28,7 +34,14 @@
 		<div><strong style="text-decoration: underline;">Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong style="text-decoration: underline;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong style="text-decoration: underline;">Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
-		<div><strong style="text-decoration: underline;">Governing Law:</strong> [#ITEM:governLaw#]</div>
+		<div><strong style="text-decoration: underline;">Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
+			<div> 
+				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>      
+		#]
+		<br>
 	#]
 
 	<div>
