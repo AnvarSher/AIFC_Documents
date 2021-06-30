@@ -8,7 +8,7 @@
 		<div><strong style="text-decoration: underline;">First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong style="text-decoration: underline;">Patronymic Name:</strong> [#ITEM:middleName#]</div>
 		<div><strong style="text-decoration: underline;">Last Name:</strong> [#ITEM:lastName#]</div>
-		<div><strong style="text-decoration: underline;">Is resident of RoK?:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong style="text-decoration: underline;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong style="text-decoration: underline;">IIN:</strong> [#ITEM:personalId#]</div>
 		<div><strong style="text-decoration: underline;">Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div><strong style="text-decoration: underline;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
@@ -32,25 +32,18 @@
 	#] 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MC", "status:REMOVED"]:##
 		<div><strong style="text-decoration: underline;">Status of Member:</strong> [#ITEM:status#]</div>
+		<div><strong style="text-decoration: underline;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong style="text-decoration: underline;">Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="text-decoration: underline;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="text-decoration: underline;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="text-decoration: underline;">Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong style="text-decoration: underline;">Number of shares contributed:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div> 
+		<div><strong style="text-decoration: underline;">Governing Law:</strong> [#ITEM:orgLegalForm#]</div>  
+		<div><strong style="text-decoration: underline;">Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>     
+		<div><strong style="text-decoration: underline;">Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div><br>		
+		
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_MEMBER_OF_COUNCILS"]:##
 			<div>
 				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 			</div>
 		#]
-		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="text-decoration: underline;">Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="text-decoration: underline;">Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong style="text-decoration: underline;">Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div><br>
 	#]
 
 	<div>
