@@ -5,7 +5,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
+    <div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
     <div>Status: [#NI:status#]</div>
     <div>Role: [#NI:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
     <div>Appointment date: [#NI:appointmentDate:DATE:dd.MM.yyyy#]</div>
@@ -116,7 +116,7 @@
     <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:NOTICE_OF_BO"]:##
 		<div>
-			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]

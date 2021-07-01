@@ -1,54 +1,54 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong style="text-decoration: underline;">Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#] </div>
-	<div><strong style="text-decoration: underline;">Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#] </div> 
+	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#] </div>
+	<div><strong>Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#] </div> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:UPDATED"]:##
-		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#] </div>
-		<div><strong style="text-decoration: underline;">First Name:</strong> [#ITEM:firstName#] </div>
-		<div><strong style="text-decoration: underline;">Patronymic name:</strong> [#ITEM:middleName#] </div>
-		<div><strong style="text-decoration: underline;">Last Name:</strong> [#ITEM:lastName#] </div>
-		<div><strong style="text-decoration: underline;">First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#] </div>
-		<div><strong style="text-decoration: underline;">Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#] </div>
-		<div><strong style="text-decoration: underline;">Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#] </div>
-		<div><strong style="text-decoration: underline;">Former name:</strong> [#ITEM:formerNames#] </div>
-		<div><strong style="text-decoration: underline;">IIN:</strong> [#ITEM:personalId#] </div>
-		<div><strong style="text-decoration: underline;">Residential Address:</strong> [#ITEM:address#] </div>
-		<div><strong style="text-decoration: underline;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#] </div>
-		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#] </div>
-		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
-		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
-		<div><strong style="text-decoration: underline;">Confirm the CEO details are changing and that you are not appointing a new CEO.:</strong> [#ITEM:changeConfirmation:BOOLEAN#] </div>
+		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#] </div>
+		<div><strong>First Name:</strong> [#ITEM:firstName#] </div>
+		<div><strong>Patronymic name:</strong> [#ITEM:middleName#] </div>
+		<div><strong>Last Name:</strong> [#ITEM:lastName#] </div>
+		<div><strong>First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#] </div>
+		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#] </div>
+		<div><strong>Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#] </div>
+		<div><strong>Former name:</strong> [#ITEM:formerNames#] </div>
+		<div><strong>IIN:</strong> [#ITEM:personalId#] </div>
+		<div><strong>Residential Address:</strong> [#ITEM:address#] </div>
+		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#] </div>
+		<div><strong>Email:</strong> [#ITEM:contact.email#] </div>
+		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
+		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#] </div>
+		<div><strong>Confirm the CEO details are changing and that you are not appointing a new CEO.:</strong> [#ITEM:changeConfirmation:BOOLEAN#] </div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_CEO"]:##    
 			<div>
-				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
 		<br>
 	#]
 	<div>
-		<strong style="text-decoration: underline;">Representative's First Name: </strong>
+		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
+		<strong>Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
+		<strong>Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
+		<strong>Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Email: </strong>
+		<strong>Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_CEO"]:##
 		<div>
-			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>
 	#]

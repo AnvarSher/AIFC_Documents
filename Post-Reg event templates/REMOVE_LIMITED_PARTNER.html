@@ -1,32 +1,32 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong style="text-decoration: underline;">Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
+	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:LP", "status:REMOVED"]:##
-		<div><strong style="text-decoration: underline;">Status:</strong> [#ITEM:status#]</div>
-		<div><strong style="text-decoration: underline;">Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
-		<div><strong style="text-decoration: underline;">First name: </strong>[#ITEM:firstName#]</div>
+		<div><strong>Status:</strong> [#ITEM:status#]</div>
+		<div><strong>Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
+		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 
-		<div><strong style="text-decoration: underline;">Patronymic name: </strong>[#ITEM:middleName#]</div>
-		<div><strong style="text-decoration: underline;">Last name: </strong>[#ITEM:lastName#]</div>
-		<div><strong style="text-decoration: underline;">Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong style="text-decoration: underline;">IIN: </strong>[#ITEM:personalId#]</div>
-		<div><strong style="text-decoration: underline;">Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong style="text-decoration: underline;">Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong style="text-decoration: underline;">Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
-		<div><strong style="text-decoration: underline;">Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong style="text-decoration: underline;">Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
-		<div><strong style="text-decoration: underline;">KYC Individual status:</strong> [#ITEM:kycIndividualStatus#]</div>
-		<div><strong style="text-decoration: underline;">Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="text-decoration: underline;">Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
+		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
+		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong>IIN: </strong>[#ITEM:personalId#]</div>
+		<div><strong>Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
+		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
+		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
+		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
+		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+		<div><strong>KYC Individual status:</strong> [#ITEM:kycIndividualStatus#]</div>
+		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_LIMITED_PARTNER"]:##         
 			<div> 
-				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
@@ -34,63 +34,63 @@
 	#]
 	
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:LP", "status:REMOVED"]:##
-		<div><strong style="text-decoration: underline;">Status of Member:</strong> [#ITEM:status#]</div>
-		<div><strong style="text-decoration: underline;">Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong style="text-decoration: underline;">Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong style="text-decoration: underline;">Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong style="text-decoration: underline;">Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong style="text-decoration: underline;">Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong style="text-decoration: underline;">Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong style="text-decoration: underline;">Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong style="text-decoration: underline;">Number of shares contributed:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong style="text-decoration: underline;">Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
+		<div><strong>Status of Member:</strong> [#ITEM:status#]</div>
+		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
+		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong>Number of shares contributed:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong>Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_LIMITED_PARTNER"]:##         
 			<div> 
-				<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
 
-		<div><strong style="text-decoration: underline;">Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong style="text-decoration: underline;">Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong style="text-decoration: underline;">Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong style="text-decoration: underline;">Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
+		<div><strong>Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong>Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
+		<div><strong>Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<br>
 	#]
 
 	<div>
-		<strong style="text-decoration: underline;">Representative's First Name: </strong>
+		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Last Name: </strong>
+		<strong>Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Country of Residence: </strong>
+		<strong>Representative's Country of Residence: </strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Phone Number: </strong>
+		<strong>Representative's Phone Number: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong style="text-decoration: underline;">Representative's Email: </strong>
+		<strong>Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
-		<strong style="text-decoration: underline;">Type of Resolution: </strong>
+		<strong>Type of Resolution: </strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
-		<strong style="text-decoration: underline;">Date of Resolution: </strong>
+		<strong>Date of Resolution: </strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_LIMITED_PARTNER"]:##
 		<div>
-			<strong style="text-decoration: underline;">[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]
