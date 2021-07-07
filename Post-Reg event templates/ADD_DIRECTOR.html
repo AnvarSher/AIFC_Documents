@@ -25,7 +25,24 @@
 			</div>
 		#]
 		<br>
-	#]     
+	#]
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DP", "status:NEW"]:##
+		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>     
+		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>     
+		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_DIRECTOR"]:##
+			<div> 
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>
+		#]
+		<br>
+	#] 
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -49,13 +66,13 @@
 	
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DIRECTOR:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DIRECTOR:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DIRECTOR:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DIRECTOR:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_DIRECTOR"]:##     
 		<div> 

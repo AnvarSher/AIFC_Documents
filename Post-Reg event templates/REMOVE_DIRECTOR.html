@@ -2,7 +2,6 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>     <hr> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DP", "status:REMOVED"]:##     
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
-     
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>     
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>        
 		<div><strong>Resident of Republic of Kazakhstan: </strong>[#ITEM:residentRok:BOOLEAN#]</div>     
@@ -25,8 +24,26 @@
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>     
 		#]     
-		<br>      
-	#]     
+		<br>
+	#]
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DP", "status:REMOVED"]:##
+		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>     
+		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Remove Date:</strong> [#ITEM:removeReason#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DIRECTOR"]:##         
+			<div> 
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>     
+		#]     
+		<br>
+	#]
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -48,13 +65,13 @@
 	</div>  
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_DIRECTOR:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_DIRECTOR"]:##     
 		<div> 
