@@ -2,7 +2,6 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
 	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:QR", "status:REMOVED"]:##
 		<div><strong>Status:</strong> [#ITEM:status#]</div>
 		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
