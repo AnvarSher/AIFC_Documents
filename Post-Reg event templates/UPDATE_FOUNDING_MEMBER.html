@@ -1,11 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-
     [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:FM", "status:UPDATED"]:##
-        <div><strong>Status:</strong> [#ITEM:status#]</div>
-        <div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
         <div><strong>First name: </strong>[#ITEM:firstName#]</div>
         <div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
         <div><strong>Last name: </strong>[#ITEM:lastName#]</div>
@@ -34,8 +30,6 @@
     #]
 
     [#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:FM", "status:UPDATED"]:##
-        <div><strong>Status of Member:</strong> [#ITEM:status#]</div>
-        <div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
         <div><strong>Company name:</strong> [#ITEM:companyName#]</div>
         <div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
         <div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
@@ -81,13 +75,13 @@
 	
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_FOUNDING_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_FOUNDING_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_FOUNDING_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_FOUNDING_MEMBER:DATE:dd.MM.yyyy#]
 	</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_FOUNDING_MEMBER"]:##
         <div>

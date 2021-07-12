@@ -5,9 +5,6 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr>
-    <div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-    <div>Status: [#NI:status#]</div>
-    <div>Role: [#NI:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
     <div>Appointment date: [#NI:appointmentDate:DATE:dd.MM.yyyy#]</div>
     <div>First name: [#NI:firstName#]</div>
     <div>Patronymic Name: [#NI:middleName#]</div>
@@ -39,8 +36,6 @@
         <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
     </div>
     <br>
-    <div>Status: [#RI:status#]</div>
-    <div>Role: [#RI:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
     <div>Remove date: [#RI:removeDate:DATE:dd.MM.yyyy#]</div>
     <div>First name: [#RI:firstName#]</div>
     <div>Patronymic Name: [#RI:middleName#]</div>
@@ -72,8 +67,6 @@
         <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> #]
     </div>
     <br>
-    <div>Status of Member: [#NC:status#]</div>
-    <div>Role: [#NC:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
     <div>Company name: [#NC:companyName#]</div>
     <div>Place of incorporation: [#NC:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
     <div>Date of registration: [#NC:registrationDate:DATE:dd.MM.yyyy#]</div>
@@ -89,8 +82,6 @@
     </div>
     <div>Appointment Date: [#NC:appointmentDate:DATE:dd.MM.yyyy#]</div>
     <br>
-    <div>Status of Member: [#RC:status#]</div>
-    <div>Role: [#RC:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
     <div>Company name: [#RC:companyName#]</div>
     <div>Place of incorporation: [#RC:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
     <div>Date of registration: [#RC:registrationDate:DATE:dd.MM.yyyy#]</div>

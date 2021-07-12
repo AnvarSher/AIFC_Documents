@@ -1,10 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:QR", "status:NEW"]:##
-		<div><strong>Status:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
@@ -27,8 +24,6 @@
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:QR", "status:NEW"]:##
-		<div><strong>Status of Member:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
@@ -65,7 +60,7 @@
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
-		<strong>Amendments to Partnership Agreement: </strong>
+		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> 
 		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
 	<div>

@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div>     <hr>
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:NEW"]:##   
-		<div><strong>Status:</strong> [#ITEM:status#]</div>   
+	<div><strong>[#EVENT:PsName#]</strong></div>     
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:NEW"]:##
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>   
 		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>   
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>   
@@ -30,8 +30,7 @@
 		#]
 		<br>
 	#]
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:REMOVED"]:##   
-		<div><strong>Status:</strong> [#ITEM:status#]</div>   
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:REMOVED"]:##
 		<div><strong>Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>   
 		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>   
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>   

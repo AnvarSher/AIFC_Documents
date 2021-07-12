@@ -1,10 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:FO", "status:REMOVED"]:##
-		<div><strong>Status:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
@@ -33,7 +30,6 @@
 	#]
 	
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:FO", "status:REMOVED"]:##
-		<div><strong>Status of Member:</strong> [#ITEM:status#]</div>
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>

@@ -26,8 +26,6 @@
 	<br>
 
 	[#ARRAY:JSON:applicationForm.application.alterationShares.corporateList:["roleCode:SH", "status:UPDATED"]:##
-		<div><strong>Status:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Company Name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Registration date:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
@@ -59,8 +57,6 @@
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.alterationShares.corporateList:["roleCode:SH", "status:UPDATED"]:##
-		<div><strong>Status of Individual:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Appointment date: </strong>[#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
@@ -115,13 +111,13 @@
 	</div>
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.ALTERATION_SHARES:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ALTERATION_SHARES"]:##
 		<div>

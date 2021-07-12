@@ -1,6 +1,6 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div><hr>
-	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div> 
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MB", "status:UPDATED"]:##
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Patronymic Name:</strong> [#ITEM:middleName#]</div>
@@ -68,8 +68,10 @@
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_MEMBER"]:##
-	<div> 
-		<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
-		<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-	</div>
-	 #]<br> </div>
+		<div> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+		</div>
+	#]
+	<br> 
+</div>

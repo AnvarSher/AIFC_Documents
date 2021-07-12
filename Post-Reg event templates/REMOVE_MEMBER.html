@@ -2,8 +2,6 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MB", "status:REMOVED"]:##
-		<div><strong>Status:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
@@ -37,7 +35,6 @@
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB", "status:REMOVED"]:##
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>

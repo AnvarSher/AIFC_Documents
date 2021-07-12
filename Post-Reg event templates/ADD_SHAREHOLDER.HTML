@@ -1,11 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:NEW"]:##
-		<div><strong>Status:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
@@ -26,11 +22,22 @@
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
 		<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
+		[#ARRAY:ITEM:shareClasses:[]:##
+			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
+			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
+			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
+			<div><strong>Shareholding percent:</strong> [#ITEM:shareholdingPercent#]</div>
+		#]
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_SHAREHOLDER"]:##
+			<div>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>    
+		#]
+		<br>
 	#] 
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:NEW"]:##
-		<div><strong>Status of Member:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate#]</div>
@@ -41,6 +48,18 @@
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
 		<div><strong>Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		[#ARRAY:ITEM:shareClasses:[]:##
+			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
+			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
+			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
+			<div><strong>Shareholding percent:</strong> [#ITEM:shareholdingPercent#]</div>
+		#]
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_SHAREHOLDER"]:##
+			<div>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>    
+		#]
 		<br> 
 	#]
 
@@ -65,13 +84,13 @@
 	</div>
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_SHAREHOLDER:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_SHAREHOLDER"]:##
 		<div>

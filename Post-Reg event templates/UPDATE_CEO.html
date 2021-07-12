@@ -4,7 +4,6 @@
 	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#] </div>
 	<div><strong>Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#] </div> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:UPDATED"]:##
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#] </div>
 		<div><strong>First Name:</strong> [#ITEM:firstName#] </div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#] </div>
 		<div><strong>Last Name:</strong> [#ITEM:lastName#] </div>

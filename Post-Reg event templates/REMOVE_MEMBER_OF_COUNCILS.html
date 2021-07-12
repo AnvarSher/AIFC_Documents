@@ -1,19 +1,10 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div><hr>
-	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div> 
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MC", "status:REMOVED"]:##
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Patronymic Name:</strong> [#ITEM:middleName#]</div>
 		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
-		<div><strong>Former Name:</strong> [#ITEM:formerNames#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_MEMBER_OF_COUNCILS"]:##
 			<div>
@@ -24,11 +15,7 @@
 		<br>
 	#] 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MC", "status:REMOVED"]:##
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>  
-		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_MEMBER_OF_COUNCILS"]:##
 			<div>
@@ -57,6 +44,10 @@
 	<div>
 		<strong>Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+	<div>
+		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> 
+		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
 	<div>
 		<strong>Type of Resolution: </strong>

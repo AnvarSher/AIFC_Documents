@@ -1,7 +1,6 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>BIN of Company:</strong> [#JSON:applicationForm.application.bin#]</div>
 	<div><strong>Use state capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.useStateCapital:BOOLEAN#]</div>
 	<div><strong>Currency:</strong> [#JSON:applicationForm.application.transfer.shareCapital.currencyCodeIso3#]</div>
 	<div><strong>Share of State capital:</strong> [#JSON:applicationForm.application.transfer.shareCapital.shareOfStateCapital#]</div>
@@ -21,8 +20,6 @@
 	<hr>
 	
 	[#ARRAY:JSON:applicationForm.application.transfer.corporateList:["roleCode:SH", "status:NEW"]:##
-		<div><strong>Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Company Name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
@@ -53,8 +50,6 @@
 
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.transfer.corporateList:["roleCode:SH", "status:REMOVED"]:##
-		<div><strong>Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Company Name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
@@ -84,8 +79,6 @@
 
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.transfer.individualList:["roleCode:SH", "status:NEW"]:##
-		<div><strong>Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Appointment date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Company Name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
@@ -115,8 +108,6 @@
 
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.transfer.individualList:["roleCode:SH", "status:REMOVED"]:##
-		<div><strong>Status of Entity:</strong> [#ITEM:status#]</div>
-		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Company Name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Tax registration number:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
