@@ -2,7 +2,6 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
 	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:GU", "status:UPDATED"]:##
 		<div><strong>Status:</strong> [#ITEM:status#]</div>
 		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
@@ -18,6 +17,7 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
@@ -35,6 +35,7 @@
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
 		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 

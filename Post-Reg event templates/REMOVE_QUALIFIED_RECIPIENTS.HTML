@@ -15,7 +15,7 @@
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Qualified Recipient options:</strong> [#ITEM:qualifiedRecipientOptions#]</div>
+		<div><strong>Date of removal: </strong>[#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_QUALIFIED_RECIPIENTS"]:##
 	        <div>
 	        	<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -33,8 +33,7 @@
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
 		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Qualified Recipient options:</strong> [#ITEM:qualifiedRecipientOptions#]</div>
-		<div><strong>Date of removal: [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Date of removal: </strong>[#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_QUALIFIED_RECIPIENTS"]:##
 	        <div>
 	        	<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>

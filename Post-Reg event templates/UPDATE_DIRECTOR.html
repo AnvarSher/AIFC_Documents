@@ -16,8 +16,8 @@
 		<div><strong>Residential Address:</strong> [#ITEM:address#]</div>     
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>     
-		<div><strong>Confirm the Director details are changing and that you are not appointing a new Director:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div> 
+		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DIRECTOR"]:##     
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -34,6 +34,7 @@
 		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>     
 		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DIRECTOR"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -60,16 +61,6 @@
 	<div>
 		<strong>Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
-	<div>
-		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_DIRECTOR:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_DIRECTOR:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_DIRECTOR:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_DIRECTOR:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DIRECTOR"]:##     
 		<div> 

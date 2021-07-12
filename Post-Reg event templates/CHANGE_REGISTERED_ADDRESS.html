@@ -13,7 +13,7 @@
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
+	</div>
 	<div>
 		<strong>Representative's Last Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
@@ -31,13 +31,13 @@
 	</div>
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_REGISTERED_ADDRESS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
 	</div>     
 	<div><strong>Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>     
 	<div><strong>Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>     

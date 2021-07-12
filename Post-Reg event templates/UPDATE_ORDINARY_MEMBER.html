@@ -3,7 +3,6 @@
 	<hr> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:OM", "status:UPDATED"]:##     
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
-     
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>     
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>     
 		<div><strong>First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>     
@@ -17,7 +16,8 @@
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>     
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>      
+		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>      
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_ORDINARY_MEMBER"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>

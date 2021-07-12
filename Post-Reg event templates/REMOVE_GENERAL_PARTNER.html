@@ -4,14 +4,17 @@
 	<div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:GP", "status:REMOVED"]:##
 		<div><strong>Status:</strong> [#ITEM:status#]</div>
-		<div><strong>Remove date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
-
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
+		<div><strong>First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>   
+		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>   
+		<div><strong>Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
+		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
 		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong>IIN: </strong>[#ITEM:personalId#]</div>
+		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of identity document: </strong>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
 		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
@@ -19,11 +22,12 @@
 		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
-		<div><strong>KYC Individual status:</strong> [#ITEM:kycIndividualStatus#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_GENERAL_PARTNER"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -42,20 +46,15 @@
 		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Number of shares contributed:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
-
+		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_GENERAL_PARTNER"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
-
-		<div><strong>Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
-		<div><strong>Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong>Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
-		<div><strong>Remove Date:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<br>
 	#]
 	<div>
@@ -79,13 +78,13 @@
 	</div>
 	<div>
 		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DEFAULT_RECIPIENTS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_GENERAL_PARTNER:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DEFAULT_RECIPIENTS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_GENERAL_PARTNER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_GENERAL_PARTNER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_GENERAL_PARTNER:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_GENERAL_PARTNER"]:##
 		<div>

@@ -13,6 +13,7 @@
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_MEMBER_OF_COUNCILS"]:##
 			<div> 
@@ -30,6 +31,7 @@
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
 		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_MEMBER_OF_COUNCILS"]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 

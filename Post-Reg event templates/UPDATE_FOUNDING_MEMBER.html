@@ -7,7 +7,6 @@
         <div><strong>Status:</strong> [#ITEM:status#]</div>
         <div><strong>Role:</strong> [#ITEM:roleCode:LOOKUP:PsAccountRelationRole.PsIntegrationCode.Description#]</div>
         <div><strong>First name: </strong>[#ITEM:firstName#]</div>
-
         <div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
         <div><strong>Last name: </strong>[#ITEM:lastName#]</div>
         <div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
@@ -24,6 +23,7 @@
         <div><strong>KYC Individual status:</strong> [#ITEM:kycIndividualStatus#]</div>
         <div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
         <div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+        <div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
         [#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDING_MEMBER"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -45,14 +45,13 @@
         <div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
         <div><strong>Number of shares contributed:</strong> [#ITEM:amountOfContribution#]</div>
         <div><strong>Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
-
+        <div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
         [#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDING_MEMBER"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
-
         <div><strong>Shareholding weight:</strong> [#ITEM:beneficiaryDetails.shareholdingWeight#]</div>
         <div><strong>Percentage of shareholding, %::</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
         <div><strong>Ultimate beneficiary ratio:</strong> [#ITEM:beneficiaryDetails.ultimateBeneficiaryRatio#]</div>
