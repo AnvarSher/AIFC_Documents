@@ -8,7 +8,13 @@
 	<div><strong>Zip code:</strong> [#JSON:applicationForm.application.addressInAifc.zipCode#]</div>     
 	<div><strong>Street/avenue:</strong> [#JSON:applicationForm.application.addressInAifc.addressLine#]</div>     
 	<div><strong>Building number:</strong> [#JSON:applicationForm.application.addressInAifc.buildingNumber#]</div>     
-	<div><strong>Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>     
+	<div><strong>Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>
+	<div><strong>Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>     
+	<div><strong>Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>     
+	<div><strong>Does document have no validity limit?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]</div>     
+	<div><strong>Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>     
+	<div><strong>Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>
+	<br>     
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -37,13 +43,8 @@
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-	</div>     
-	<div><strong>Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>     
-	<div><strong>Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>     
-	<div><strong>Does document have no validity limit?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]</div>     
-	<div><strong>Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>     
-	<div><strong>Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>     
-	<div><strong>Amendments to Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
+	</div>
+	<div><strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_REGISTERED_ADDRESS"]:##     
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
