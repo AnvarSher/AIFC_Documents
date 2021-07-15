@@ -1,9 +1,16 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>     
-	<div><strong>I wish to adopt and use standard Articles of Association:</strong> [#JSON:applicationForm.application.amendment.isStandard:BOOLEAN#]</div>          
-	<div><strong>I wish to make amendments to the bespoke Articles of Association:</strong> [#JSON:applicationForm.application.amendment.isAmendment:BOOLEAN#]</div>
-	<div><strong>I wish to adopt bespoke Articles of Association:</strong> [#JSON:applicationForm.application.amendment.isBespoke:BOOLEAN#]</div>     
+	<hr>
+	<div><strong>I wish to adopt and use standard Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isStandard:BOOLEAN#]</div>          
+	<div><strong>I wish to make amendments to the bespoke Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isAmendment:BOOLEAN#]</div>
+	<div><strong>I wish to adopt bespoke Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isBespoke:BOOLEAN#]</div>
+
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_CHANGES_AND_AMENDMENTS_TO_ARTICLES_OF_ASSOCIATION"]:##     
+		<div> <strong>Changes and additions to Articles of Association/Partnership Agreement/Charter: </strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+		</div>
+	#]
+	
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
