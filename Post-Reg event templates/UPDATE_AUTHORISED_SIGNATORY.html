@@ -1,0 +1,28 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:AS", "status:UPDATED"]:##
+		<div>First name: [#ITEM:firstName#]	</div>
+		<div>Last name: [#ITEM:lastName#]	</div>
+		<div>Patronymic name: [#ITEM:middleName#]	</div>
+		<div>Former name: [#ITEM:formerNames#]	</div>
+		<div>IIN: [#ITEM:personalId#]	</div>
+		<div>Date of Birth: [#ITEM:dob#]	</div>
+		<div>Residential address: [#ITEM:address#]	</div>
+		<div>Country of Citizenship: [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]	</div>
+		<div>Country of main residence: [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]	</div>
+		<div>Email: [#ITEM:contact.email#]	</div>
+	#]
+
+	<div>Representative's First Name: [#applicationForm.application.documentSignature.representative.personName.firstName#]	</div>
+	<div>Representative's Last Name: [#applicationForm.application.documentSignature.representative.personName.lastName#]	</div>
+	<div>Representative's Country of Residence: [#applicationForm.application.documentSignature.representative.personName.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]	</div>
+	<div>Representative's Phone Number: [#applicationForm.application.documentSignature.representative.personName.contact.phone#]	</div>
+	<div>Representatove's Email: [#applicationForm.application.documentSignature.representative.personName.contact.email#]	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_FOUNDING_MEMBER"]:##
+		<div>
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>    
+	#]
+</div>
