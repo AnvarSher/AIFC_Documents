@@ -8,7 +8,7 @@
 		<div><strong>Residential Address:</strong> [#ITEM:address#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Reason of removal:</strong> [#ITEM:removeReason#]</div>
+		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DESIGNATED_MEMBER"]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
