@@ -20,7 +20,7 @@
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
-			</div>    
+			</div>
 		#]
 		<br>
 	#]
@@ -30,26 +30,7 @@
 		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Reason of removal:</strong> [#ITEM:removeReason#]</div>
-
-		   
-		   
-		<div><strong>First Name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>   
-		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>   
-		<div><strong>Last Name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>   
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>   
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>   
-		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>   
-		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>   
-		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>   
-		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>   
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>   
-		<div><strong>KYC ID:</strong> [#ITEM:kycId#]</div>   
-		<div><strong>Residential Address:</strong> [#ITEM:address#]</div>   
-		   
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>   
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>   
-		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>   
+		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:CHANGE_CEO"]:## 
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>

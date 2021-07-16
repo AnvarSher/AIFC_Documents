@@ -6,7 +6,7 @@
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>     
-		<div><strong>Reason of removal:</strong> [#ITEM:removeReason#]</div>
+		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DIRECTOR"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -18,7 +18,7 @@
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DP", "status:REMOVED"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Reason of removal:</strong> [#ITEM:removeReason#]</div>
+		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DIRECTOR"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
