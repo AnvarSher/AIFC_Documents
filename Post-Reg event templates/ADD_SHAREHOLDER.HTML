@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DE", "status:NEW"]:##
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:SH", "status:NEW"]:##
 		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
@@ -37,7 +37,7 @@
 		<br>
 	#] 
 
-	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DE", "status:NEW"]:##
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:SH", "status:NEW"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate#]</div>

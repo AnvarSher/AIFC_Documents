@@ -37,10 +37,6 @@
 		<strong>Representative's Email:</strong> 
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	<div>
-		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> 
-		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
-	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_PERSON_ATAS"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 

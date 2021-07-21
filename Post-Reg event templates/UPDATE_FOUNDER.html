@@ -19,6 +19,7 @@
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Role of Founder:</strong> [#ITEM:roleOfTheFounder#]</div>
+		<div><strong>Confirm that Founder details are changing and that you are not appointing a new Founder: </strong>[#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDER"]:##    
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -38,6 +39,7 @@
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Role of the Founder:</strong> [#ITEM:roleOfTheFounder#]</div>
+		<div><strong>Confirm that Founder details are changing and that you are not appointing a new Founder: </strong>[#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDER"]:##    
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
