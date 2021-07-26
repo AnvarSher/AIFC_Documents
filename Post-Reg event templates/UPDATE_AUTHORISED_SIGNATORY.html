@@ -1,8 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:AS", "status:UPDATED"]:##
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:AS", "status:UPDATED"]:##		
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
@@ -12,6 +11,8 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Authorised Signatory details are changing and that you are not appointing a new Authorised Signatory:</strong> [#ITEM:changeConfirmation#]</div>
 	#]
 
 	<div><strong>Representative's First Name:</strong> [#JSON:applicationForm.documentSignature.representative.personName.firstName#]</div>
