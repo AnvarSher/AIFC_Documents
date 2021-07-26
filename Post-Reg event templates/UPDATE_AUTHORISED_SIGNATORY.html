@@ -21,7 +21,7 @@
 	<div><strong>Representatove's Email:</strong> [#JSON:applicationForm.documentSignature.representative.contact.email#]</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_FOUNDING_MEMBER"]:##
 		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 	</div>    
 	#]

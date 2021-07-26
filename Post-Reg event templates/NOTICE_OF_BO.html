@@ -107,7 +107,7 @@
     <div>Representative's Full name: [#JSON:applicationForm.documentSignature.representative.personName#]</div>
     [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:NOTICE_OF_BO"]:##
 		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>    
 	#]

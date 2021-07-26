@@ -6,28 +6,28 @@
 	<div><strong>I wish to adopt bespoke Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isBespoke:BOOLEAN#]</div>
 
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_CHANGES_AND_AMENDMENTS_TO_ARTICLES_OF_ASSOCIATION"]:##     
-		<div> <strong>Changes and additions to Articles of Association/Partnership Agreement/Charter: </strong>
+		<div> <strong>Changes and additions to Articles of Association/Partnership Agreement/Charter:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div>
 	#]
 	
 	<div>
-		<strong>Representative's First Name: </strong>
+		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
 	<div>
-		<strong>Representative's Last Name: </strong>
+		<strong>Representative's Last Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
 	<div>
-		<strong>Representative's Country of Residence: </strong>
+		<strong>Representative's Country of Residence:</strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>     
 	<div>
-		<strong>Representative's Phone Number: </strong>
+		<strong>Representative's Phone Number:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>     
 	<div>
-		<strong>Representative's Email: </strong>
+		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	<div>
@@ -35,17 +35,17 @@
 		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
 	<div>
-		<strong>Type of Resolution: </strong>
+		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.AMENDMENT:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
-		<strong>Date of Resolution: </strong>
+		<strong>Date of Resolution:</strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:AMENDMENT"]:##     
-		<div> <strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+		<div> <strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div>
 	#]

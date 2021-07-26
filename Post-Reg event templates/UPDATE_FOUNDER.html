@@ -2,16 +2,16 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:FO", "status:UPDATED"]:##
-		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
-		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
-		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
+		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
+		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
+		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>
 		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
 		<div><strong>Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
-		<div><strong>Former name: </strong>[#ITEM:formerNames#]</div>
-		<div><strong>Resident of Republic of Kazakhstan: </strong>[#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN: </strong>[#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
+		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
+		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
+		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
@@ -19,10 +19,10 @@
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Role of Founder:</strong> [#ITEM:roleOfTheFounder#]</div>
-		<div><strong>Confirm that Founder details are changing and that you are not appointing a new Founder: </strong>[#ITEM:changeConfirmation:BOOLEAN#]</div>
+		<div><strong>Confirm that Founder details are changing and that you are not appointing a new Founder:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDER"]:##    
 			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
 		#]
@@ -34,42 +34,42 @@
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Role of the Founder:</strong> [#ITEM:roleOfTheFounder#]</div>
-		<div><strong>Confirm that Founder details are changing and that you are not appointing a new Founder: </strong>[#ITEM:changeConfirmation:BOOLEAN#]</div>
+		<div><strong>Confirm that Founder details are changing and that you are not appointing a new Founder:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDER"]:##    
 			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>    
 		#]
 		<br> 
 	#]
 	<div>
-		<strong>Representative's First Name: </strong>
+		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>
 	<div>
-		<strong>Representative's Last Name: </strong>
+		<strong>Representative's Last Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
 	<div>
-		<strong>Representative's Country of Residence: </strong>
+		<strong>Representative's Country of Residence:</strong>
 		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
 	</div>
 	<div>
-		<strong>Representative's Phone Number: </strong>
+		<strong>Representative's Phone Number:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
 	</div>
 	<div>
-		<strong>Representative's Email: </strong>
+		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_FOUNDER"]:##
 		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>
 	#]
