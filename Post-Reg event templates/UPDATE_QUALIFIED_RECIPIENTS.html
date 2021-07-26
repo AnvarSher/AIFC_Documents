@@ -13,6 +13,7 @@
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Qualified Recipient details are changing and that you are not appointing a new Qualified Recipient:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_QUALIFIED_RECIPIENTS"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
@@ -29,6 +30,7 @@
 		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
 		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Qualified Recipient details are changing and that you are not appointing a new Qualified Recipient:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_QUALIFIED_RECIPIENTS"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
