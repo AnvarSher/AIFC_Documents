@@ -6,9 +6,10 @@
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>     
 		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>     
 		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>     
-		<div><strong>Residential address:</strong>  [#ITEM:address#]</div>     
-		<div><strong>Email:</strong>  [#ITEM:contact.email#]</div>
-		<div><strong>Effective date:</strong>  [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>   
+		<div><strong>Residential address:</strong> [#ITEM:address#]</div>     
+		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Designated Member details are changing and that you are not appointing a new Designated Member:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DESIGNATED_MEMBER"]:##         
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
