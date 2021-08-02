@@ -38,7 +38,7 @@
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:TRANSFER_OF_CONTRIBUTION"]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
