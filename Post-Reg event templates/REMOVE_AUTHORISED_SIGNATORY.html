@@ -6,7 +6,7 @@
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>     
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong>Date of birth: </strong>[#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>		
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_AUTHORISED_SIGNATORY"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -15,7 +15,26 @@
 		#]
 		<br>
 	#]
-	
+	<div>
+		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong>
+		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
+	</div>
+	<div>
+		<strong>Type of Resolution: </strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_AUTHORISED_SIGNATORY:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution: </strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_AUTHORISED_SIGNATORY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_AUTHORISED_SIGNATORY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_AUTHORISED_SIGNATORY:DATE:dd.MM.yyyy#]
+	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_AUTHORISED_SIGNATORY"]:##     
+		<div> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+		</div>
+	#]
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -35,21 +54,5 @@
 		<strong>Representative's Email: </strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	<div>
-		<strong>Type of Resolution: </strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_AUTHORISED_SIGNATORY:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution: </strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_AUTHORISED_SIGNATORY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_AUTHORISED_SIGNATORY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_AUTHORISED_SIGNATORY:DATE:dd.MM.yyyy#]
-	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_AUTHORISED_SIGNATORY"]:##     
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
-		</div>
-	#]
 	<br>
 </div>
