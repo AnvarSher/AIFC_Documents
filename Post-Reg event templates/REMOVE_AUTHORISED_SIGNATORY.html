@@ -6,7 +6,7 @@
 		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>     
 		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
 		<div><strong>Date of birth: </strong>[#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>		
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_AUTHORISED_SIGNATORY"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
@@ -15,7 +15,10 @@
 		#]
 		<br>
 	#]
-	
+	<div>
+		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong>
+		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
+	</div>	
 	<div>
 		<strong>Representative's First Name: </strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
