@@ -12,13 +12,19 @@
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Qualified Recipient options:</strong> [#ITEM:qualifiedRecipientOptions#]</div>
+		<div><strong>Qualified Recipient options:</strong> 
+			<ul>
+				[#ARRAY:ITEM:qualifiedRecipientOptions:[]:##
+					<li>[#ITEM#]</li>
+				#]
+			</ul>
+		</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ADD_QUALIFIED_RECIPIENTS"]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
-			</div>    
+			</div>
 		#]
 		<br>
 	#]
@@ -29,7 +35,13 @@
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
 		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Qualified Recipient options:</strong> [#ITEM:qualifiedRecipientOptions#]</div>
+		<div><strong>Qualified Recipient options:</strong> 
+			<ul>
+				[#ARRAY:ITEM:qualifiedRecipientOptions:[]:##
+					<li>[#ITEM#]</li>
+				#]
+			</ul>
+		</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ADD_QUALIFIED_RECIPIENTS"]:##
 			<div>

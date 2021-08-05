@@ -22,7 +22,8 @@
 			</div> 
 		#]
 		<br>
-	#]      
+	#]
+	 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MC", "status:NEW"]:##     
 		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>  
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>     
@@ -37,26 +38,8 @@
 			</div> 
 		#]
 		<br>
-	#]     
-	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
-	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div>     
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>     
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
+	#]
+
 	<div>
 		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> 
 		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
@@ -77,5 +60,26 @@
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div> 
 	#]
+	<br>
+
+	<div>
+		<strong>Representative's First Name:</strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong>Representative's Last Name:</strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong>Representative's Country of Residence:</strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong>Representative's Phone Number:</strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong>Representative's Email:</strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
 	<br>
 </div>
