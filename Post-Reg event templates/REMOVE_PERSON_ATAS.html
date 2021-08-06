@@ -7,7 +7,7 @@
 		<div><strong>Date of birth:</strong> [#ITEM:dob#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_PERSON_AUTHORISED_TO_ACCEPT_SERVICES"]:##
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_PERSON_ATAS"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
@@ -34,7 +34,7 @@
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_PERSON_AUTHORISED_TO_ACCEPT_SERVICES"]:##     
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_PERSON_ATAS"]:##     
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
