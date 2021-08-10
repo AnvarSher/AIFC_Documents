@@ -1,0 +1,70 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:PC", "status:UPDATED"]:##
+		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
+		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
+		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>     
+		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong>Objectives of the Company:</strong> [#ITEM:objectives#]</div>
+		<div><strong>Date of starting activities in the Republic of Kazakhstan:</strong> [#ITEM:dateOfStartingActivities:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Share capital currency:</strong> [#ITEM:sizeOfShareCapitalCurrency:LOOKUP:Currency.Code.Name#]</div>
+		<div><strong>Amount of issued share capital:</strong> [#ITEM:amountOfIssuedShareCapital#]</div>
+		<div><strong>Is a legal entity is an international organization?:</strong> [#ITEM:isInternational:BOOLEAN#]</div>
+		<div><strong>CEO First name:</strong> [#ITEM:ceo.firstName#]</div>
+		<div><strong>CEO Last name:</strong> [#ITEM:ceo.lastName#]</div>
+		<div><strong>CEO Patronymic name:</strong> [#ITEM:ceo.patronymicName#]</div>
+		<div><strong>Regime of registration:</strong> [#ITEM:regimeType#]</div>
+		<div><strong>Date of incorporation:</strong> [#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Type of share capital:</strong> [#ITEM:typeOfShareCapital#]</div>
+		<div><strong></strong></div>
+		<div><strong>Size of share capital:</strong> [#ITEM:sizeOfShareCapital#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##
+			<div> 
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+			</div>
+		#]
+		<br>
+	#]   
+	<div>
+		<strong>Representative's First Name:</strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>     
+	<div>
+		<strong>Representative's Last Name:</strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong>Representative's Country of Residence:</strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong>Representative's Phone Number:</strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong>Representative's Email:</strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_HEAD_COMPANY:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
+	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##     
+		<div> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+		</div>
+	#]
+	<br>
+</div>
