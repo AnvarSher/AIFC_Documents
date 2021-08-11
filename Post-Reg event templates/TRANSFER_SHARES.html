@@ -2,7 +2,7 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:SH", "status:UPDATED_PERCENTAGE"]:##
-		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>     
+		<div><strong>First Name:</strong> [#ITEM:firstName#]</div> 
 		<div><strong>Patronymic Name:</strong> [#ITEM:middleName#]</div>     
 		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>     
@@ -18,7 +18,7 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
 			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
@@ -37,14 +37,13 @@
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:SH", "status:UPDATED_PERCENTAGE"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
-		<div><strong>Date of registration:</strong> [#ITEM:registrationDate#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
-		<div><strong>Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
 			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
 			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
@@ -61,7 +60,7 @@
 	#]
 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:SH", "status:NOT_UPDATED"]:##
-		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>     
+		<div><strong>First Name:</strong> [#ITEM:firstName#]</div> 
 		<div><strong>Patronymic Name:</strong> [#ITEM:middleName#]</div>     
 		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>     
@@ -77,7 +76,7 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
 			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
@@ -96,14 +95,13 @@
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:SH", "status:NOT_UPDATED"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
-		<div><strong>Date of registration:</strong> [#ITEM:registrationDate#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
-		<div><strong>Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
 			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
 			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>

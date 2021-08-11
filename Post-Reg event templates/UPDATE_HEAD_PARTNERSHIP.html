@@ -23,7 +23,7 @@
 		<div><strong>Size of share capital currency:</strong> [#ITEM:sizeOfShareCapitalCurrency:LOOKUP:Currency.Code.Name#]</div>
 		<div><strong>Size of share capital:</strong> [#ITEM:sizeOfShareCapital#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##
+		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_HEAD_PARTNERSHIP"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
@@ -52,15 +52,15 @@
 	</div>
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_HEAD_COMPANY:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_HEAD_PARTNERSHIP:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_HEAD_PARTNERSHIP:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_HEAD_PARTNERSHIP:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_HEAD_PARTNERSHIP:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##     
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_HEAD_PARTNERSHIP"]:##     
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
