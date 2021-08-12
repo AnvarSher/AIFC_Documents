@@ -1,8 +1,8 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>I declare that alteration of Contribution is not prohibited by Partnership Agreement:</strong> [#JSON:applicationForm.application.alterationAllowed#]</div>
-	<div><strong>I declare that alteration of Contribution will not result in the Limited Partnership not having the minimum contribution:</strong> [#JSON:applicationForm.application.minimumContribution#]</div>
+	<div><strong>I declare that alteration of Contribution is not prohibited by Partnership Agreement:</strong> [#JSON:applicationForm.application.alterationAllowed:BOOLEAN#]</div>
+	<div><strong>I declare that alteration of Contribution will not result in the Limited Partnership not having the minimum contribution:</strong> [#JSON:applicationForm.application.minimumContribution:BOOLEAN#]</div>
 	<br>
 
 	<div><strong>Amount of contribution:</strong> [#JSON:applicationForm.application.shareCapital.amountOfContribution#]</div>
@@ -22,9 +22,9 @@
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType#]</div>
 		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong>Identity document issued by:</strong> [#ITEM:issuePlace#]</div>
-		<div><strong>Date of issue of a document:</strong> [#ITEM:issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:expirationDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
+		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Date of Birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
