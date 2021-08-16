@@ -42,12 +42,11 @@
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Currency:</strong> [#ITEM:valueOfSharesCurrencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_MEMBER"]:##
-			<div> 
+			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 			</div>
@@ -55,7 +54,6 @@
 		<br>
 	#]
 
-	<div><strong>Payment Option:</strong> [#JSON:applicationForm.application.paymentOption#]</div>
 	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
