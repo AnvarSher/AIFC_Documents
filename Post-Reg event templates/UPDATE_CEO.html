@@ -1,22 +1,20 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#] </div>
-	<div><strong>Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#] </div> 
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:UPDATED"]:##
 		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>
-		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
 		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
+		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
 		<div><strong>First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>
-		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
 		<div><strong>Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
+		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
 		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
 		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Residential Address:</strong> [#ITEM:address#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Residential Address:</strong> [#ITEM:address#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_CEO"]:##    
 			<div>

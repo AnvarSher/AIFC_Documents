@@ -7,11 +7,11 @@
 	</div>
 	<div>
 		<strong>Country of incorporation:</strong>
-		[#JSON:applicationForm.application.incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
+		[#JSON:applicationForm.application.financialYearEnd:DATE:dd.MM.yyyy#]
 	</div>
 	<div>
 		<strong>Effective date:</strong>
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.financialYearEndEffectiveDate:DATE:dd.MM.yyyy#]
 	</div>
 	<div>
 		<strong>Representative's First Name:</strong>
@@ -32,7 +32,7 @@
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:F019|PR_SUPPORTING_DOCUMENT|PR_RESOLUTION_UPDATE_JURISDICTION|APPLICATION_REPORT"]:##
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_CHANGE_FINANCIAL_YEAR_END|APPLICATION_REPORT"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
