@@ -10,14 +10,14 @@
 	<div><strong>Share of state capital:</strong> [#JSON:applicationForm.application.shareCapital.shareOfStateCapital#]</div>
 	<div><strong>Amount of private capital:</strong> [#JSON:applicationForm.application.shareCapital.amountOfPrivateCapital#]</div>
 	<div><strong>Share of private capital:</strong> [#JSON:applicationForm.application.shareCapital.shareOfPrivateCapital#]</div>
+	<div><strong>Effective date:</strong> [#JSON:applicationForm.application.alterationEffectiveDate#]</div>
 	<br>
 	
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MB|FO|FM|GP|LP", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:MB|FO|FM|GP|LP", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##		
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok#]</div>
+		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType#]</div>
@@ -30,7 +30,7 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Amount of contribution::</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong>Amount of contribution:</strong> [#ITEM:shareCapital.amountOfContribution#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>		
 		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_OF_CONTRIBUTION"]:##
 			<div> 

@@ -2,8 +2,8 @@
 	<div><strong>[#EVENT:PsName#]</strong></div><hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:REMOVED"]:##
 		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>
+		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>		
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
-		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DESIGNATED_MEMBER"]:##
