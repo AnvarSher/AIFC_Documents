@@ -10,7 +10,6 @@
 		<div><strong>Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
 		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
 		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
 		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
@@ -34,6 +33,7 @@
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB", "status:UPDATED"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Date of incorporation:</strong> [#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
