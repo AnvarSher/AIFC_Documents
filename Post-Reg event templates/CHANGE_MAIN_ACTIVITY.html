@@ -1,15 +1,17 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div><hr>     
-	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
 	<div><strong>Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#]</div>
-	<div><strong>Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
+	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
 	<div><strong>The nature of business:</strong> [#JSON:applicationForm.application.businessDesc#]</div>
+	<div><strong>Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
 	<div><strong>Detailed description of your business activities to be conducted in the AIFC:</strong> [#JSON:applicationForm.application.descriptionOfBusinessActivities#]</div>
+	<div><strong>:</strong> </div>
 	<br>
 	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
+	</div>
 	<div>
 		<strong>Representative's Last Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
