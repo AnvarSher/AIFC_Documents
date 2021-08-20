@@ -7,24 +7,12 @@
 		<div><strong>Date of birth:</strong> [#ITEM:dob#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>     
 		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DIRECTOR"]:##         
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>     
-		#]     
 		<br>
 	#]
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:DP", "status:REMOVED"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_DIRECTOR"]:##         
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>     
-		#]     
 		<br>
 	#]
 	<div>
@@ -56,11 +44,6 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_DIRECTOR"]:##     
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#]     
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_REPLACE_DIRECTOR#]</div>    
 	<br> 
 </div>
