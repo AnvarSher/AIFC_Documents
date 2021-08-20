@@ -28,8 +28,6 @@
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-
-	
 	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_NAME:LOOKUP:PsPostRegResolutionType.Name.Description#]
@@ -39,15 +37,10 @@
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]
-	</div> 
+	</div>
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</div>
 	<div>
 		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_NAME"]:##         
-		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-		</div>
-	#]
 	<br>
 </div>
