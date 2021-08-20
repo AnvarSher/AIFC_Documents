@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div><hr>     
 	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
-	<div><strong>Name of the Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#]</div>
+	<div><strong>Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#]</div>
 	<div><strong>Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
 	<div><strong>The nature of business:</strong> [#JSON:applicationForm.application.businessDesc#]</div>
 	<div><strong>Detailed description of your business activities to be conducted in the AIFC:</strong> [#JSON:applicationForm.application.descriptionOfBusinessActivities#]</div>
@@ -35,10 +35,6 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_MAIN_ACTIVITY"]:##
-		<div><strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>         
-		</div>     
-	#]         
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ACTIVITY_CODE_CHANGE#]</div>
 	<br> 
 </div>
