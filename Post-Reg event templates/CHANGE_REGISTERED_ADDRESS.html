@@ -44,11 +44,6 @@
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
 	</div>
 	<div><strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ON_ADDRESS_CHANGE"]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
-		</div>
-	#]
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</div>
 	<br>
 </div>
