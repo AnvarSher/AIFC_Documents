@@ -5,25 +5,7 @@
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
-		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
-		<div><strong>First name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>
-		<div><strong>Last name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
-		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_FOUNDING_MEMBER"]:##         
 			<div> 
@@ -36,14 +18,6 @@
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:FM", "status:REMOVED"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Date of registration:</strong> [#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Type of activity:</strong> [#ITEM:objectives#]</div>
-		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_FOUNDING_MEMBER"]:##         
 			<div> 
@@ -53,25 +27,8 @@
 		#]
 		<br>
 	#]
-	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
-	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div>     
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>     
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
+
+	<div><strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
 	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_FOUNDING_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
