@@ -1,0 +1,40 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	<div><strong>Company: </strong>[#JSON:applicationForm.application.nameOfCompany.nameEn#]</div>
+	<div><strong>Register type: </strong>[#JSON:applicationForm.application.addressOfRegisters.registerType#]</div>
+	<div><strong>City: </strong>[#JSON:applicationForm.application.addressOfRegisters.city#]</div>
+	<div><strong>Zip code: </strong>[#JSON:applicationForm.application.addressOfRegisters.zipCode#]</div>
+	<div><strong>District: </strong>[#JSON:applicationForm.application.addressOfRegisters.raion#]</div>
+	<div><strong>Street: </strong>[#JSON:applicationForm.application.addressOfRegisters.addressLine#]</div>
+	<div><strong>Building: </strong>[#JSON:applicationForm.application.addressOfRegisters.buildingNumber#]</div>
+	<div><strong>Office: </strong>[#JSON:applicationForm.application.addressOfRegisters.officeNumber#]</div>
+	<div><strong>Effective date: </strong>[#JSON:applicationForm.application.addressOfRegisters.effectiveDate#]</div>
+	<br>
+	<div>
+		<strong>Representative's First Name:</strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+	</div>
+	<div>
+		<strong>Representative's Last Name:</strong>
+		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
+	<div>
+		<strong>Representative's Country of Residence:</strong>
+		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+	</div>     
+	<div>
+		<strong>Representative's Phone Number:</strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
+	</div>     
+	<div>
+		<strong>Representative's Email:</strong>
+		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:[]:##
+		<div> 
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+		</div>
+	#]
+	<br> 
+</div>
