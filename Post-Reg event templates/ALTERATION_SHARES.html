@@ -1,7 +1,11 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>Alteration reason: </strong>[#JSON:applicationForm.application.alterReason#]</div>
+	<div><strong>Alteration type: </strong>
+		[#ARRAY:JSON:applicationForm.application.alterReason:[]:##
+			[#ITEM#]
+		#]
+	</div>
 	<div><strong>Total amount of sharecapital: </strong>[#JSON:applicationForm.application.shareCapital.totalAmountOfShareCapital#]</div>
 	<div><strong>Currency: </strong>[#JSON:applicationForm.application.shareCapital.currencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
 	[#ARRAY:JSON:applicationForm.application.shareCapital.shareCapitalClasses:[]:##
@@ -40,12 +44,12 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Percentage of shareholding, %: </strong>[#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong>Percentage of shareholding, %: </strong>[#ITEM:beneficiaryDetails.shareholdingPercent:DECIMAL#]</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
 			<div><strong>Number of share: </strong>[#ITEM:numberOfShares#]</div>
 			<div><strong>Share class name: </strong>[#ITEM:className#]</div>
 			<div><strong>Value of share: </strong>[#ITEM:valueOfShares#]</div>
-			<div><strong>Shareholding percent: </strong>[#ITEM:shareholdingPercent#]</div>
+			<div><strong>Shareholding percent: </strong>[#ITEM:shareholdingPercent:DECIMAL#]</div>
 		#]
 		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_SHARES"]:##         
 			<div> 
@@ -64,13 +68,13 @@
 		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity: </strong>[#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address: </strong>[#ITEM:address.addressLine#]</div>
-		<div><strong>Percentage of shareholding, %: </strong>[#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong>Percentage of shareholding, %: </strong>[#ITEM:beneficiaryDetails.shareholdingPercent:DECIMAL#]</div>
 		<div><strong>Number of shares: </strong>[#ITEM:numberOfShares#]</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
 			<div><strong>Share Class Name:</strong> [#ITEM:className#]</div>
 			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
 			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
-			<div><strong>Shareholding percent: </strong>[#ITEM:shareholdingPercent#]</div>
+			<div><strong>Shareholding percent: </strong>[#ITEM:shareholdingPercent:DECIMAL#]</div>
 		#]
 		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_SHARES"]:##         
 			<div> 
