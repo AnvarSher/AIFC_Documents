@@ -12,8 +12,8 @@
 		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
 		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
 		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
-		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt#]</div>
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt#]</div>
+		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Date of Birth:</strong> [#ITEM:dob#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
@@ -84,13 +84,20 @@
 	</div>
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_SHAREHOLDER:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.ALTERATION_SHARES:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_SHAREHOLDER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.TRANSFER_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.TRANSFER_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.TRANSFER_SHARES:DATE:dd.MM.yyyy#]
+
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_SHAREHOLDER"]:##
 		<div>
