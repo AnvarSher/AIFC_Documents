@@ -21,6 +21,7 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Founding Member details are changing and that you are not appointing a new Founding Member:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDING_MEMBER"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
@@ -38,6 +39,8 @@
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Founding Member details are changing and that you are not appointing a new Founding Member:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_FOUNDING_MEMBER"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
