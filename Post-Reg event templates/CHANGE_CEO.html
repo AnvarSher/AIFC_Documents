@@ -38,7 +38,25 @@
 			</div>
 		#]
 		<br>
-	#]     
+	#]
+
+	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_CEO:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
+	</div>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_CEO"]:##   
+		<div>
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
+		</div>
+	#]
+	<br>
 	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -57,22 +75,6 @@
 	<div>
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>	
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_CEO:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_CEO"]:##   
-		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
-		</div>
-	#]
 	<br> 
 </div>

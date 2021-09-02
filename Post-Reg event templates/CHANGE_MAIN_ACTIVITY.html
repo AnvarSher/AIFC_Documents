@@ -1,12 +1,21 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>Company:</strong> [#JSON:applicationForm.application.bin:LOOKUP:Account.PsRegistrationNumber.Name#]</div>
-	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
 	<div><strong>The nature of business:</strong> [#JSON:applicationForm.application.businessDesc#]</div>
 	<div><strong>Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
 	<div><strong>Detailed description of your business activities to be conducted in the AIFC:</strong> [#JSON:applicationForm.application.descriptionOfBusinessActivities#]</div>
-	<div><strong>:</strong> </div>
+	<br>
+	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_MAIN_ACTIVITY:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
+	</div>
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ACTIVITY_CODE_CHANGE#]</div>
 	<br>
 	<div>
 		<strong>Representative's First Name:</strong>
@@ -27,16 +36,5 @@
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_MAIN_ACTIVITY:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ACTIVITY_CODE_CHANGE#]</div>
 	<br> 
 </div>

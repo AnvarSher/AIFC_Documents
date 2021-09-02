@@ -16,6 +16,18 @@
 		<br>
 	#]
 	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_DIRECTOR:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
+	</div>
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_REPLACE_DIRECTOR#]</div>
+	<br>
+	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
@@ -33,17 +45,6 @@
 	<div>
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>  
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_DIRECTOR:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_DIRECTOR:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_REPLACE_DIRECTOR#]</div>    
 	<br> 
 </div>

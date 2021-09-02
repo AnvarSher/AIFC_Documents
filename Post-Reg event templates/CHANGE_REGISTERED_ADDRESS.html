@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>  
-	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>
+	<div><strong>Registration code address:</strong> [#JSON:applicationForm.application.addressInAifc.addressRegCode#]</div>
 	<div><strong>City:</strong> [#JSON:applicationForm.application.addressInAifc.city#]</div>
 	<div><strong>District:</strong> [#JSON:applicationForm.application.addressInAifc.raion#]</div>
 	<div><strong>Zip code:</strong> [#JSON:applicationForm.application.addressInAifc.zipCode#]</div>
@@ -10,9 +10,22 @@
 	<div><strong>Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>
 	<div><strong>Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>
 	<div><strong>Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>
-	<div><strong>Does document have no validity limit?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:LOOKUP:PsYesNo.Name.Description#]</div>
+	<div><strong>Does the lease agreement have the validity period?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:LOOKUP:PsYesNo.Name.Description#]</div>
 	<div><strong>Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>
 	<div><strong>Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>
+	<br>
+	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_REGISTERED_ADDRESS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
+	</div>
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</div>
+	<div><strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
 	<br>
 	<div>
 		<strong>Representative's First Name:</strong>
@@ -33,17 +46,5 @@
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_REGISTERED_ADDRESS:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</div>
 	<br>
 </div>

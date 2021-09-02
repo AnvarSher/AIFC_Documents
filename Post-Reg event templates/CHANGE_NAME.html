@@ -1,14 +1,13 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div>     
-	<hr>    
-	<div><strong>Type of Company:</strong> [#JSON:applicationForm.application.applicationType.companyTypeCode:LOOKUP:AccountCategory.Name.Description#]</div>     
+	<hr>
 	<div><strong>Name of a legal entity to be established in the AIFC (English):</strong> [#JSON:applicationForm.application.fullNameOfCompany.nameEn#]</div>     
 	<div><strong>Name of a legal entity to be established in the AIFC (Kazakh):</strong> [#JSON:applicationForm.application.fullNameOfCompany.nameKz#]</div>     
 	<div><strong>Name of a legal entity to be established in the AIFC (Russian):</strong> [#JSON:applicationForm.application.fullNameOfCompany.nameRu#]</div>     
 	<div><strong>Abbreviated Name of a legal entity to be established in the AIFC (English):</strong> [#JSON:applicationForm.application.fullAbbreviatedNameOfCompany.nameEn#]</div>     
 	<div><strong>Abbreviated Name of a legal entity to be established in the AIFC (Kazakh):</strong> [#JSON:applicationForm.application.fullAbbreviatedNameOfCompany.nameKz#]</div>     
 	<div><strong>Abbreviated Name of a legal entity to be established in the AIFC (Russian):</strong> [#JSON:applicationForm.application.fullAbbreviatedNameOfCompany.nameRu#]</div>
-	<br>
+
 	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -39,8 +38,5 @@
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_NAME:DATE:dd.MM.yyyy#]
 	</div>
 	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</div>
-	<div>
-		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]
-	</div>
 	<br>
 </div>

@@ -40,6 +40,7 @@
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
+		<div><strong>Confirm that Member details are changing and that you are not appointing a new Member:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_MEMBER"]:##   
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>

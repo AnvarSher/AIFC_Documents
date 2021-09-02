@@ -43,7 +43,24 @@
 			</div>     
 		#]
 		<br>
-	#]     
+	#]
+	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.REPLACE_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
+
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
+	</div>
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ADD_ORDINARY_MEMBER#]</div>
+	<br>
 	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -67,26 +84,5 @@
 		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> 
 		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
-		[#JSON:applicationForm.application.selectedResolutionOption.REPLACE_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
-
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
-	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_ORDINARY_MEMBER|REPLACE_ORDINARY_MEMBER"]:##     
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#]
 	<br> 
 </div>

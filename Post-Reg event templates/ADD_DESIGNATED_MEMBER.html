@@ -18,6 +18,18 @@
 		<br>
 	#]
 	<div>
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DESIGNATED_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
+	</div>
+	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER#]</div>
+	<br>
+	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
 	</div>     
@@ -36,16 +48,5 @@
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
 	</div>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_DESIGNATED_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER#]</div>
 	<br>
 </div>
