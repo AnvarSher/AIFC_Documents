@@ -28,17 +28,6 @@
 		<br>
 	#]
 
-	<div><strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_FOUNDING_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_FOUNDING_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_FOUNDING_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_FOUNDING_MEMBER:DATE:dd.MM.yyyy#]
-	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_FOUNDING_MEMBER"]:##
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 

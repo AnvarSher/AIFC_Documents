@@ -76,16 +76,6 @@
 		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong>
 		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_MEMBER:DATE:dd.MM.yyyy#]
-	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_MEMBER"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
