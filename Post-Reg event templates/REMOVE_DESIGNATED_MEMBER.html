@@ -1,8 +1,8 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div><hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:REMOVED"]:##
-		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>
-		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>		
+		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
+		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>		
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
@@ -16,39 +16,19 @@
 	#]
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.TRANSFER_SHARES:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_DESIGNATED_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.TRANSFER_SHARES:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.TRANSFER_SHARES:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.TRANSFER_SHARES:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER"]:##
-	<div>
-		 <strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-		 <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REMOVE_DESIGNATED_MEMBER"]:##
+		<div>
+			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div>
 	#]
-	<br>
-	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div> 
-	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div> 
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div> 
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div> 
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
 	<br>
 </div>

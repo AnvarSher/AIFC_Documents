@@ -8,7 +8,6 @@
 	<div><strong>Statement of Compliance:</strong> [#FILE:PR_STATEMENT_OF_COMPLIANCE#]</div>
 	<div><strong>Effective date of statement of compliance:</strong> [#JSON:applicationForm.application.statementOfComplianceEffectiveDate:DATE:dd.MM.yyyy#]</div>
 	<div><strong>Changes and Additions:</strong> [#FILE:PR_CHANGES_AND_AMENDMENTS_TO_ARTICLES_OF_ASSOCIATION#]</div>
-	<br>
 	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.AMENDMENT:LOOKUP:PsPostRegResolutionType.Name.Description#]
@@ -20,7 +19,6 @@
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
 	</div>
 	<div><strong>Resolution:</strong> [#FILE:PR_STANDARD_RESOLUTION_ON_CHANGE_AND_ADD_AMENDMENTS#]</div>
-	<br>
 	<div>
 		<strong>Representative's First Name:</strong>
 		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
@@ -39,10 +37,6 @@
 	<div>
 		<strong>Representative's Email:</strong>
 		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
-	<div>
-		<strong>Amendments to Article of Association/Charter/Partnership Agreement:</strong> 
-		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]
 	</div>
 	<br>
 </div>

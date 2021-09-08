@@ -14,25 +14,22 @@
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_JURISDICTION:DATE:dd.MM.yyyy#]
 	</div>
 	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_JURISDICTION:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_JURISDICTION:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_JURISDICTION:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_JURISDICTION:DATE:dd.MM.yyyy#]
 	</div>
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:F019|PR_SUPPORTING_DOCUMENT|PR_RESOLUTION_UPDATE_JURISDICTION|APPLICATION_REPORT"]:##
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_UPDATE_JURISDICTION"]:##
+		<div> 
+			<strong>Resolution:</strong>
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+		</div>
+	#]
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:F019|PR_SUPPORTING_DOCUMENT|APPLICATION_REPORT"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 

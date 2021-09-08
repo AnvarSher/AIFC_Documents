@@ -19,6 +19,7 @@
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>     
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:TRANSFER_OF_CONTRIBUTION"]:##
 			<div>
@@ -31,13 +32,14 @@
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB|FO|FM|GP|LP", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
+		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Date of registration:</strong> [#ITEM:registrationDate#]</div>
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
+		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:TRANSFER_OF_CONTRIBUTION"]:##
 			<div>
@@ -48,25 +50,6 @@
 		<br> 
 	#]
 
-	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
-	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div>     
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>     
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
 	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.TRANSFER_OF_CONTRIBUTION:LOOKUP:PsPostRegResolutionType.Name.Description#]

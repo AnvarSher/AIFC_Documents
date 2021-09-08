@@ -22,6 +22,7 @@
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
@@ -42,6 +43,7 @@
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:objectives#]</div>
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
+		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
@@ -53,25 +55,7 @@
 		#]
 		<br>
 	#]
-	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
-	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div>     
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>     
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
+	
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_GENERAL_PARTNER"]:##
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
