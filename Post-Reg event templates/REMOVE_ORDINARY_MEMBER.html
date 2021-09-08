@@ -28,9 +28,6 @@
 	#]
 
 	<div>
-		<strong>Amendments to Article of Association/Charter/Partnership Agreement: </strong>
-		[#JSON:applicationForm.application.isBespoke:BOOLEAN#]</div>
-	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
 		[#JSON:applicationForm.application.selectedResolutionOption.REPLACE_ORDINARY_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
@@ -45,11 +42,11 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_ORDINARY_MEMBER|REPLACE_ORDINARY_MEMBER"]:##     
-		<div> 
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REMOVE_ORDINARY_MEMBER|PR_RESOLUTION_REPLACE_ORDINARY_MEMBER"]:##     
+		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
 		</div>
 	#]
-	<br> 
+	<br>
 </div>

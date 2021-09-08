@@ -3,18 +3,11 @@
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:PA", "status:NEW"]:##
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
-		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
-		<div><strong>Date of Birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Address:</strong> [#ITEM:address#]</div>
+		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
+		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
+		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
 		[#ARRAY:ITEM:attachmentsList:["event:ADD_PERSON_ATAS"]:##
 			<div> 
@@ -26,23 +19,14 @@
 	#]
 
 	<div>
-		<strong>Representative's First Name:</strong> 
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
+		<strong>Type of Resolution:</strong>
+		[#JSON:applicationForm.application.selectedResolutionOption.ADD_PERSON_ATAS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+	</div>
 	<div>
-		<strong>Representative's Last Name:</strong> 
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>
-		<strong>Representative's Country of Residence:</strong> 
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div>     
-	<div>
-		<strong>Representative's Phone Number:</strong> 
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>     
-	<div>
-		<strong>Representative's Email:</strong> 
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
+		<strong>Date of Resolution:</strong>
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_PERSON_ATAS"]:##
 		<div> 
