@@ -29,7 +29,7 @@
 			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
 			<div><strong>Shareholding percent:</strong> [#ITEM:shareholdingPercent#]</div>
 		#]
-		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_SHAREHOLDER"]:##         
+		[#ARRAY:ITEM:attachmentsList:["event:REMOVE_SHAREHOLDER"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
@@ -45,7 +45,7 @@
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong>Address:</strong> [#ITEM:address#]</div>
+		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:shareholdingPercent#]</div>
