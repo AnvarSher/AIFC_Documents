@@ -26,7 +26,7 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER"]:##
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER|PR_RESOLUTION_ADD_DESIGNATED_MEMBER"]:##
 		<div> 
 			<strong>Resolution:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
