@@ -95,11 +95,6 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ALTERATION_SHARES"]:##
-		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>    
-	#]
+	<div><strong>Resolution: </strong>[#FILE:PR_RESOLUTION_ALTERATION_SHARES#]</div>
 	<br>
 </div>

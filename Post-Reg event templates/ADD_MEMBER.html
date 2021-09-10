@@ -19,12 +19,12 @@
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Residential address:</strong> [#ITEM:contact.address#]</div>
+		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentList:["event:ADD_MEMBER"]:##
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_MEMBER"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
@@ -32,12 +32,6 @@
 		#]		
 		<br> 
 	#]
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_COPY_OF_PASSPORT"]:##
-		<div> 
-			<strong>Copy of passport:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#] 
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:MB", "status:NEW"]:##
 		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
@@ -50,7 +44,7 @@
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentList:["event:ADD_MEMBER"]:##
+		[#ARRAY:ITEM:attachmentsList:["event:ADD_MEMBER"]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
