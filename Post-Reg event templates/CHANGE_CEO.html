@@ -50,31 +50,11 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_CEO"]:##   
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_CHANGE_CEO"]:##   
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
 		</div>
 	#]
 	<br>
-	<div>
-		<strong>Representative's First Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.firstName#]
-	</div>     
-	<div>
-		<strong>Representative's Last Name:</strong>
-		[#JSON:applicationForm.documentSignature.representative.personName.lastName#]</div>     
-	<div>
-		<strong>Representative's Country of Residence:</strong>
-		[#JSON:applicationForm.documentSignature.representative.residencyCountryIso2Code:LOOKUP:Country.Code.Name#]
-	</div>     
-	<div>
-		<strong>Representative's Phone Number:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.phone#]
-	</div>     
-	<div>
-		<strong>Representative's Email:</strong>
-		[#JSON:applicationForm.documentSignature.representative.contact.email#]
-	</div>
-	<br> 
 </div>

@@ -45,7 +45,7 @@
 		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
 		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
 		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong>Address:</strong> [#ITEM:address#]</div>
+		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
 		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
@@ -68,6 +68,7 @@
 	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ALTERATION_SHARES:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.TRANSFER_SHARES:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>

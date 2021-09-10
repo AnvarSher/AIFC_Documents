@@ -28,7 +28,7 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_PERSON_ATAS"]:##
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_ATAS|PR_RESOLUTION_REPLACE_ATAS"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
