@@ -21,12 +21,17 @@
 	<div>
 		<strong>Type of Resolution:</strong>
 		[#JSON:applicationForm.application.selectedResolutionOption.ADD_PERSON_ATAS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		[#JSON:applicationForm.application.selectedResolutionOption.REPLACE_PERSON_ATAS:LOOKUP:PsPostRegResolutionType.Name.Description#]
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
 		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
+
+		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REPLACE_PERSON_ATAS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REPLACE_PERSON_ATAS:DATE:dd.MM.yyyy#]
+		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REPLACE_PERSON_ATAS:DATE:dd.MM.yyyy#]
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_ATAS|PR_RESOLUTION_REPLACE_ATAS"]:##
 		<div> 
