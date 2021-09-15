@@ -59,7 +59,7 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REPLACE_ORDINARY_MEMBER:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:ITEM:attachmentsList:["fileCode:PR_RESOLUTION_ADD_ORDINARY_MEMBER|PR_RESOLUTION_REPLACE_ORDINARY_MEMBER"]:##         
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_ORDINARY_MEMBER|PR_RESOLUTION_REPLACE_ORDINARY_MEMBER"]:##         
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 

@@ -53,7 +53,7 @@
 		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_DIRECTOR:DATE:dd.MM.yyyy#]
 		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_DIRECTOR:DATE:dd.MM.yyyy#]
 	</div>
-	[#ARRAY:ITEM:attachmentsList:["fileCode:PR_RESOLUTION_ADD_DIRECTOR|PR_RESOLUTION_REPLACE_DIRECTOR"]:##
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_DIRECTOR|PR_RESOLUTION_REPLACE_DIRECTOR"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
