@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
     <div><strong>[#EVENT:PsName#]</strong></div>
     <hr> 
-    [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:UBO", "status:NEW"]:##     
+    [#ARRAY:JSON:applicationForm.application.individualList:["roleCode:UBO", "status:REMOVED"]:##
         <div><strong>First name:</strong> [#ITEM:firstName#]</div>
         <div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>     
         <div><strong>Last name:</strong> [#ITEM:lastName#]</div>
@@ -18,11 +18,9 @@
         <div><strong>Address:</strong> [#ITEM:address#]</div>
         <div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
         <div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-        <div><strong>Business occupation:</strong> [#ITEM:businessOccupation#]</div>
         <div><strong>Place of birth:</strong> [#ITEM:nationalityCodeIso2:LOOKUP:Country.Code.Name#]</div>
-        <div><strong>The date when became an Owner:</strong> [#ITEM:beneficiaryDetails.shareholdingMMYYYY#]</div>
-        <div><strong>Effective date:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-        [#ARRAY:ITEM:attachmentsList:["event:NOTICE_OF_BO"]:##
+        <div><strong>Date of cessation:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
+        [#ARRAY:ITEM:attachmentsList:["event:NOTICE_OF_CESSATION_BO"]:##
             <div> 
                 <strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
                 <a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
