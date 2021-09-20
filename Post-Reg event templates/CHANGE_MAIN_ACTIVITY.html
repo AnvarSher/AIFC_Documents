@@ -1,20 +1,76 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>
-	<div><strong>The nature of business:</strong> [#JSON:applicationForm.application.businessDesc#]</div>
-	<div><strong>Activity Code:</strong> [#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]</div>
-	<div><strong>Detailed description of your business activities to be conducted in the AIFC:</strong> [#JSON:applicationForm.application.descriptionOfBusinessActivities#]</div>
-	<br>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_MAIN_ACTIVITY:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_MAIN_ACTIVITY:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ACTIVITY_CODE_CHANGE#]</div>
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>The nature of business</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.businessDesc#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.businessDesc#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Activity Code</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.mainActivityCode:LOOKUP:PsBusinessActivity.PsCode.Name#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Detailed description of your business activities to be conducted in the AIFC</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.descriptionOfBusinessActivities#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.descriptionOfBusinessActivities#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Type of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Date of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#FILE:PR_RESOLUTION_ON_ACTIVITY_CODE_CHANGE#]
+			</td>
+		</tr>
+	</table>
 	<br>
 </div>

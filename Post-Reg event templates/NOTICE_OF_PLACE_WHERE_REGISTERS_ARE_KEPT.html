@@ -1,21 +1,128 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>
-	<div><strong>Company: </strong>[#JSON:applicationForm.application.nameOfCompany.nameEn#]</div>
-	<div><strong>Register type: </strong>[#JSON:applicationForm.application.addressOfRegisters.registerType#]</div>
-	<div><strong>City: </strong>[#JSON:applicationForm.application.addressOfRegisters.city#]</div>
-	<div><strong>Zip code: </strong>[#JSON:applicationForm.application.addressOfRegisters.zipCode#]</div>
-	<div><strong>District: </strong>[#JSON:applicationForm.application.addressOfRegisters.raion#]</div>
-	<div><strong>Street: </strong>[#JSON:applicationForm.application.addressOfRegisters.addressLine#]</div>
-	<div><strong>Building: </strong>[#JSON:applicationForm.application.addressOfRegisters.buildingNumber#]</div>
-	<div><strong>Office: </strong>[#JSON:applicationForm.application.addressOfRegisters.officeNumber#]</div>
-	<div><strong>Effective date: </strong>[#JSON:applicationForm.application.addressOfRegisters.effectiveDate#]</div>
-	<br>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:[]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
-		</div>
-	#]
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Company</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.nameOfCompany.nameEn#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Register type</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.registerType#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.registerType#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>City</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.city#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.city#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Zip code</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.zipCode#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.zipCode#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>District</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.raion#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.raion#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Street</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.addressLine#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.addressLine#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Building</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.buildingNumber#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.buildingNumber#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Office</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.officeNumber#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.officeNumber#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Effective date</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressOfRegisters.effectiveDate:DATE:dd.MM.yyyy#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressOfRegisters.effectiveDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Event Attachments</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:NOTICE_OF_PLACE_WHERE_REGISTERS_ARE_KEPT"]:##
+					<div> 
+						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]: </strong>
+						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+					</div>
+				#]
+			</td>
+		</tr>
+				
 	<br> 
 </div>

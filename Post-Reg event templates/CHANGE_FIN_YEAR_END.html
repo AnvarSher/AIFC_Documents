@@ -1,23 +1,64 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>
-	<div>
-		<strong>Company:</strong>
-		[#JSON:applicationForm.application.nameOfCompany.nameEn#]
-	</div>
-	<div>
-		<strong>Financial year ends:</strong>
-		[#JSON:applicationForm.application.financialYearEnd:DATE:dd.MM.yyyy#]
-	</div>
-	<div>
-		<strong>Effective date:</strong>
-		[#JSON:applicationForm.application.financialYearEndEffectiveDate:DATE:dd.MM.yyyy#]
-	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_CHANGE_FINANCIAL_YEAR_END|APPLICATION_REPORT"]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#]
-	<br> 
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Company</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.nameOfCompany.nameEn#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Financial year ends</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.financialYearEnd:DATE:dd.MM.yyyy#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.financialYearEnd:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Effective date</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.financialYearEndEffectiveDate:DATE:dd.MM.yyyy#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.financialYearEndEffectiveDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Event Attachments</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_FIN_YEAR_END"]:##
+					<div> 
+						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">
+							<span>[#ITEM:fileName#]</span>
+						</a> 
+					</div>
+				#]
+			</td>
+		</tr>
+	</table>
+	<br>
 </div>

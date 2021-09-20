@@ -1,23 +1,45 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<div><strong>I wish to adopt and use standard Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isStandard:BOOLEAN#]</div>          
-	<div><strong>I wish to make amendments to the bespoke Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isAmendment:BOOLEAN#]</div>
-	<div><strong>I wish to adopt bespoke Articles of Association/Charter/Partnership Agreement:</strong> [#JSON:applicationForm.application.amendment.isBespoke:BOOLEAN#]</div>
-	<div><strong>Statement of compliance option:</strong> [#JSON:applicationForm.application.statementOfComplianceOption#]</div>
-	<div><strong>Statement of Compliance:</strong> [#FILE:PR_STATEMENT_OF_COMPLIANCE#]</div>
-	<div><strong>Effective date of statement of compliance:</strong> [#JSON:applicationForm.application.statementOfComplianceEffectiveDate:DATE:dd.MM.yyyy#]</div>
-	<div><strong>Changes and Additions:</strong> [#FILE:PR_CHANGES_AND_AMENDMENTS_TO_ARTICLES_OF_ASSOCIATION#]</div>
+	<div>
+		<strong>I wish to adopt and use standard Articles of Association/Charter/Partnership Agreement:</strong> 
+		<span>[#JSON:applicationForm.application.amendment.isStandard:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>I wish to make amendments to the bespoke Articles of Association/Charter/Partnership Agreement:</strong> 
+		<span>[#JSON:applicationForm.application.amendment.isAmendment:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>I wish to adopt bespoke Articles of Association/Charter/Partnership Agreement:</strong> 
+		<span>[#JSON:applicationForm.application.amendment.isBespoke:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Statement of compliance option:</strong>
+		<span>[#JSON:applicationForm.application.statementOfComplianceOption#]</span>
+	</div>
+	<div>
+		<strong>Statement of Compliance:</strong>
+		<span>[#FILE:PR_STATEMENT_OF_COMPLIANCE#]</span>
+	</div>
+	<div>
+		<strong>Effective date of statement of compliance:</strong>
+		<span>[#JSON:applicationForm.application.statementOfComplianceEffectiveDate:DATE:dd.MM.yyyy#]</span>
+	</div>
+	<div>
+		<strong>Changes and Additions:</strong>
+		<span>[#FILE:PR_CHANGES_AND_AMENDMENTS_TO_ARTICLES_OF_ASSOCIATION#]</span>
+	</div>
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.AMENDMENT:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.AMENDMENT:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_STANDARD_RESOLUTION_ON_CHANGE_AND_ADD_AMENDMENTS#]</div>
+	<div>
+		<strong>Resolution:</strong>
+		<span>[#FILE:PR_STANDARD_RESOLUTION_ON_CHANGE_AND_ADD_AMENDMENTS#]</span>
+	</div>
 	<br>
 </div>

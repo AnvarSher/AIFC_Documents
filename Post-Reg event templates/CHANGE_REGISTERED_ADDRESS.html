@@ -1,29 +1,174 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>  
-	<div><strong>Registration code address:</strong> [#JSON:applicationForm.application.addressInAifc.addressRegCode#]</div>
-	<div><strong>City:</strong> [#JSON:applicationForm.application.addressInAifc.city#]</div>
-	<div><strong>District:</strong> [#JSON:applicationForm.application.addressInAifc.raion#]</div>
-	<div><strong>Zip code:</strong> [#JSON:applicationForm.application.addressInAifc.zipCode#]</div>
-	<div><strong>Street/avenue:</strong> [#JSON:applicationForm.application.addressInAifc.addressLine#]</div>
-	<div><strong>Building number:</strong> [#JSON:applicationForm.application.addressInAifc.buildingNumber#]</div>
-	<div><strong>Office number:</strong> [#JSON:applicationForm.application.addressInAifc.officeNumber#]</div>
-	<div><strong>Document type:</strong> [#JSON:applicationForm.application.leaseAgreementType#]</div>
-	<div><strong>Document name:</strong> [#JSON:applicationForm.application.otherDocumentName#]</div>
-	<div><strong>Does the lease agreement have the validity period?:</strong> [#JSON:applicationForm.application.documentAddressValidityHasNoLimit:LOOKUP:PsYesNo.Name.Description#]</div>
-	<div><strong>Validity start date:</strong> [#JSON:applicationForm.application.documentAddressValidityFromDate#]</div>
-	<div><strong>Validity end date:</strong> [#JSON:applicationForm.application.documentAddressValidityToDate#]</div>
-	<br>
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_REGISTERED_ADDRESS:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_REGISTERED_ADDRESS:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Resolution:</strong> [#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</div>
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Registration code address</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.addressRegCode#]
+			</td>
+			<td style="border: 0.5px solid black;">
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>City</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.city#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.city#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>District</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.raion#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.raion#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Zip code</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.zipCode#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.zipCode#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Street/avenue</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.addressLine#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.addressLine#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Building number</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.buildingNumber#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.buildingNumber#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Office number</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.addressInAifc.officeNumber#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.officeNumber#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Document type</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.leaseAgreementType#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.leaseAgreementType#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Document name</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.otherDocumentName#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.otherDocumentName#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Does the lease agreement have the validity period?</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.documentAddressValidityHasNoLimit:BOOLEAN#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Validity start date</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.documentAddressValidityFromDate:DATE:dd.MM.yyyy#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.documentAddressValidityFromDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Validity end date</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.documentAddressValidityToDate:DATE:dd.MM.yyyy#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.documentAddressValidityToDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Type of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Date of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				<span>[#FILE:PR_RESOLUTION_ON_ADDRESS_CHANGE#]</span>
+			</td>
+		</tr>
+	</table>
 	<br>
 </div>
