@@ -42,14 +42,13 @@
 
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_MEMBER_OF_COUNCILS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_MEMBER_OF_COUNCILS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_MEMBER_OF_COUNCILS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_MEMBER_OF_COUNCILS:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
+
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_MEMBER_OF_COUNCILS"]:##     
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>

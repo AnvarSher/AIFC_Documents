@@ -1,29 +1,132 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr> 
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:UPDATED"]:##     
-		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
-		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>     
-		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>     
-		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>     
-		<div><strong>Residential address:</strong> [#ITEM:address#]</div>     
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Confirm that Designated Member details are changing and that you are not appointing a new Designated Member:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_DESIGNATED_MEMBER"]:##         
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>    
-		#]     
-		<br>      
-	#]
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DESIGNATED_MEMBER"]:##     
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#]     
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:DM", "status:UPDATED"]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>First name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:firstName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.firstName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Patronymic name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:middleName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.middleName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Last name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:lastName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.lastName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Former name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:formerNames#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.formerName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Residential address</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:address#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.address#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Email</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:contact.email#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.email#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Effective date</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Confirm that Designated Member details are changing and that you are not appointing a new Designated Member</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:changeConfirmation:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Individual's Documents</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ARRAY:ITEM:attachmentsList:[]:##
+						<div>
+							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+						</div>
+					#]
+				</td>
+			</tr>
+		#]
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Event Attachments</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_DESIGNATED_MEMBER"]:##
+					<div>
+						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+					</div>
+				#]
+			</td>
+		</tr>
+	</table>
 	<br> 
 </div>

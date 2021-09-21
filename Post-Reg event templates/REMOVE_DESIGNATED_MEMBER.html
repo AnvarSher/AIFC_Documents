@@ -16,13 +16,11 @@
 	#]
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_DESIGNATED_MEMBER:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_DESIGNATED_MEMBER:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REMOVE_DESIGNATED_MEMBER|PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER"]:##
 		<div>

@@ -20,7 +20,7 @@
         <div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
         <div><strong>Business occupation:</strong> [#ITEM:businessOccupation#]</div>
         <div><strong>Place of birth:</strong> [#ITEM:nationalityCodeIso2:LOOKUP:Country.Code.Name#]</div>
-        <div><strong>The date when became an Owner:</strong> [#ITEM:beneficiaryDetails.shareholdingMMYYYY:dd.MM.yyyy#]</div>
+        <div><strong>The date when became an Owner:</strong> [#ITEM:beneficiaryDetails.shareholdingMMYYYY:DATE:dd.MM.yyyy#]</div>
         <div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
         [#ARRAY:ITEM:attachmentsList:["event:NOTICE_OF_BO"]:##
             <div> 

@@ -28,13 +28,11 @@
 
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_MEMBER_OF_COUNCILS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_MEMBER_OF_COUNCILS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_MEMBER_OF_COUNCILS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_MEMBER_OF_COUNCILS:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_MEMBER_OF_COUNCILS"]:##
 	<div>

@@ -30,19 +30,18 @@
 
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.REMOVE_GUARDIANS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REMOVE_GUARDIANS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REMOVE_GUARDIANS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REMOVE_GUARDIANS:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
+
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_GUARDIANS"]:##
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>    
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+		</div>
 	#]
 	<br>
 </div>

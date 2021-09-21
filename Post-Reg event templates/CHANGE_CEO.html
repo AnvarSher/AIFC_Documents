@@ -1,37 +1,38 @@
-<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
-	<div><strong>[#EVENT:PsName#]</strong></div>     
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:NEW"]:##
-		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>   
-		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>   
-		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>   
-		<div><strong>First Name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>   
-		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>   
+		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>
+		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
+		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
+		<div><strong>First Name in Cyrillic:</strong> [#ITEM:firstNameCyrillic#]</div>
+		<div><strong>Patronymic name in Cyrillic:</strong> [#ITEM:middleNameCyrillic#]</div>
 		<div><strong>Last Name in Cyrillic:</strong> [#ITEM:lastNameCyrillic#]</div>
 		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
 		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Residential Address:</strong> [#ITEM:address#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>   
+		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>  
-		[#ARRAY:ITEM:attachmentsList:["event:CHANGE_CEO"]:## 
+		[#ARRAY:ITEM:attachmentsList:[]:## 
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 			</div>
 		#]
 		<br>
 	#]
+
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:CEO", "status:REMOVED"]:##
-		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>   
-		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>   
+		<div><strong>First Name:</strong> [#ITEM:firstName#]</div>
+		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
 		<div><strong>Last Name:</strong> [#ITEM:lastName#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Date of removal:</strong> [#ITEM:removeDate:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Reason of removal:</strong> [#ITEM:removeReason:LOOKUP:PsPostRegRemovalReason.PsCode.Name#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:CHANGE_CEO"]:## 
+		[#ARRAY:ITEM:attachmentsList:[]:## 
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
@@ -42,18 +43,17 @@
 
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.CHANGE_CEO:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.CHANGE_CEO:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_CHANGE_CEO"]:##   
+
+	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_CEO"]:##
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>  
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 		</div>
 	#]
 	<br>

@@ -9,7 +9,7 @@
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_PERSON_ATAS"]:##
+		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
@@ -20,19 +20,13 @@
 
 	<div>
 		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ADD_PERSON_ATAS:LOOKUP:PsPostRegResolutionType.Name.Description#]
-		[#JSON:applicationForm.application.selectedResolutionOption.REPLACE_PERSON_ATAS:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
 	</div>
 	<div>
 		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ADD_PERSON_ATAS:DATE:dd.MM.yyyy#]
-
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.REPLACE_PERSON_ATAS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.REPLACE_PERSON_ATAS:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.REPLACE_PERSON_ATAS:DATE:dd.MM.yyyy#]
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
+
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_ATAS|PR_RESOLUTION_REPLACE_ATAS"]:##
 		<div> 
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
