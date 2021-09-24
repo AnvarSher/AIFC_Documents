@@ -1,7 +1,7 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">     
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr> 
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:AS", "status:NEW"]:##     
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:AS", "status:NEW"]:##
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>     
 		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>    
@@ -29,12 +29,13 @@
 		<strong>Date of Resolution:</strong>
 		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_AUTHORISED_SIGNATORY"]:##     
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-		</div>
-	#]
+	<div>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_REPLACE_AUTHORISED_SIGNATORY#]
+			[#FILE:PR_RESOLUTION_ADD_AUTHORISED_SIGNATORY#]
+			[#FILE:PR_RESOLUTION_REMOVE_AUTHORISED_SIGNATORY#]
+		</span>
+	</div>
 	<br>
 </div>

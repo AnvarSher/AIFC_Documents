@@ -2,61 +2,181 @@
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
 	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:SH", "status:NEW"]:##
-		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
-		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
-		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
-		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
-		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of Birth:</strong> [#ITEM:dob#]</div>
-		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code#]</div>
-		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
-		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
+		<div>
+			<strong>First name: </strong>
+			<span>[#ITEM:firstName#]</span>
+		</div>
+		<div>
+			<strong>Last name: </strong>
+			<span>[#ITEM:lastName#]</span>
+		</div>
+		<div>
+			<strong>Patronymic name: </strong>
+			<span>[#ITEM:middleName#]</span>
+		</div>
+		<div>
+			<strong>Former name: </strong>
+			<span>[#ITEM:formerNames#]</span>
+		</div>
+		<div>
+			<strong>Resident of Republic of Kazakhstan: </strong>
+			<span>[#ITEM:residentRok:BOOLEAN#]</span>
+		</div>
+		<div>
+			<strong>IIN: </strong>
+			<span>[#ITEM:personalId#]</span>
+		</div>
+		<div>
+			<strong>Tax registration number in the country of incorporation: </strong>
+			<span>[#ITEM:registrationNumberCountryOfIncorporation#]</span>
+		</div>
+		<div>
+			<strong>Type of identity document: </strong>
+			<span>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</span>
+		</div>
+		<div>
+			<strong>Passport / Identity document number: </strong> 
+			<span>[#ITEM:passport.number#]</span>
+		</div>
+		<div>
+			<strong>Identity document issued by: </strong>
+			<span>[#ITEM:passport.issuePlace#]</span>
+		</div>
+		<div>
+			<strong>Date of issue of a document: </strong>
+			<span>[#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Date of expiration of a document: </strong>
+			<span>[#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Date of Birth: </strong>
+			<span>[#ITEM:dob#]</span>
+		</div>
+		<div>
+			<strong>Residential address: </strong>
+			<span>[#ITEM:address#]</span>
+		</div>
+		<div>
+			<strong>Country of Citizenship: </strong>
+			<span>[#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</span>
+		</div>
+		<div>
+			<strong>Country of main residence: </strong>
+			<span>[#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</span>
+		</div>
+		<div>
+			<strong>Email: </strong>
+			<span>[#ITEM:contact.email#]</span>
+		</div>
+		<div>
+			<strong>Date of appointment: </strong>
+			<span>[#ITEM:appointmentDate#]</span>
+		</div>
+		<div>
+			<strong>Currency: </strong>
+			<span>[#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</span>
+		</div>
+		<div>
+			<strong>Percentage of shareholding, %: </strong>
+			<span>[#ITEM:beneficiaryDetails.shareholdingPercent#]</span>
+		</div>
+		<div>
+			<strong>Number of share: </strong>
+			<span>[#ITEM:numberOfShares#]</span>
+		</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
-			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
-			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
-			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
-			<div><strong>Shareholding percent:</strong> [#ITEM:shareholdingPercent#]</div>
+			<div>
+				<strong>Share class name: </strong>
+				<span>[#ITEM:className#]</span>
+			</div>
+			<div>
+				<strong>Value of share: </strong>
+				<span>[#ITEM:valueOfShares#]</span>
+			</div>
+			<div>
+				<strong>Number of share: </strong>
+				<span>[#ITEM:numberOfShares#]</span>
+			</div>
+			<div>
+				<strong>Shareholding percent: </strong>
+				<span>[#ITEM:shareholdingPercent#]</span>
+			</div>
 		#]
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_SHAREHOLDER"]:##
+		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
-			</div>    
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+			</div>
 		#]
 		<br>
-	#] 
+	#]
 
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:SH", "status:NEW"]:##
-		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2#]</div>
-		<div><strong>Date of registration:</strong> [#ITEM:registrationDate#]</div>
-		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Type of activity:</strong> [#ITEM:typeOfBusiness#]</div>
-		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate#]</div>
-		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
-		<div><strong>Number of shares:</strong> [#ITEM:numberOfShares#]</div>
+		<div>
+			<strong>Company name: </strong>
+			<span>[#ITEM:companyName#]</span>
+		</div>
+		<div>
+			<strong>Place of incorporation: </strong>
+			<span>[#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</span>
+		</div>
+		<div>
+			<strong>Date of registration: </strong>
+			<span>[#ITEM:registrationDate:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Registration Number: </strong>
+			<span>[#ITEM:registrationNumber#]</span>
+		</div>
+		<div>
+			<strong>Tax registration number in the country of incorporation: </strong>
+			<span>[#ITEM:registrationNumberCountryOfIncorporation#]</span>
+		</div>
+		<div>
+			<strong>Type of activity: </strong>
+			<span>[#ITEM:typeOfBusiness#]</span>
+		</div>
+		<div>
+			<strong>Address: </strong>
+			<span>[#ITEM:address.addressLine#]</span>
+		</div>
+		<div>
+			<strong>Date of appointment: </strong>
+			<span>[#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Currency: </strong>
+			<span>[#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</span>
+		</div>
+		<div>
+			<strong>Percentage of shareholding, %: </strong>
+			<span>[#ITEM:beneficiaryDetails.shareholdingPercent#]</span>
+		</div>
+		<div>
+			<strong>Number of shares: </strong>
+			<span>[#ITEM:numberOfShares#]</span>
+		</div>
 		[#ARRAY:ITEM:shareClasses:[]:##
-			<div><strong>Share class name:</strong> [#ITEM:className#]</div>
-			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
-			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
-			<div><strong>Shareholding percent:</strong> [#ITEM:shareholdingPercent#]</div>
+			<div>
+				<strong>Share class name: </strong>
+				<span>[#ITEM:className#]</span>
+			</div>
+			<div>
+				<strong>Value of share: </strong>
+				<span>[#ITEM:valueOfShares#]</span>
+			</div>
+			<div>
+				<strong>Number of share: </strong>
+				<span>[#ITEM:numberOfShares#]</span>
+			</div>
+			<div>
+				<strong>Shareholding percent: </strong>
+				<span>[#ITEM:shareholdingPercent#]</span>
+			</div>
 		#]
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_SHAREHOLDER"]:##
+		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
@@ -64,4 +184,112 @@
 		#]
 		<br> 
 	#]
+
+	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:UBO", "status:NEW"]:##
+		<div>
+			<strong>Role code: </strong>
+			<span>[#ITEM:roleCode#]</span>
+		</div>
+		<div>
+			<strong>First name: </strong>
+			<span>[#ITEM:firstName#]</span>
+		</div>
+		<div>
+			<strong>Patronymic name: </strong>
+			<span>[#ITEM:middleName#]</span>
+		</div>
+		<div>
+			<strong>Last name: </strong>
+			<span>[#ITEM:lastName#]</span>
+		</div>
+		<div>
+			<strong>Former names: </strong>
+			<span>[#ITEM:formerNames#]</span>
+		</div>
+		<div>
+			<strong>Email: </strong> 
+			<span>[#ITEM:contact.email#]</span>
+		</div>
+		<div>
+			<strong>Type of identity document: </strong> 
+			<span>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</span>
+		</div>
+		<div>
+			<strong>Passport / Identity document number:</strong> 
+			<span>[#ITEM:passport.number#] </span>
+		</div>
+		<div>
+			<strong>Date of issue of a document: </strong> 
+			<span>[#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Date of expiration of a document: </strong> 
+			<span>[#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Identity document issued by: </strong> 
+			<span>[#ITEM:passport.issuePlace#]</span>
+		</div>
+		<div>
+			<strong>Date of Birth: </strong> 
+			<span>[#ITEM:dob:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Residential address: </strong> 
+			<span>[#ITEM:address#]</span>
+		</div>
+		<div>
+			<strong>Country of Citizenship: </strong> 
+			<span>[#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</span>
+		</div>
+		<div>
+			<strong>Country of main residence:</strong> 
+			<span>[#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</span>
+		</div>
+		<div>
+			<strong>Business occupation (optional): </strong> 
+			<span>[#ITEM:businessOccupation#]</span>
+		</div>
+		<div>
+			<strong>The date when became an Owner (MM.YYYY): </strong> 
+			<span>[#ITEM:dateWhenBecameOwner#]</span>
+		</div>
+		[#ARRAY:ITEM:attachmentsList:[]:##
+			<div>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+			</div>
+		#]
+		<br>
+	#]
+	
+	<div>
+		<strong>The Relevant Person has its Securities listed or traded on a Recognised Exchange</strong>
+		<span>[#JSON:applicationForm.application.isHasItsSecuritiesListed:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>The Entity does not engage in raising or disbursing funds for charitable, religious, cultural, educational, social, fraternal or similar purposes</strong>
+		<span>[#JSON:applicationForm.application.isNPIOpurposes:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>The Relevant Person is wholly owned by a government or government agency of a Relevant Jurisdiction</strong>
+		<span>[#JSON:applicationForm.application.isWhollyOwnedByGov:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>the Relevant Person is established under a law of Kazakhstan to perform governmental functions</strong>
+		<span>[#JSON:applicationForm.application.isEstablishedUnderLaw:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Is there any natural person who:
+ owns or controls (directly or indirectly) Shares in the share capital of the company or other Ownership Interests in the Relevant Person of at least 25%;
+ owns or controls (directly or indirectly) voting rights in the Relevant Person of at least 25%;
+ owns or controls (directly or indirectly) the right to appoint or remove the majority of the Directors of the Relevant Person;
+ has the legal right or through other ownership interests to exercise or actually exercises, significant control or influence over the activities of the company?</strong>
+		<span>[#JSON:applicationForm.application.checkNaturalPerson:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Is there any natural person who has the legal right or through other ownership interests to exercise or actually exercises, significant control or influence over the activities of the company?</strong>
+		<span>[#JSON:applicationForm.application.isInstructionsOrGovBodyRequiredToAct:BOOLEAN#]</span>
+	</div>
+	<br>
 </div>

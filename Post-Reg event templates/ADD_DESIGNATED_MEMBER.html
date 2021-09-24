@@ -24,12 +24,13 @@
 		<strong>Date of Resolution:</strong>
 		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER|PR_RESOLUTION_ADD_DESIGNATED_MEMBER"]:##
-		<div> 
-			<strong>Resolution:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-		</div>
-	#] 
+	<div>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_ADD_DESIGNATED_MEMBER#]
+			[#FILE:PR_RESOLUTION_REMOVE_DESIGNATED_MEMBER#]
+			[#FILE:PR_RESOLUTION_REPLACE_DESIGNATED_MEMBER#]
+		</span>
+	</div>
 	<br>
 </div>

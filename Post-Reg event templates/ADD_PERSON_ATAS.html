@@ -26,12 +26,13 @@
 		<strong>Date of Resolution:</strong>
 		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_ATAS|PR_RESOLUTION_REPLACE_ATAS"]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#]
+	<div>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_REPLACE_ATAS#]
+			[#FILE:PR_RESOLUTION_ADD_ATAS#]
+			[#FILE:PR_RESOLUTION_REMOVE_ATAS#]
+		</span>
+	</div>
 	<br>
 </div>

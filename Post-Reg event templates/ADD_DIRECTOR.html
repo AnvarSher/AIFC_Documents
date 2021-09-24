@@ -51,12 +51,13 @@
 		<strong>Date of Resolution:</strong>
 		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["fileCode:PR_RESOLUTION_ADD_DIRECTOR|PR_RESOLUTION_REPLACE_DIRECTOR"]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#]
+	<div>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_ADD_DIRECTOR#]
+			[#FILE:PR_RESOLUTION_REMOVE_DIRECTOR#]
+			[#FILE:PR_RESOLUTION_REPLACE_DIRECTOR#]
+		</span>
+	</div>
 	<br>
 </div>

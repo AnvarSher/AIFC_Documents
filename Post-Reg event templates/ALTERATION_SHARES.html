@@ -1,100 +1,548 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>
-	<div><strong>Alteration type: </strong>
-		[#ARRAY:JSON:applicationForm.application.alterReason:[]:##
-			[#ITEM#]
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Alteration type</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#ARRAY:JSON:applicationForm.application.alterReason:[]:##
+					<div>[#ITEM#]</div> 
+				#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Effective date</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.alterationEffectiveDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Total amount of sharecapital</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.shareCapital.totalAmountOfShareCapital#]
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.shareCapital.totalAmountOfShareCapital#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Currency</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.shareCapital.currencyCodeIso3#]
+			</td>
+		</tr>
+		[#ARRAY:JSON:applicationForm.application.shareCapital.shareCapitalClasses:[]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Class name</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:className#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Number of votes per share</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:votesNumber#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Nominal value per share</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:shareValue#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareValue#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Number of newly allotted shares</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:allotedShares#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Total number of shares</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:totalNumberOfShares#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.totalNumberOfShares#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Amount of share capital</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:amountOfShareCapital#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.amountOfShareCapital#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Alteration effective date</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:alterationEffectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
 		#]
-	</div>
-	<div><strong>Total amount of sharecapital: </strong>[#JSON:applicationForm.application.shareCapital.totalAmountOfShareCapital#]</div>
-	<div><strong>Currency: </strong>[#JSON:applicationForm.application.shareCapital.currencyCodeIso3:LOOKUP:Currency.Code.Name#]</div>
-	[#ARRAY:JSON:applicationForm.application.shareCapital.shareCapitalClasses:[]:##
-		<br>
-		<div><strong>Class name: </strong>[#ITEM:className#]</div>
-		<div><strong>Number of votes per share: </strong>[#ITEM:votesNumber#]</div>
-		<div><strong>Nominal value per share: </strong>[#ITEM:shareValue#]</div>
-		<div><strong>Number of newly allotted shares: </strong>[#ITEM:allotedShares#]</div>
-		<div><strong>Total number of shares: </strong>[#ITEM:totalNumberOfShares#]</div>
-		<div><strong>Amount of share capital: </strong>[#ITEM:amountOfShareCapital#]</div>
-		<div><strong>Alteration effective date: </strong>[#ITEM:alterationEffectiveDate#]</div>
-	#]
-	<br>
-	<div><strong>I declare that alteration of Share Capital is not prohibited by Articles of Association: </strong>[#JSON:applicationForm.application.alterationAllowed:BOOLEAN#]</div>
-	<div><strong>I declare that alteration of Share Capital will not result in the Private company not having the minimum share capital: </strong>[#JSON:applicationForm.application.minimumShares:BOOLEAN#]</div>
-	<div><strong>Are there any unpaid shares?: </strong>[#JSON:applicationForm.application.hasUnpaidShares:BOOLEAN#]</div>
-	<div><strong>Total number of unpaid shares: </strong>[#JSON:applicationForm.application.totalNumberOfUnpaidShares#]</div>
-	<br>
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:SH", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##
-		<div><strong>First name: </strong>[#ITEM:firstName#]</div>
-		<div><strong>Last name: </strong>[#ITEM:lastName#]</div>
-		<div><strong>Patronymic name: </strong>[#ITEM:middleName#]</div>
-		<div><strong>First name in Cyrillic: </strong>[#ITEM:firstNameCyrillic#]</div>
-		<div><strong>Last name in Cyrillic: </strong>[#ITEM:lastNameCyrillic#]</div>
-		<div><strong>Patronymic name in Cyrillic: </strong>[#ITEM:middleNameCyrillic#]</div>
-		<div><strong>Resident of Republic of Kazakhstan: </strong>[#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN: </strong>[#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporatio#]</div>
-		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
-		<div><strong>Passport / Identity document number:</strong> [#ITEM:passport.number#]</div>
-		<div><strong>Identity document issued by:</strong> [#ITEM:passport.issuePlace#]</div>
-		<div><strong>Date of issue of a document:</strong> [#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of expiration of a document:</strong> [#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Percentage of shareholding, %: </strong>[#ITEM:beneficiaryDetails.shareholdingPercent:DECIMAL#]</div>
-		[#ARRAY:ITEM:shareClasses:[]:##
-			<div><strong>Number of share: </strong>[#ITEM:numberOfShares#]</div>
-			<div><strong>Share class name: </strong>[#ITEM:className#]</div>
-			<div><strong>Value of share: </strong>[#ITEM:valueOfShares#]</div>
-			<div><strong>Shareholding percent: </strong>[#ITEM:shareholdingPercent:DECIMAL#]</div>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>I declare that alteration of Share Capital is not prohibited by Articles of Association</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.alterationAllowed:BOOLEAN#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>I declare that alteration of Share Capital will not result in the Private company not having the minimum share capital</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.minimumShares:BOOLEAN#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Are there any unpaid shares?</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.hasUnpaidShares#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Total number of unpaid shares</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#JSON:applicationForm.application.totalNumberOfUnpaidShares#]
+			</td>
+		</tr>
+		[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:SH", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>First name</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:firstName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Last name</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:lastName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Patronymic name</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:middleName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>First name in Cyrillic</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:firstNameCyrillic#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Last name in Cyrillic</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:lastNameCyrillic#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Patronic name in Cyrillic</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:middleNameCyrillic#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Resident of Republic of Kazakhstan</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:residentRok:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>IIN</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:personalId#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Tax registration number in the country of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:registrationNumberCountryOfIncorporation#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Type of identity document</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:passport.documentType#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Passport / Identity document number</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:passport.number#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Identity document issued by</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:passport.issuePlace#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of issue of a document</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of expiration of a document</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of Birth</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:dob:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Residential address</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:address#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Country of Citizenship</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Country of main residence</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Email</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:contact.email#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Percentage of shareholding, %</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:beneficiaryDetails.shareholdingPercent#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareholdingPercent#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Number of shares</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:numberOfShares#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.numberOfShares#]
+				</td>
+			</tr>
+			[#ARRAY:ITEM:shareClasses:[]:##
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Share class name</strong>
+					</td>
+					<td style="border: 0.5px solid black;" colspan="2">
+						[#ITEM:className#]
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Number of share</strong>
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:numberOfShares#]
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:oldValues.numberOfShares#]
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Value of share</strong>
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:valueOfShares#]
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:oldValues.valueOfShares#]
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Shareholding percent</strong>
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:shareholdingPercent#]
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:oldValues.shareholdingPercent#]
+					</td>
+				</tr>
+			#]
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Individual's Documents</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ARRAY:ITEM:attachmentsList:[]:##
+						<div>
+							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+						</div>
+					#]
+				</td>
+			</tr>
 		#]
-		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_SHARES"]:##         
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>
-		#]
-		<br>
-	#]
 
-	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:SH", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##
-		<div><strong>Company Name: </strong>[#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation: </strong>[#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Date of registration: </strong>[#ITEM:registrationDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Registration Number: </strong>[#ITEM:registrationNumber#]</div>
-		<div><strong>Tax registration number in the country of incorporation: </strong>[#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Type of activity: </strong>[#ITEM:typeOfBusiness#]</div>
-		<div><strong>Address: </strong>[#ITEM:address.addressLine#]</div>
-		<div><strong>Percentage of shareholding, %: </strong>[#ITEM:beneficiaryDetails.shareholdingPercent:DECIMAL#]</div>
-		<div><strong>Number of shares: </strong>[#ITEM:numberOfShares#]</div>
-		[#ARRAY:ITEM:shareClasses:[]:##
-			<div><strong>Share Class Name:</strong> [#ITEM:className#]</div>
-			<div><strong>Value of share:</strong> [#ITEM:valueOfShares#]</div>
-			<div><strong>Number of share:</strong> [#ITEM:numberOfShares#]</div>
-			<div><strong>Shareholding percent: </strong>[#ITEM:shareholdingPercent:DECIMAL#]</div>
+		[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:SH", "status:UPDATED_PERCENTAGE|NOT_UPDATED"]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Company name</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:companyName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Place of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of registration</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:registrationDate:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Registration Number</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:registrationNumber#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Tax registration number in the country of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:registrationNumberCountryOfIncorporation#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Type of activity</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:typeOfBusiness#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Address</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:address.addressLine#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Percentage of shareholding, %</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:beneficiaryDetails.shareholdingPercent#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareholdingPercent#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Number of shares</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:numberOfShares#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.numberOfShares#]
+				</td>
+			</tr>
+			[#ARRAY:ITEM:shareClasses:[]:##
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Share class name</strong>
+					</td>
+					<td style="border: 0.5px solid black;" colspan="2">
+						[#ITEM:className#]
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Number of share</strong>
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:numberOfShares#]
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:oldValues.numberOfShares#]
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Value of share</strong>
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:valueOfShares#]
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:oldValues.valueOfShares#]
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 0.5px solid black;">
+						<strong>Shareholding percent</strong>
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:shareholdingPercent#]
+					</td>
+					<td style="border: 0.5px solid black;">
+						[#ITEM:oldValues.shareholdingPercent#]
+					</td>
+				</tr>
+			#]
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Body Corporate's Documents</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ARRAY:ITEM:attachmentsList:[]:##
+						<div>
+							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+						</div>
+					#]
+				</td>
+			</tr>
 		#]
-		[#ARRAY:ITEM:attachmentsList:["event:ALTERATION_SHARES"]:##         
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>
-		#]
-		<br>
-	#]
-
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ALTERATION_SHARES:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.ALTERATION_SHARES:DATE:dd.MM.yyyy#]
-	</div>
-	<div><strong>Resolution: </strong>[#FILE:PR_RESOLUTION_ALTERATION_SHARES#]</div>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Type of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Date of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#FILE:PR_RESOLUTION_ALTERATION_SHARES#]
+			</td>
+		</tr>
+	</table>
 	<br>
 </div>

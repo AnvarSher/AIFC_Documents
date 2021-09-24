@@ -1,52 +1,275 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>
-	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:PC", "status:UPDATED"]:##
-		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>     
-		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
-		<div><strong>Objectives of the Company:</strong> [#ITEM:objectives#]</div>
-		<div><strong>Date of starting activities in the Republic of Kazakhstan:</strong> [#ITEM:dateOfStartingActivities:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Share capital currency:</strong> [#ITEM:sizeOfShareCapitalCurrency:LOOKUP:Currency.Code.Name#]</div>
-		<div><strong>Amount of issued share capital:</strong> [#ITEM:amountOfIssuedShareCapital#]</div>
-		<div><strong>Is a legal entity is an international organization?:</strong> [#ITEM:isInternational:BOOLEAN#]</div>
-		<div><strong>CEO First name:</strong> [#ITEM:ceo.firstName#]</div>
-		<div><strong>CEO Last name:</strong> [#ITEM:ceo.lastName#]</div>
-		<div><strong>CEO Patronymic name:</strong> [#ITEM:ceo.middleName#]</div>
-		<div><strong>Regime of registration:</strong> [#ITEM:regimeType#]</div>
-		<div><strong>Date of incorporation:</strong> [#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Type of share capital:</strong> [#ITEM:typeOfShareCapital#]</div>
-		<div><strong>Size of share capital currency:</strong> [#ITEM:sizeOfShareCapitalCurrency:LOOKUP:Currency.Code.Name#]</div>
-		<div><strong>Size of share capital:</strong> [#ITEM:sizeOfShareCapital#]</div>
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:PC", "status:UPDATED"]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Company name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:companyName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.companyName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Registration Number</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:registrationNumber#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.registrationNumber#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Tax registration number in the country of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:registrationNumberCountryOfIncorporation#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.registrationNumberCountryOfIncorporation#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Place of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Organisational legal form</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:orgLegalForm#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.orgLegalForm#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Governing Law</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:governLaw:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.governLawCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Address</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:address.addressLine#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.address#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Objectives of the Company</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:objectives#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.objectives#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of starting activities in the Republic of Kazakhstan</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:dateOfStartingActivities:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.dateOfStartingActivities:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Share capital currency</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:sizeOfShareCapitalCurrency#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.sizeOfShareCapitalCurrency#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Amount of issued share capital</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:amountOfIssuedShareCapital#]
+				</td>
+				<td style="border: 0.5px solid black;">
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Is a legal entity is an international organization?</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:isInternational#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.isInternational#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>CEO First name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:ceo.firstName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.ceo.firstName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>CEO Last name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:ceo.lastName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.ceo.lastName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>CEO Patronymic name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:ceo.middleName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Regime of registration</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:regimeType#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.regimeType#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.dateOfIncorporation:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Type of share capital</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:typeOfShareCapital#]
+				</td>
+				<td style="border: 0.5px solid black;">
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Size of share capital currency</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:sizeOfShareCapitalCurrency#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.sizeOfShareCapitalCurrency#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Size of share capital</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:sizeOfShareCapital#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.sizeOfShareCapital#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Effective date</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Body Corporate's Documents</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ARRAY:ITEM:attachmentsList:[]:##
+						<div>
+							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+						</div>
+					#]
+				</td>
+			</tr>
 		#]
-		<br>
-	#]
-
-	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.UPDATE_HEAD_COMPANY:LOOKUP:PsPostRegResolutionType.Name.Description#]
-	</div>
-	<div>
-		<strong>Date of Resolution:</strong>
-		[#JSON:applicationForm.application.standardOnlineResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.standardResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
-		[#JSON:applicationForm.application.ownResolutionEffectiveDate.UPDATE_HEAD_COMPANY:DATE:dd.MM.yyyy#]
-	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##     
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
-		</div>
-	#]
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Event Attachments</strong>
+			</td>
+			<td style="border: 0.5px solid black;">
+				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_HEAD_COMPANY"]:##     
+					<div>
+						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+					</div>
+				#]
+			</td>
+		</tr>
+	</table>
 	<br>
 </div>

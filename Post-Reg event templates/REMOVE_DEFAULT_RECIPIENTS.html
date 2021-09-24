@@ -35,12 +35,13 @@
 		<strong>Date of Resolution:</strong>
 		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_DEFAULT_RECIPIENTS"]:##
-		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-		</div>
-	#]
+	<div>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_ADD_DEFAULT_RECIPIENTS#]
+			[#FILE:PR_RESOLUTION_REMOVE_DEFAULT_RECIPIENTS#]
+			[#FILE:PR_RESOLUTION_REPLACE_DEFAULT_RECIPIENTS#]
+		</span>
+	</div>
 	<br>
 </div>

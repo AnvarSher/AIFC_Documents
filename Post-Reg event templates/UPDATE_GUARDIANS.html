@@ -1,53 +1,286 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-	<div><strong>[#EVENT:PsName#]</strong></div>
-	<hr>
-	[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:GU", "status:UPDATED"]:##
-		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
-		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
-		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
-		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
-		<div><strong>Tax registration number in the country of incorporation:</strong> [#ITEM:registrationNumberCountryOfIncorporation#]</div>
-		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Residential address:</strong> [#ITEM:address#]</div>
-		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Confirm that Guardian details are changing and that you are not appointing a new Qualified Recipient:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>      
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+		<tr style="background-color: #d0d0d0;">
+			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
+		</tr>
+		<tr style="background-color: #d0d0d0;">
+			<td style="width: 30%; border: 0.5px solid black;">
+				<strong>Field name</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>New value</strong>
+			</td>
+			<td style="width: 35%; border: 0.5px solid black;">
+				<strong>Old value</strong>
+			</td>
+		</tr>
+		[#ARRAY:JSON:applicationForm.application.individualList:["roleCode:GU", "status:UPDATED"]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>First name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:firstName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.firstName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Patronymic name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:middleName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.middleName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Last name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:lastName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.lastName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Former name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:formerNames#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.formerName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Resident of Republic of Kazakhstan</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:residentRok:BOOLEAN#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.residentRok:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>IIN</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:personalId#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.idcard.number#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Tax registration number in the country of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:registrationNumberCountryOfIncorporation#]
+				</td>
+				<td style="border: 0.5px solid black;">
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of Birth</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:dob:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.dob:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Residential address</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:address#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.address#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Country of Citizenship</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Country of main residence</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Email</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:contact.email#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.email#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Effective date</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Confirm that Guardian details are changing and that you are not appointing a new Guardian</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:changeConfirmation:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Individual's Documents</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ARRAY:ITEM:attachmentsList:[]:##
+						<div> 
+							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
+							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+						</div>
+					#]
+				</td>
+			</tr>
 		#]
-		<br>
-	#]
-
-	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:GU", "status:UPDATED"]:##
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>Company name:</strong> [#ITEM:companyName#]</div>
-		<div><strong>Place of incorporation:</strong> [#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Registration Number:</strong> [#ITEM:registrationNumber#]</div>
-		<div><strong>Organisational legal form:</strong> [#ITEM:orgLegalForm#]</div>
-		<div><strong>Governing Law:</strong> [#ITEM:governLaw:LOOKUP:Country.Code.Name#]</div>
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Confirm that Guardian details are changing and that you are not appointing a new Qualified Recipient:</strong> [#ITEM:changeConfirmation:BOOLEAN#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
-			<div> 
-				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-			</div>      
+		[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:GU", "status:UPDATED"]:##
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Company name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:companyName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.companyName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Place of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Registration Number</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:registrationNumber#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.registrationNumber#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Organisational legal form</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:orgLegalForm#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.orgLegalForm#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Governing Law</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:governLaw:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.governLawCountryCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Effective date</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.effectiveDate:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Confirm that Guardian details are changing and that you are not appointing a new Guardian</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:changeConfirmation:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Body Corporate's Documents</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ARRAY:ITEM:attachmentsList:["event:UPDATE_GUARDIANS"]:##
+						<div>
+							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
+							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+						</div>
+					#]
+				</td>
+			</tr>
 		#]
-		<br>
-	#]
-
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_GUARDIANS"]:##
-		<div>
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>  
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>    
-	#]
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Event Attachments</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_GUARDIANS"]:##
+					<div>
+						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>  
+						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+					</div>
+				#]
+			</td>
+		</tr>
+	</table>
 	<br>
 </div>

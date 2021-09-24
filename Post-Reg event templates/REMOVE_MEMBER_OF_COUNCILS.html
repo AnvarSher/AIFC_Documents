@@ -34,11 +34,13 @@
 		<strong>Date of Resolution:</strong>
 		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 	</div>
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:REMOVE_MEMBER_OF_COUNCILS"]:##
 	<div>
-		<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-		<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_ADD_MEMBER_OF_THE_COUNCILS#]
+			[#FILE:PR_RESOLUTION_REMOVE_MEMBER_OF_THE_COUNCILS#]
+			[#FILE:PR_RESOLUTION_REPLACE_MEMBER_OF_THE_COUNCILS#]
+		</span>
 	</div>
-	#]
 	<br>
 </div>
