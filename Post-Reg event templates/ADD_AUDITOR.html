@@ -1,0 +1,61 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div><hr> 
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:AUDITOR", "status:NEW"]:##
+		<div>
+			<strong>Auditor: </strong>
+			<span>[#ITEM:auditor#]</span>
+		</div>
+		<div>
+			<strong>License number: </strong>
+			<span>[#ITEM:licenseNumber#]</span>
+		</div>
+		<div>
+			<strong>Registered Address: </strong>
+			<span>[#ITEM:address#]</span>
+		</div>
+		<div>
+			<strong>Date of license: </strong>
+			<span>[#ITEM:dateOfLicense:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Contact number: </strong>
+			<span>[#ITEM:contact.phone#]</span>
+		</div>
+		<div>
+			<strong>Email: </strong>
+			<span>[#ITEM:contact.email#]</span>
+		</div>
+		<div>
+			<strong>Date of Appointment: </strong>
+			<span>[#ITEM:auditorsDateOfAppointment:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>Year for which the Auditor is appointed: </strong>
+			<span>[#ITEM:auditorAppointmentYear#]</span>
+		</div>
+		[#ARRAY:ITEM:attachmentsList:[]:##
+			<div>
+				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]</strong>
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a>
+			</div>
+		#]
+		<br>
+	#]
+	<div>
+		<strong>Type of Resolution: </strong>
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
+	</div>
+	<div>
+		<strong>Date of Resolution: </strong>
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
+	</div>
+	<div>
+		<strong>Resolution: </strong>
+		<span>
+			[#FILE:PR_RESOLUTION_APPOINTMENT_OF_AUDITOR#]
+			[#FILE:PR_RESOLUTION_REMOVAL_OF_AUDITOR#]
+			[#FILE:PR_RESOLUTION_REPLACE_OF_AUDITOR#]
+		</span>
+	</div>
+	<br>
+</div>

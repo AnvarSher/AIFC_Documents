@@ -1,0 +1,31 @@
+<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div><strong>[#EVENT:PsName#]</strong></div><hr> 
+	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:AUDITOR", "status:REMOVED"]:##
+		<div>
+			<strong>Auditor: </strong>
+			<span>[#ITEM:auditor#]</span>
+		</div>
+		<div>
+			<strong>Date of cessation: </strong>
+			<span>[#ITEM:removeDate:DATE:dd.MM.yyyy#]</span>
+		</div>		
+		<br>
+	#]
+	<div>
+		<strong>Type of Resolution: </strong>
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
+	</div>
+	<div>
+		<strong>Date of Resolution: </strong>
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
+	</div>
+	<div>
+		<strong>Resolution: </strong>
+		<span>
+			[#FILE:PR_RESOLUTION_APPOINTMENT_OF_AUDITOR#]
+			[#FILE:PR_RESOLUTION_REMOVAL_OF_AUDITOR#]
+			[#FILE:PR_RESOLUTION_REPLACE_OF_AUDITOR#]
+		</span>
+	</div>
+	<br>
+</div>
