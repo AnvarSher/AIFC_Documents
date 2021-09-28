@@ -24,12 +24,12 @@
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong>Ownership Interest, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_LIMITED_PARTNER"]:##         
+		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 			</div>
 		#]
 		<br>
@@ -45,12 +45,12 @@
 		<div><strong>Address:</strong> [#ITEM:address.addressLine#]</div>
 		<div><strong>Currency:</strong> [#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]</div>
 		<div><strong>Amount of contribution:</strong> [#ITEM:amountOfContribution#]</div>
-		<div><strong>Percentage of shareholding, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
+		<div><strong>Ownership Interest, %:</strong> [#ITEM:beneficiaryDetails.shareholdingPercent#]</div>
 		<div><strong>Date of appointment:</strong> [#ITEM:appointmentDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:ADD_LIMITED_PARTNER"]:##         
+		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div> 
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 			</div>
 		#]
 		<br>
@@ -59,8 +59,8 @@
 	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_LIMITED_PARTNER"]:##
 		<div>
 			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>    
+			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
+		</div>
 	#]
 	<br>
 </div>
