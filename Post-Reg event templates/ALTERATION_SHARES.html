@@ -20,16 +20,8 @@
 			</td>
 			<td style="border: 0.5px solid black;" colspan="2">
 				[#ARRAY:JSON:applicationForm.application.alterReason:[]:##
-					<div>[#ITEM#]</div> 
+					<div>[#ITEM:value:LOOKUP:PsPostRegAlterReason.Name.Description#]</div> 
 				#]
-			</td>
-		</tr>
-		<tr>
-			<td style="border: 0.5px solid black;">
-				<strong>Effective date</strong>
-			</td>
-			<td style="border: 0.5px solid black;" colspan="2">
-				[#JSON:applicationForm.application.alterationEffectiveDate:DATE:dd.MM.yyyy#]
 			</td>
 		</tr>
 		<tr>
@@ -48,7 +40,7 @@
 				<strong>Currency</strong>
 			</td>
 			<td style="border: 0.5px solid black;" colspan="2">
-				[#JSON:applicationForm.application.shareCapital.currencyCodeIso3#]
+				[#JSON:applicationForm.application.shareCapital.shareCapitalCurrency#]
 			</td>
 		</tr>
 		[#ARRAY:JSON:applicationForm.application.shareCapital.shareCapitalClasses:[]:##
@@ -128,7 +120,7 @@
 		</tr>
 		<tr>
 			<td style="border: 0.5px solid black;">
-				<strong>I declare that alteration of Share Capital will not result in the Private company not having the minimum share capital</strong>
+				<strong>I declare that alteration of Share Capital will not result in the Entity not having the minimum share capital</strong>
 			</td>
 			<td style="border: 0.5px solid black;" colspan="2">
 				[#JSON:applicationForm.application.minimumShares:BOOLEAN#]
@@ -139,7 +131,7 @@
 				<strong>Are there any unpaid shares?</strong>
 			</td>
 			<td style="border: 0.5px solid black;" colspan="2">
-				[#JSON:applicationForm.application.hasUnpaidShares#]
+				[#JSON:applicationForm.application.hasUnpaidShares:BOOLEAN#]
 			</td>
 		</tr>
 		<tr>
@@ -368,18 +360,6 @@
 					</td>
 				</tr>
 			#]
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>Individual's Documents</strong>
-				</td>
-				<td style="border: 0.5px solid black;" colspan="2">
-					[#ARRAY:ITEM:attachmentsList:[]:##
-						<div>
-							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-						</div>
-					#]
-				</td>
 			</tr>
 		#]
 
@@ -410,18 +390,10 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Registration Number</strong>
+					<strong>BIN</strong>
 				</td>
 				<td style="border: 0.5px solid black;" colspan="2">
 					[#ITEM:registrationNumber#]
-				</td>
-			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>Tax registration number in the country of incorporation</strong>
-				</td>
-				<td style="border: 0.5px solid black;" colspan="2">
-					[#ITEM:registrationNumberCountryOfIncorporation#]
 				</td>
 			</tr>
 			<tr>
@@ -505,19 +477,6 @@
 					</td>
 				</tr>
 			#]
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>Body Corporate's Documents</strong>
-				</td>
-				<td style="border: 0.5px solid black;" colspan="2">
-					[#ARRAY:ITEM:attachmentsList:[]:##
-						<div>
-							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-						</div>
-					#]
-				</td>
-			</tr>
 		#]
 		<tr>
 			<td style="border: 0.5px solid black;">
