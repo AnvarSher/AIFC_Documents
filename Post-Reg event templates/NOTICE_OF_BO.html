@@ -5,8 +5,7 @@
 		<div><strong>First name:</strong> [#ITEM:firstName#]</div>
 		<div><strong>Patronymic name:</strong> [#ITEM:middleName#]</div>
 		<div><strong>Last name:</strong> [#ITEM:lastName#]</div>
-		<div><strong>Resident of Republic of Kazakhstan:</strong> [#ITEM:residentRok:BOOLEAN#]</div>
-		<div><strong>IIN:</strong> [#ITEM:personalId#]</div>
+		<div><strong>Former name:</strong> [#ITEM:formerNames#]</div>
 		<div><strong>Email:</strong> [#ITEM:contact.email#]</div>
 		<div><strong>Date of birth:</strong> [#ITEM:dob:DATE:dd.MM.yyyy#]</div>
 		<div><strong>Type of identity document:</strong> [#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</div>
@@ -19,10 +18,9 @@
 		<div><strong>Country of Citizenship:</strong> [#ITEM:citizenshipCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Country of main residence:</strong> [#ITEM:mainResidenceCountryIso2Code:LOOKUP:Country.Code.Name#]</div>
 		<div><strong>Business occupation:</strong> [#ITEM:businessOccupation#]</div>
-		<div><strong>Place of birth:</strong> [#ITEM:nationalityCodeIso2:LOOKUP:Country.Code.Name#]</div>
+		<div><strong>Place of birth:</strong> [#ITEM:placeOfBirth#]</div>
 		<div><strong>The date when became an Owner:</strong> [#ITEM:beneficiaryDetails.shareholdingMMYYYY:DATE:dd.MM.yyyy#]</div>
-		<div><strong>Effective date:</strong> [#ITEM:effectiveDate:DATE:dd.MM.yyyy#]</div>
-		[#ARRAY:ITEM:attachmentsList:["event:NOTICE_OF_BO"]:##
+		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 				<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
@@ -30,4 +28,45 @@
 		#]
 		<br>
 	#]
+	<div>
+		<strong>The Relevant Person has its Securities listed or traded on a Recognised Exchange</strong>
+	</div>
+	<div>
+		<span> - [#JSON:applicationForm.application.isHasItsSecuritiesListed:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>The Entity does not engage in raising or disbursing funds for charitable, religious, cultural, educational, social, fraternal or similar purposes</strong>
+	</div>
+	<div>
+		<span> - [#JSON:applicationForm.application.isNPIOpurposes:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>The Relevant Person is wholly owned by a government or government agency of a Relevant Jurisdiction</strong>
+	</div>
+	<div>
+		<span> - [#JSON:applicationForm.application.isWhollyOwnedByGov:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>the Relevant Person is established under a law of Kazakhstan to perform governmental functions</strong>
+	</div>
+	<div>
+		<span> - [#JSON:applicationForm.application.isEstablishedUnderLaw:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Is there any natural person who:
+ owns or controls (directly or indirectly) Shares in the share capital of the company or other Ownership Interests in the Relevant Person of at least 25%;
+ owns or controls (directly or indirectly) voting rights in the Relevant Person of at least 25%;
+ owns or controls (directly or indirectly) the right to appoint or remove the majority of the Directors of the Relevant Person;
+ has the legal right or through other ownership interests to exercise or actually exercises, significant control or influence over the activities of the company?</strong>
+	</div>
+	<div>
+		<span> - [#JSON:applicationForm.application.checkNaturalPerson:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Is there any natural person who has the legal right or through other ownership interests to exercise or actually exercises, significant control or influence over the activities of the company?</strong>
+	</div>
+	<div>
+		<span> - [#JSON:applicationForm.application.isInstructionsOrGovBodyRequiredToAct:BOOLEAN#]</span>
+	</div>
+	<br>
 </div>
