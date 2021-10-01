@@ -164,7 +164,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Percentage of shareholding, %</strong>
+					<strong>Ownership interest, %</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:beneficiaryDetails.shareholdingPercent#]
@@ -178,7 +178,7 @@
 					<strong>Individual's Documents</strong>
 				</td>
 				<td style="border: 0.5px solid black;" colspan="2">
-					[#ARRAY:ITEM:attachmentsList:["event:TRANSFER_OF_CONTRIBUTION"]:##
+					[#ARRAY:ITEM:attachmentsList:[]:##
 						<div>
 							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
 							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
@@ -266,7 +266,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Percentage of shareholding, %</strong>
+					<strong>Ownership interest, %</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:beneficiaryDetails.shareholdingPercent#]
@@ -300,6 +300,22 @@
 						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
 					</div>
 				#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Type of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Date of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
 			</td>
 		</tr>
 	</table>
