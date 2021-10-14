@@ -3,27 +3,43 @@
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:AUDITOR", "status:NEW"]:##
 		<div>
 			<strong>Auditor: </strong>
-			<span>[#ITEM:auditor#]</span>
+			<span>[#ITEM:companyName#]</span>
 		</div>
 		<div>
 			<strong>License number: </strong>
 			<span>[#ITEM:licenseNumber#]</span>
 		</div>
 		<div>
-			<strong>Registered Address: </strong>
-			<span>[#ITEM:address#]</span>
-		</div>
-		<div>
 			<strong>Date of license: </strong>
 			<span>[#ITEM:dateOfLicense:DATE:dd.MM.yyyy#]</span>
 		</div>
 		<div>
+			<strong>Address: </strong>
+			<span>[#ITEM:address.addressLine#]</span>
+		</div>
+		<div>
+			<strong>Zip code: </strong>
+			<span>[#ITEM:address.zipCode#]</span>
+		</div>
+		<div>
+			<strong>City: </strong>
+			<span>[#ITEM:address.city#]</span>
+		</div>
+		<div>
+			<strong>District: </strong>
+			<span>[#ITEM:address.raion#]</span>
+		</div>
+		<div>
+			<strong>Building number: </strong>
+			<span>[#ITEM:address.buildingNumber#]</span>
+		</div>
+		<div>
 			<strong>Contact number: </strong>
-			<span>[#ITEM:contact.phone#]</span>
+			<span>[#ITEM:address.contact.phone#]</span>
 		</div>
 		<div>
 			<strong>Email: </strong>
-			<span>[#ITEM:contact.email#]</span>
+			<span>[#ITEM:address.contact.email#]</span>
 		</div>
 		<div>
 			<strong>Date of Appointment: </strong>
@@ -31,8 +47,9 @@
 		</div>
 		<div>
 			<strong>Year for which the Auditor is appointed: </strong>
-			<span>[#ITEM:auditorAppointmentYear#]</span>
+			<span>[#ITEM:auditorAppointmentYear:DATE:yyyy#]</span>
 		</div>
+
 		[#ARRAY:ITEM:attachmentsList:[]:##
 			<div>
 				<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]</strong>
