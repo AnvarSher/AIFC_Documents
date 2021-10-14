@@ -53,11 +53,21 @@
 		<br> 
 	#]
 
-	[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ADD_MEMBER"]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-	#] 
+	<div>
+		<strong>Type of Resolution:</strong>
+		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>
+	</div>
+	<div>
+		<strong>Date of Resolution:</strong>
+		<span>[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]</span>
+	</div>
+	<div>
+		<strong>Resolution:</strong>
+		<span>
+			[#FILE:PR_RESOLUTION_ADD_MEMBER#]
+			[#FILE:PR_RESOLUTION_REMOVE_MEMBER#]
+			[#FILE:PR_RESOLUTION_REPLACE_MEMBER#]
+		</span>
+	</div>
 	<br> 
 </div>
