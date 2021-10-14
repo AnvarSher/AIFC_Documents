@@ -46,17 +46,26 @@
 		</tr>
 		<tr>
 			<td style="border: 0.5px solid black;">
-				<strong>Event Attachments</strong>
+				<strong>Type of Resolution</strong>
 			</td>
 			<td style="border: 0.5px solid black;" colspan="2">
-				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:CHANGE_FIN_YEAR_END"]:##
-					<div> 
-						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">
-							<span>[#ITEM:fileName#]</span>
-						</a> 
-					</div>
-				#]
+				[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Date of Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#EVENT:PsResolutionDate:DATE:dd.MM.yyyy#]
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0.5px solid black;">
+				<strong>Resolution</strong>
+			</td>
+			<td style="border: 0.5px solid black;" colspan="2">
+				[#FILE:PR_RESOLUTION_CHANGE_FINANCIAL_YEAR_END#]
 			</td>
 		</tr>
 	</table>
