@@ -147,18 +147,5 @@
 				</td>
 			</tr>
 		#]
-		<tr style="background-color: #d0d0d0;">
-			<td style="border: 0.5px solid black;">
-				<strong>Event Attachments</strong>
-			</td>
-			<td style="border: 0.5px solid black;" colspan="2">
-				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_AUTHORISED_SIGNATORY"]:##
-					<div>
-						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong> 
-						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a> 
-					</div>    
-				#]
-			</td>
-		</tr>
 	</table>
 </div>
