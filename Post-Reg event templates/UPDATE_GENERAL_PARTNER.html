@@ -122,16 +122,15 @@
 					[#ITEM:registrationNumberCountryOfIncorporation#]
 				</td>
 				<td style="border: 0.5px solid black;">
+					[#oldValues.taxnumber#]
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
 					<strong>Type of identity document</strong>
 				</td>
-				<td style="border: 0.5px solid black;">
+				<td style="border: 0.5px solid black;" colspan="2">
 					[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]
-				</td>
-				<td style="border: 0.5px solid black;">
 				</td>
 			</tr>
 			<tr>
@@ -252,7 +251,7 @@
 					[#ITEM:changeConfirmation:BOOLEAN#]
 				</td>
 			</tr>
-			<!-- <tr>
+			<tr>
 				<td style="border: 0.5px solid black;">
 					<strong>Individual's Documents</strong>
 				</td>
@@ -264,7 +263,7 @@
 						</div>
 					#]
 				</td>
-			</tr> -->
+			</tr>
 		#]
 
 		[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:GP", "status:UPDATED"]:##
@@ -378,19 +377,6 @@
 				</td>
 			</tr>
 		#]
-		<tr>
-			<td style="border: 0.5px solid black;">
-				<strong>Event Attachments</strong>
-			</td>
-			<td style="border: 0.5px solid black;" colspan="2">
-				[#ARRAY:JSON:applicationForm.application.attachmentsList:["event:UPDATE_GENERAL_PARTNER"]:##
-					<div>
-						<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-						<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-					</div>
-				#]
-			</td>
-		</tr>
 	</table>
 	<br> 
 </div>
