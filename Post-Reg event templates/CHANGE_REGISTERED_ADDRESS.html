@@ -22,6 +22,7 @@
 				[#JSON:applicationForm.application.addressInAifc.addressRegCode#]
 			</td>
 			<td style="border: 0.5px solid black;">
+				[#JSON:applicationForm.application.oldValues.addressInAifc.addressRegCode#]
 			</td>
 		</tr>
 		<tr>
@@ -117,10 +118,10 @@
 				<strong>Does the lease agreement have the validity period?</strong>
 			</td>
 			<td style="border: 0.5px solid black;">
-				[#JSON:applicationForm.application.documentAddressValidityHasNoLimit:BOOLEAN#]
+				[#JSON:applicationForm.application.documentAddressValidityHasNoLimit:INVERSEDBOOLEAN#]
 			</td>
 			<td style="border: 0.5px solid black;">
-				[#JSON:applicationForm.application.oldValues.documentAddressValidityHasNoLimit:BOOLEAN#]
+				[#JSON:applicationForm.application.oldValues.documentAddressValidityHasNoLimit:INVERSEDBOOLEAN#]
 			</td>
 		</tr>
 		<tr>

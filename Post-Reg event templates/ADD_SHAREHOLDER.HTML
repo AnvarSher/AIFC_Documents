@@ -15,10 +15,6 @@
 			<span>[#ITEM:middleName#]</span>
 		</div>
 		<div>
-			<strong>Former name: </strong>
-			<span>[#ITEM:formerNames#]</span>
-		</div>
-		<div>
 			<strong>Resident of Republic of Kazakhstan: </strong>
 			<span>[#ITEM:residentRok:BOOLEAN#]</span>
 		</div>
@@ -31,24 +27,36 @@
 			<span>[#ITEM:registrationNumberCountryOfIncorporation#]</span>
 		</div>
 		<div>
-			<strong>Type of identity document: </strong>
-			<span>[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]</span>
-		</div>
-		<div>
-			<strong>Passport / Identity document number: </strong> 
+			<strong>Passport number: </strong> 
 			<span>[#ITEM:passport.number#]</span>
 		</div>
 		<div>
-			<strong>Identity document issued by: </strong>
+			<strong>Passport issued by: </strong>
 			<span>[#ITEM:passport.issuePlace#]</span>
 		</div>
 		<div>
-			<strong>Date of issue of a document: </strong>
+			<strong>Passport's date of issue: </strong>
 			<span>[#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]</span>
 		</div>
 		<div>
-			<strong>Date of expiration of a document: </strong>
+			<strong>Passport's date of expiration: </strong>
 			<span>[#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>ID Card number: </strong> 
+			<span>[#ITEM:card.number#]</span>
+		</div>
+		<div>
+			<strong>ID Card issued by: </strong>
+			<span>[#ITEM:card.issuePlace#]</span>
+		</div>
+		<div>
+			<strong>ID Card's date of issue: </strong>
+			<span>[#ITEM:card.issueDt:DATE:dd.MM.yyyy#]</span>
+		</div>
+		<div>
+			<strong>ID Card's date of expiration: </strong>
+			<span>[#ITEM:card.expirationDt:DATE:dd.MM.yyyy#]</span>
 		</div>
 		<div>
 			<strong>Date of Birth: </strong>
@@ -80,7 +88,7 @@
 		</div>
 		<div>
 			<strong>Percentage of shareholding, %: </strong>
-			<span>[#ITEM:beneficiaryDetails.shareholdingPercent#]</span>
+			<span>[#ITEM:beneficiaryDetails.shareholdingPercent:DECIMAL#]</span>
 		</div>
 		<div>
 			<strong>Number of share: </strong>
@@ -101,7 +109,7 @@
 			</div>
 			<div>
 				<strong>Shareholding percent: </strong>
-				<span>[#ITEM:shareholdingPercent#]</span>
+				<span>[#ITEM:shareholdingPercent:DECIMAL#]</span>
 			</div>
 		#]
 		[#ARRAY:ITEM:attachmentsList:[]:##
@@ -152,7 +160,7 @@
 		</div>
 		<div>
 			<strong>Percentage of shareholding, %: </strong>
-			<span>[#ITEM:beneficiaryDetails.shareholdingPercent#]</span>
+			<span>[#ITEM:beneficiaryDetails.shareholdingPercent:DECIMAL#]</span>
 		</div>
 		<div>
 			<strong>Number of shares: </strong>
@@ -173,7 +181,7 @@
 			</div>
 			<div>
 				<strong>Shareholding percent: </strong>
-				<span>[#ITEM:shareholdingPercent#]</span>
+				<span>[#ITEM:shareholdingPercent:DECIMAL#]</span>
 			</div>
 		#]
 		[#ARRAY:ITEM:attachmentsList:[]:##
