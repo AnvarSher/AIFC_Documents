@@ -1,5 +1,6 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div><hr> 
+	
 	[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:AUDITOR", "status:NEW"]:##
 		<div>
 			<strong>Auditor: </strong>
@@ -58,6 +59,7 @@
 		#]
 		<br>
 	#]
+
 	<div>
 		<strong>Type of Resolution: </strong>
 		<span>[#EVENT:PsResolutionTypeId:LOOKUP:PsPostRegResolutionType.Id.Name#]</span>

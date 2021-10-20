@@ -281,19 +281,6 @@
 					[#ITEM:oldValues.shareholdingPercent#]
 				</td>
 			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>Individual's Documents</strong>
-				</td>
-				<td style="border: 0.5px solid black;" colspan="2">
-					[#ARRAY:ITEM:attachmentsList:[]:##
-						<div>
-							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-						</div>
-					#]
-				</td>
-			</tr>
 		#]
 		<tr style="background-color: linen;">
 			<td style="width: 30%; border: 0.5px solid black;" colspan="3">
@@ -385,19 +372,6 @@
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:oldValues.shareholdingPercent#]
-				</td>
-			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>Body Corporate's Documents</strong>
-				</td>
-				<td style="border: 0.5px solid black;" colspan="2">
-					[#ARRAY:ITEM:attachmentsList:[]:##
-						<div>
-							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-							<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#]</a>
-						</div>
-					#]
 				</td>
 			</tr>
 		#]
