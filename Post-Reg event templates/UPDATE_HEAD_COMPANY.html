@@ -28,6 +28,17 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
+					<strong>Country of residence</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:countryOfResidenceCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.countryOfResidenceCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
 					<strong>Registration Number</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
@@ -46,6 +57,28 @@
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:oldValues.registrationNumberCountryOfIncorporation#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Resident of Republic of Kazakhstan</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:residentRok:BOOLEAN#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.residentRok:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Date of incorporation in the Country of incorporation</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.dateOfIncorporation:DATE:dd.MM.yyyy#]
 				</td>
 			</tr>
 			<tr>
@@ -130,9 +163,10 @@
 					<strong>Amount of issued share capital</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:amountOfIssuedShareCapital#]
+					[#ITEM:shareCapitalAmount#]
 				</td>
 				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareCapitalAmount#]
 				</td>
 			</tr>
 			<tr>
@@ -140,10 +174,10 @@
 					<strong>Is a legal entity is an international organization?</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:isInternational#]
+					[#ITEM:international:BOOLEAN#]
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.isInternational#]
+					[#ITEM:oldValues.isInternational:BOOLEAN#]
 				</td>
 			</tr>
 			<tr>
@@ -191,23 +225,13 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Date of incorporation</strong>
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.dateOfIncorporation:DATE:dd.MM.yyyy#]
-				</td>
-			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
 					<strong>Type of share capital</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:typeOfShareCapital#]
+					[#ITEM:shareCapitalType#]
 				</td>
 				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareCapitalType#]
 				</td>
 			</tr>
 			<tr>
@@ -234,20 +258,39 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
+					<strong>The period for which the company is required to prepare accounts by Head Company law</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:finYearPeriodMMDD#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.periodToPrepareAccounts#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Is the Head Company a subject to the supervision of a Financial Services Regulator in the relevant jurisdiction or any other jurisdiction?</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:subjectOfSupervision:BOOLEAN#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.isSubjectOfSupervision:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
 					<strong>Effective date</strong>
 				</td>
-				<td style="border: 0.5px solid black;">
+				<td style="border: 0.5px solid black;" colspan="2">
 					[#ITEM:effectiveDate:DATE:dd.MM.yyyy#]
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.effectiveDate:DATE:dd.MM.yyyy#]
 				</td>
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
 					<strong>Body Corporate's Documents</strong>
 				</td>
-				<td style="border: 0.5px solid black;">
+				<td style="border: 0.5px solid black;" colspan="2">
 					[#ARRAY:ITEM:attachmentsList:[]:##
 						<div>
 							<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
