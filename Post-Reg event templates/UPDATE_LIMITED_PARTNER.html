@@ -1,4 +1,4 @@
-<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
+	<div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
 		<tr style="background-color: #d0d0d0;">
 			<td style="border: 0.5px solid black;" colspan="3"><strong>[#EVENT:PsName#]</strong></td>
@@ -111,7 +111,7 @@
 					[#ITEM:personalId#]
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.idcard.number#]
+					[#ITEM:oldValues.iin#]
 				</td>
 			</tr>
 			<tr>
@@ -123,20 +123,10 @@
 				</td>
 				<td style="border: 0.5px solid black;">
 				</td>
-			</tr>
+			</tr>			
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Type of identity document</strong>
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:passport.documentType:LOOKUP:PsDocumentType.Name.Description#]
-				</td>
-				<td style="border: 0.5px solid black;">
-				</td>
-			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>Passport / Identity document number</strong>
+					<strong>Passport number</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:passport.number#]
@@ -147,7 +137,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Identity document issued by</strong>
+					<strong>Passport issued by</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:passport.issuePlace#]
@@ -158,7 +148,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Date of issue of a document</strong>
+					<strong>Passport's date of issue</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:passport.issueDt:DATE:dd.MM.yyyy#]
@@ -169,13 +159,57 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Date of expiration of a document</strong>
+					<strong>Passport's date of expiration</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:passport.expirationDt:DATE:dd.MM.yyyy#]
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:oldValues.passport.expirationDt:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>ID Card number</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:card.number#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.card.number#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>ID Card issued by</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:card.issuePlace#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.card.issuePlace#]
+				</td>
+			</tr>			
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>ID Card's date of issue</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:card.issueDt:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.card.issueDt:DATE:dd.MM.yyyy#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>ID Card's date of expiration</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:card.expirationDt:DATE:dd.MM.yyyy#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.card.expirationDt:DATE:dd.MM.yyyy#]
 				</td>
 			</tr>
 			<tr>
