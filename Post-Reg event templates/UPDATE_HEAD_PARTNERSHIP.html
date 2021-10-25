@@ -17,7 +17,7 @@
 		[#ARRAY:JSON:applicationForm.application.corporateList:["roleCode:PC", "status:UPDATED"]:##
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Company name</strong>
+					<strong>Entity name</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:companyName#]
@@ -28,7 +28,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Registration Number</strong>
+					<strong>BIN/Registration Number</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:registrationNumber#]
@@ -50,7 +50,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Place of incorporation</strong>
+					<strong>Country of incorporation</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:incorpCountryCodeIso2:LOOKUP:Country.Code.Name#]
@@ -61,7 +61,7 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Organisational legal form</strong>
+					<strong>Legal form</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:orgLegalForm#]
@@ -94,6 +94,17 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
+					<strong>Country of residence:</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:countryOfResidenceCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.countryOfResidenceCodeIso2:LOOKUP:Country.Code.Name#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
 					<strong>Objectives of the Company</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
@@ -105,13 +116,13 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Date of starting activities in the Republic of Kazakhstan</strong>
+					<strong>Please give the period for which the company is required to prepare accounts by Head Company law (if applicable)</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:dateOfStartingActivities:DATE:dd.MM.yyyy#]
+					[#ITEM:finYearPeriodMMDD#]
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.dateOfStartingActivities:DATE:dd.MM.yyyy#]
+					[#ITEM:oldValues.periodToPrepareAccounts#]
 				</td>
 			</tr>
 			<tr>
@@ -130,9 +141,10 @@
 					<strong>Amount of issued share capital</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:amountOfIssuedShareCapital#]
+					[#ITEM:shareCapitalAmount#]
 				</td>
 				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareCapitalAmount#]
 				</td>
 			</tr>
 			<tr>
@@ -140,10 +152,32 @@
 					<strong>Is a legal entity is an international organization?</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:isInternational#]
+					[#ITEM:international:BOOLEAN#]
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.isInternational#]
+					[#ITEM:oldValues.isInternational:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Name of registration authority</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:registrationAuthorityName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.registrationAuthorityName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Address of registration authority</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:addressOfRegistrationAuthority#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.registrationAuthorityAddress#]
 				</td>
 			</tr>
 			<tr>
@@ -159,6 +193,17 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
+					<strong>CEO Patronymic name</strong>
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:ceo.middleName#]
+				</td>
+				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.ceo.middleName#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
 					<strong>CEO Last name</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
@@ -166,16 +211,6 @@
 				</td>
 				<td style="border: 0.5px solid black;">
 					[#ITEM:oldValues.ceo.lastName#]
-				</td>
-			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
-					<strong>CEO Patronymic name</strong>
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:ceo.middleName#]
-				</td>
-				<td style="border: 0.5px solid black;">
 				</td>
 			</tr>
 			<tr>
@@ -191,23 +226,13 @@
 			</tr>
 			<tr>
 				<td style="border: 0.5px solid black;">
-					<strong>Date of incorporation</strong>
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:dateOfIncorporation:DATE:dd.MM.yyyy#]
-				</td>
-				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.dateOfIncorporation:DATE:dd.MM.yyyy#]
-				</td>
-			</tr>
-			<tr>
-				<td style="border: 0.5px solid black;">
 					<strong>Type of share capital</strong>
 				</td>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:typeOfShareCapital#]
+					[#ITEM:shareCapitalType#]
 				</td>
 				<td style="border: 0.5px solid black;">
+					[#ITEM:oldValues.shareCapitalType#]
 				</td>
 			</tr>
 			<tr>
@@ -236,11 +261,24 @@
 				<td style="border: 0.5px solid black;">
 					<strong>Effective date</strong>
 				</td>
-				<td style="border: 0.5px solid black;">
+				<td style="border: 0.5px solid black;" colspan="2">
 					[#ITEM:effectiveDate:DATE:dd.MM.yyyy#]
 				</td>
+			</tr>
+			<tr>
 				<td style="border: 0.5px solid black;">
-					[#ITEM:oldValues.effectiveDate:DATE:dd.MM.yyyy#]
+					<strong>Is the Head Partnership a subject to the supervision of a Financial Services Regulator in the relevant jurisdiction or any other jurisdiction?</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:subjectOfSupervision:BOOLEAN#]
+				</td>
+			</tr>
+			<tr>
+				<td style="border: 0.5px solid black;">
+					<strong>Confirm that you are changing details of the existing Head Partnership.</strong>
+				</td>
+				<td style="border: 0.5px solid black;" colspan="2">
+					[#ITEM:changeConfirmation:BOOLEAN#]
 				</td>
 			</tr>
 			<tr>
