@@ -1,15 +1,27 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-    <div><strong>[#EVENT:PsName#]</strong></div>
-    <hr>
-    <div><strong>Type of post-registration application:</strong> ANNUAL_RETURN</div>
-    <div><strong>Please confirm that the Company is subject to submission of Annual return in accordance with section 26 of the AIFC Companies Regulations:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</div>
-    <div><strong>Financial Year end:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd#]</div>
-    <div><strong>Payment option:</strong> [#JSON:applicationForm.application.paymentOption#]</div>
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
+	<div>
+		<strong>Please confirm that the Company is subject to submission of Annual return in accordance with section 26 of the AIFC Companies Regulations:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Financial Year end:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd#]</span>
+	</div>
+	<div>
+		<strong>Reporting year:</strong>
+		<span>[#JSON:applicationForm.application.period#]</span>
+	</div>
 
-    [#ARRAY:JSON:applicationForm.application.attachmentsList:["event:ANNUAL_RETURN"]:##
-		<div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
+	[#ARRAY:JSON:applicationForm.application.shareCapital.shareCapitalClasses:[]:##
+		<div>
+			<strong>Class of share:</strong>
+			<span>[#ITEM:className#]</span>
+		</div>
+		<div>
+			<strong>Specific Details of this class:</strong>
+			<span>[#ITEM:details#]</span>
 		</div>
 	#]
 </div>
