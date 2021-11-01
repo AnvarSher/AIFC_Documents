@@ -1,24 +1,45 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
-    <div><strong>[#EVENT:PsName#]</strong></div>
-    <hr>
-    <div><strong>Company BIN:</strong> [#JSON:applicationForm.application.bin#]</div>
-    <div><strong>Financial Year end:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd:DATE:dd.MM.yyyy#]</div>
-    <div><strong>Please confirm that the Company is subject to submission of Annual accounts in accordance with section 131 of the AIFC Companies Regulations:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</div>
-    <div><strong>Profit and Loss account notes:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.profitLossAccountNotes#]</div>
-    <div><strong>Balance Sheet notes:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.balanceSheetNotes#]</div>
-    <div><strong>Auditor:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.auditor#]</div>
-    <div><strong>When:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.when:DATE:dd.MM.yyyy#]</div>
-    <div><strong>Period:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.period#]</div>
-    <div><strong>Main conclusion:</strong> [#JSON:applicationForm.application.annualFillings.annualAccount.mainConclusion#]</div>
-    <div><strong>Profit and Loss account: [#ARRAY:JSON:applicationForm.application.annualFillings.annualAccount.attachmentsList:["event:ANNUAL_ACCOUNT"]:##
-        <div> 
-			<strong>[#ITEM:fileCode:LOOKUP:PsFileCode.PsCode.Name#]:</strong>
-			<a href="/0/rest/PsSSPFileService/GetFile/[#ITEM:fileName#]/[#ITEM:filePlaceholder#]">[#ITEM:fileName#] </a> 
-		</div>
-		#]
-    </div>
+	<div><strong>[#EVENT:PsName#]</strong></div>
+	<hr>
 	<div>
-		<strong>Type of Resolution:</strong>
-		[#JSON:applicationForm.application.selectedResolutionOption.ANNUAL_ACCOUNT:LOOKUP:PsPostRegResolutionType.Name.Description#]
+		<strong>Financial Year end:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.financialYearEnd:DATE:dd.MM.yyyy#]</span>
+	</div>
+	<div>
+		<strong>Reporting year:</strong>
+		<span>[#JSON:applicationForm.application.period	#]</span>
+	</div>
+	<div>
+		<strong>Please confirm that the Company is subject to submission of Annual accounts in accordance with section 131 of the AIFC Companies Regulations:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.confirmation:BOOLEAN#]</span>
+	</div>
+	<div>
+		<strong>Profit and Loss account notes:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.profitLossAccountNotes#]</span>
+	</div>
+	<div>
+		<strong>Balance Sheet notes:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.balanceSheetNotes#]</span>
+	</div>
+
+	<div>
+		<strong>Main conclusion:</strong>
+		<span>[#JSON:applicationForm.application.annualFillings.annualAccount.mainConclusion#]</span>
+	</div>
+	<div>
+		<strong>Profit and Loss account</strong>
+		<span>[#FILE:PR_ANNUAL_PROFIT_LOSS_ACCOUNT#]</span>
+	</div>
+	<div>
+		<strong>Balance Sheet</strong>
+		<span>[#FILE:PR_ANNUAL_BALANCE_SHEET#]</span>
+	</div>
+	<div>
+		<strong>Auditor's Report</strong>
+		<span>[#FILE:PR_ANNUAL_AUDITORS_REPORT#]</span>
+	</div>
+	<div>
+		<strong>Director's Report</strong>
+		<span>[#FILE:PR_ANNUAL_DIRECTORS_REPORT#]</span>
 	</div>
 </div>
