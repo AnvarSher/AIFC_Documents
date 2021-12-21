@@ -1,16 +1,16 @@
 <div id="[#EVENT:PsCode#]" style="[#EVENT:PsStyles#] margin-bottom: 20px;">
 	<div><strong>[#EVENT:PsName#]</strong></div>
 	<hr>
-	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;"cellpadding="4">
+	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;" cellpadding="4">
 		<tr>
-			<td style="border: 0.5px solid black; width: 70%;">Type of extract</td>
-			<td style="border: 0.5px solid black; width: 30%;">Date on which extract is required</td>
+			<td style="border: 0.5px solid black; width: 70%;"><strong>Type of extract</strong></td>
+			<td style="border: 0.5px solid black; width: 30%;"><strong>Date on which extract is required</strong></td>
 		</tr>
-	[#ARRAY:JSON:applicationForm.application.extractInfo:[]:##
-		<tr>
-			<td style="border: 0.5px solid black;">[#ITEM:type:LOOKUP:PsPostRegExtractType.PsCode.Name#]</td>
-			<td style="border: 0.5px solid black;">[#ITEM:sinceDate:N/A#]</td>
-		</tr>
-	#]
+		[#ARRAY:JSON:applicationForm.application.extractInfo:[]:##
+			<tr>
+				<td style="border: 0.5px solid black;">[#ITEM:type:LOOKUP:PsPostRegExtractType.PsCode.Name#]</td>
+				<td style="border: 0.5px solid black;">[#ITEM:sinceDate:N/A#]</td>
+			</tr>
+		#]
 	</table>
 </div>
