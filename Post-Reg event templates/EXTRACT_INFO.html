@@ -3,13 +3,15 @@
 	<hr>
 	<table style="width: 100%; border-spacing: initial; border-collapse: collapse;" cellpadding="4">
 		<tr>
-			<td style="border: 0.5px solid black; width: 70%;"><strong>Type of extract</strong></td>
-			<td style="border: 0.5px solid black; width: 30%;"><strong>Date on which extract is required</strong></td>
+			<td style="border: 0.5px solid black; width: 50%;"><strong>Type of extract</strong></td>
+			<td style="border: 0.5px solid black; width: 25%;"><strong>Date on which extract is required</strong></td>
+			<td style="border: 0.5px solid black; width: 25%;"><strong>For the year</strong></td>
 		</tr>
 		[#ARRAY:JSON:applicationForm.application.extractInfo:[]:##
 			<tr>
 				<td style="border: 0.5px solid black;">[#ITEM:type:LOOKUP:PsPostRegExtractType.PsCode.Name#]</td>
 				<td style="border: 0.5px solid black;">[#ITEM:sinceDate:N/A#]</td>
+				<td style="border: 0.5px solid black;">[#ITEM:sinceYear:N/A#]</td>
 			</tr>
 		#]
 	</table>
